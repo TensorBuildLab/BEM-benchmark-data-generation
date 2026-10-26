@@ -1,0 +1,113 @@
+{
+ "item": "P01-lupton-free-floating",
+ "tier": "Bronze",
+ "gates": {
+  "G0": "pass",
+  "G1": "pass",
+  "G2": "pass",
+  "G3": "pass",
+  "G4": "pass",
+  "G5": "pass",
+  "G6": "pass",
+  "G7": "pending"
+ },
+ "n_findings": {
+  "blocking": 0,
+  "major": 0,
+  "minor": 1,
+  "info": 1
+ },
+ "findings": [
+  {
+   "gate": "G5",
+   "id": "G5-no-ledger",
+   "severity": "minor",
+   "message": "assumed facts present but no assumption ledger",
+   "evidence": "",
+   "resolution": "",
+   "open": true
+  },
+  {
+   "gate": "G7",
+   "id": "G7-pending",
+   "severity": "info",
+   "message": "no expert sign-off recorded yet; review packet written",
+   "evidence": "",
+   "resolution": "",
+   "open": true
+  }
+ ],
+ "run": {
+  "completed": true,
+  "fatal": false,
+  "severe": 0,
+  "warnings": 3,
+  "elapsed_s": 46.54,
+  "returncode": 0,
+  "severe_messages": [],
+  "instrumentation": [
+   "added Output:Variable Zone Total Internal Total Heating Energy (RunPeriod)"
+  ],
+  "top_warnings": [
+   [
+    "Temperature out of range [-#. to #.] (PsyPsatFnTemp)",
+    2
+   ],
+   [
+    "Weather file location will be used rather than entered (IDF) Location object.",
+    1
+   ],
+   [
+    "WetBulb not converged after # iterations(PsyTwbFnTdbWPb)",
+    1
+   ],
+   [
+    "WetBulb not converged after max iterations(PsyTwbFnTdbWPb)",
+    1
+   ]
+  ]
+ },
+ "conformance": {
+  "n_facts": 25,
+  "n_pass": 25,
+  "n_fail": 0,
+  "n_na": 0,
+  "conformance": 1.0,
+  "constrained": null,
+  "plausibility": 1.0,
+  "by_facet": {
+   "site": 1.0,
+   "geometry": 1.0,
+   "fenestration": 1.0,
+   "envelope": 1.0,
+   "loads": 1.0,
+   "infiltration": 1.0,
+   "control": 1.0,
+   "hvac": 1.0
+  },
+  "by_probe": {},
+  "failed": [],
+  "unverified": []
+ },
+ "spec_profile": {
+  "n_facts": 25,
+  "by_kind": {
+   "stated": 21,
+   "derived": 2,
+   "assumed": 2
+  },
+  "determined_fraction": 0.92,
+  "facets": [
+   "control",
+   "envelope",
+   "fenestration",
+   "geometry",
+   "hvac",
+   "infiltration",
+   "loads",
+   "simulation",
+   "site"
+  ],
+  "probes": []
+ }
+}

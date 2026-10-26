@@ -1,0 +1,81 @@
+{
+ "id": "V06-medium-office-denver",
+ "btype": "office",
+ "city": {
+  "name": "Denver",
+  "state": "CO",
+  "epw": "USA_CO_Denver.Intl.AP.725650_TMY3.epw",
+  "ddy": "USA_CO_Denver.Intl.AP.725650_TMY3.ddy",
+  "climate_zone": "5B",
+  "lat": 39.83,
+  "lon": -104.65,
+  "tz": -7.0,
+  "elev": 1650.0,
+  "station": "725650"
+ },
+ "shape": "rect",
+ "length": 46.0,
+ "width": 32.0,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 3,
+ "f2f": 3.99,
+ "north_axis": 0.0,
+ "zoning": "core_perimeter",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.25,
+  "E": 0.26,
+  "N": 0.26,
+  "W": 0.31
+ },
+ "sill": 0.9,
+ "wall": "wall_cmu_ci",
+ "roof": "roof_insulated_deck_hi",
+ "win_u": 1.73,
+ "win_shgc": 0.33,
+ "win_vt": 0.59,
+ "lpd": 8.5,
+ "epd": 7.26,
+ "occ_density": 4.8,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   7,
+   18
+  ],
+  "saturday": [
+   8,
+   12
+  ],
+  "sunday": null
+ },
+ "infiltration_ach": 0.19,
+ "hvac": "psz_hp",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.49,
+ "cop_heat": 3.25,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "units",
+  "distractor"
+ ],
+ "style": "narrative",
+ "units": "IP",
+ "info_level": "complete",
+ "omitted": [
+  "setpoints"
+ ],
+ "notes": {
+  "name": "Building V06"
+ }
+}

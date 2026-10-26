@@ -1,0 +1,10 @@
+Assembly,Layer (outside to inside),Thickness,Conductivity,Density,Specific heat
+Exterior wall,Stucco 25mm,25.0 mm,0.720 W/m-K,1856 kg/m3,840 J/kg-K
+Exterior wall,XPS board 50mm,50.0 mm,0.029 W/m-K,35 kg/m3,1400 J/kg-K
+Exterior wall,OSB sheathing 12mm,12.7 mm,0.120 W/m-K,640 kg/m3,1210 J/kg-K
+Exterior wall,Batt insulation 140mm,140.0 mm,0.045 W/m-K,12 kg/m3,960 J/kg-K
+Exterior wall,Gypsum board 13mm,12.7 mm,0.160 W/m-K,800 kg/m3,1090 J/kg-K
+Roof,Roof membrane 10mm,9.5 mm,0.160 W/m-K,1121 kg/m3,1460 J/kg-K
+Roof,Plywood 16mm,15.9 mm,0.120 W/m-K,544 kg/m3,1210 J/kg-K
+Roof,Batt insulation 140mm,140.0 mm,0.045 W/m-K,12 kg/m3,960 J/kg-K
+Roof,Gypsum board 13mm,12.7 mm,0.160 W/m-K,800 kg/m3,1090 J/kg-K

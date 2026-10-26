@@ -1,0 +1,8 @@
+Assembly,Layer (outside to inside),Thickness,Conductivity,Density,Specific heat
+Exterior wall,Stucco 25mm,25.0 mm,0.720 W/m-K,1856 kg/m3,840 J/kg-K
+Exterior wall,XPS board 50mm,50.0 mm,0.029 W/m-K,35 kg/m3,1400 J/kg-K
+Exterior wall,Concrete block 200mm,200.0 mm,1.110 W/m-K,800 kg/m3,920 J/kg-K
+Exterior wall,Gypsum board 13mm,12.7 mm,0.160 W/m-K,800 kg/m3,1090 J/kg-K
+Roof,Roof membrane 10mm,9.5 mm,0.160 W/m-K,1121 kg/m3,1460 J/kg-K
+Roof,Polyiso board 100mm,100.0 mm,0.024 W/m-K,30 kg/m3,1470 J/kg-K
+Roof,Metal deck 1.5mm,1.5 mm,45.000 W/m-K,7680 kg/m3,418 J/kg-K

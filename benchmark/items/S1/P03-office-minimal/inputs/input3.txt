@@ -1,0 +1,12 @@
+Building Type: Office
+Stories: 2
+Length: 30 m
+Width: 25 m
+Story Height: 3.6 m
+
+Total Floor Area: 1500 m²
+Volume: 5400 m³
+
+
+Level 1 : z = 0.0 - 3.6
+Level 2 : z = 3.6 - 7.2

@@ -1,0 +1,72 @@
+{
+ "id": "V17-house-denver",
+ "btype": "house",
+ "city": {
+  "name": "Denver",
+  "state": "CO",
+  "epw": "USA_CO_Denver.Intl.AP.725650_TMY3.epw",
+  "ddy": "USA_CO_Denver.Intl.AP.725650_TMY3.ddy",
+  "climate_zone": "5B",
+  "lat": 39.83,
+  "lon": -104.65,
+  "tz": -7.0,
+  "elev": 1650.0,
+  "station": "725650"
+ },
+ "shape": "rect",
+ "length": 15.2,
+ "width": 11.1,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 2,
+ "f2f": 3.0,
+ "north_axis": 0.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.18,
+  "E": 0.08,
+  "N": 0.11,
+  "W": 0.1
+ },
+ "sill": 0.9,
+ "wall": "wall_woodframe_ci",
+ "roof": "roof_wood",
+ "win_u": 1.49,
+ "win_shgc": 0.32,
+ "win_vt": 0.58,
+ "lpd": 4.69,
+ "epd": 3.75,
+ "occ_density": null,
+ "people": 3.0,
+ "activity": 120.0,
+ "hours": "residential",
+ "infiltration_ach": 0.26,
+ "hvac": "psz_hp",
+ "heat_sp": 20.7,
+ "cool_sp": 24.9,
+ "heat_setback": null,
+ "cool_setup": null,
+ "cop_cool": 4.12,
+ "cop_heat": 3.7,
+ "party_walls": [],
+ "garage": {
+  "side": "E",
+  "depth": 6.1
+ },
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "garage",
+  "units"
+ ],
+ "style": "narrative",
+ "units": "IP",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V17"
+ }
+}

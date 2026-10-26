@@ -1,0 +1,106 @@
+{
+ "item": "V03-small-office-seattle",
+ "tier": "Bronze",
+ "gates": {
+  "G0": "pass",
+  "G1": "pass",
+  "G2": "pass",
+  "G3": "pass",
+  "G4": "pass",
+  "G5": "pass",
+  "G6": "pass",
+  "G7": "pending"
+ },
+ "n_findings": {
+  "blocking": 0,
+  "major": 0,
+  "minor": 0,
+  "info": 1
+ },
+ "findings": [
+  {
+   "gate": "G7",
+   "id": "G7-pending",
+   "severity": "info",
+   "message": "no expert sign-off recorded yet; review packet written",
+   "evidence": "",
+   "resolution": "",
+   "open": true
+  }
+ ],
+ "run": {
+  "completed": true,
+  "fatal": false,
+  "severe": 0,
+  "warnings": 1,
+  "elapsed_s": 204.39,
+  "returncode": 0,
+  "severe_messages": [],
+  "instrumentation": [
+   "added Output:Variable Zone Total Internal Total Heating Energy (RunPeriod)"
+  ],
+  "top_warnings": [
+   [
+    "Site:GroundTemperature:BuildingSurface: Some values fall outside the range of #-",
+    1
+   ]
+  ]
+ },
+ "conformance": {
+  "n_facts": 30,
+  "n_pass": 30,
+  "n_fail": 0,
+  "n_na": 0,
+  "conformance": 1.0,
+  "constrained": null,
+  "plausibility": 1.0,
+  "by_facet": {
+   "site": 1.0,
+   "simulation": 1.0,
+   "geometry": 1.0,
+   "fenestration": 1.0,
+   "envelope": 1.0,
+   "loads": 1.0,
+   "schedules": 1.0,
+   "control": 1.0,
+   "hvac": 1.0
+  },
+  "by_probe": {
+   "hvac_vocab": 1.0,
+   "orientation": 1.0,
+   "precedence": 1.0,
+   "schedule": 1.0,
+   "zoning": 1.0
+  },
+  "failed": [],
+  "unverified": []
+ },
+ "spec_profile": {
+  "n_facts": 30,
+  "by_kind": {
+   "stated": 20,
+   "derived": 9,
+   "assumed": 1
+  },
+  "determined_fraction": 0.967,
+  "facets": [
+   "control",
+   "envelope",
+   "fenestration",
+   "geometry",
+   "hvac",
+   "infiltration",
+   "loads",
+   "schedules",
+   "simulation",
+   "site"
+  ],
+  "probes": [
+   "hvac_vocab",
+   "orientation",
+   "precedence",
+   "schedule",
+   "zoning"
+  ]
+ }
+}

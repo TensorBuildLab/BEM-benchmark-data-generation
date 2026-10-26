@@ -1,0 +1,83 @@
+{
+ "id": "V11-retail-albuquerque",
+ "btype": "retail",
+ "city": {
+  "name": "Albuquerque",
+  "state": "NM",
+  "epw": "USA_NM_Albuquerque.Intl.AP.723650_TMY3.epw",
+  "ddy": "USA_NM_Albuquerque.Intl.AP.723650_TMY3.ddy",
+  "climate_zone": "4B",
+  "lat": 35.04,
+  "lon": -106.62,
+  "tz": -7.0,
+  "elev": 1619.0,
+  "station": "723650"
+ },
+ "shape": "rect",
+ "length": 54.0,
+ "width": 31.0,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 1,
+ "f2f": 5.31,
+ "north_axis": 0.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.39,
+  "E": 0.05,
+  "N": 0.0,
+  "W": 0.05
+ },
+ "sill": 0.9,
+ "wall": "wall_cmu_ci",
+ "roof": "roof_insulated_deck",
+ "win_u": 3.23,
+ "win_shgc": 0.31,
+ "win_vt": 0.57,
+ "lpd": 9.68,
+ "epd": 4.9,
+ "occ_density": 14.01,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   9,
+   21
+  ],
+  "saturday": [
+   9,
+   21
+  ],
+  "sunday": [
+   10,
+   18
+  ]
+ },
+ "infiltration_ach": 0.38,
+ "hvac": "psz_hp",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.29,
+ "cop_heat": 3.46,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S",
+  "N"
+ ],
+ "year": 2023,
+ "probes": [
+  "layers",
+  "precedence"
+ ],
+ "style": "spec",
+ "units": "SI",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V11"
+ }
+}

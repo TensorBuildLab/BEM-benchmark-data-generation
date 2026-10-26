@@ -1,0 +1,84 @@
+{
+ "id": "V12-retail-duluth",
+ "btype": "retail",
+ "city": {
+  "name": "Duluth",
+  "state": "MN",
+  "epw": "USA_MN_Duluth.Intl.AP.727450_TMY3.epw",
+  "ddy": "USA_MN_Duluth.Intl.AP.727450_TMY3.ddy",
+  "climate_zone": "7",
+  "lat": 46.83,
+  "lon": -92.22,
+  "tz": -6.0,
+  "elev": 433.0,
+  "station": "727450"
+ },
+ "shape": "rect",
+ "length": 50.0,
+ "width": 33.0,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 1,
+ "f2f": 5.19,
+ "north_axis": 0.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.31,
+  "E": 0.05,
+  "N": 0.0,
+  "W": 0.05
+ },
+ "sill": 0.9,
+ "wall": "wall_cmu_ci",
+ "roof": "roof_insulated_deck",
+ "win_u": 2.16,
+ "win_shgc": 0.34,
+ "win_vt": 0.5,
+ "lpd": 10.36,
+ "epd": 4.98,
+ "occ_density": 13.44,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   9,
+   21
+  ],
+  "saturday": [
+   9,
+   21
+  ],
+  "sunday": [
+   10,
+   18
+  ]
+ },
+ "infiltration_ach": 0.58,
+ "hvac": "psz_hp",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.65,
+ "cop_heat": 3.2,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S",
+  "N"
+ ],
+ "year": 2023,
+ "probes": [
+  "window_dims"
+ ],
+ "style": "narrative",
+ "units": "IP",
+ "info_level": "complete",
+ "omitted": [
+  "schedules"
+ ],
+ "notes": {
+  "name": "Building V12"
+ }
+}

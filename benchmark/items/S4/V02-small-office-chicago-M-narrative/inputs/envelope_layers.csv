@@ -1,0 +1,8 @@
+Assembly,Layer (outside to inside),Thickness,Conductivity,Density,Specific heat
+Exterior wall,Stucco ,0.98 in,4.992 Btu-in/h-ft2-F,115.9 lb/ft3,0.201 Btu/lb-F
+Exterior wall,XPS board,1.97 in,0.201 Btu-in/h-ft2-F,2.2 lb/ft3,0.334 Btu/lb-F
+Exterior wall,Concrete block,7.87 in,7.696 Btu-in/h-ft2-F,49.9 lb/ft3,0.220 Btu/lb-F
+Exterior wall,Gypsum board,0.50 in,1.109 Btu-in/h-ft2-F,49.9 lb/ft3,0.260 Btu/lb-F
+Roof,Roof membrane,0.37 in,1.109 Btu-in/h-ft2-F,70.0 lb/ft3,0.349 Btu/lb-F
+Roof,Polyiso board,3.94 in,0.166 Btu-in/h-ft2-F,1.9 lb/ft3,0.351 Btu/lb-F
+Roof,Metal deck,0.06 in,312.006 Btu-in/h-ft2-F,479.4 lb/ft3,0.100 Btu/lb-F

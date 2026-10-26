@@ -1,0 +1,79 @@
+{
+ "id": "V01-small-office-phoenix",
+ "btype": "office",
+ "city": {
+  "name": "Phoenix",
+  "state": "AZ",
+  "epw": "USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.epw",
+  "ddy": "USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.ddy",
+  "climate_zone": "2B",
+  "lat": 33.45,
+  "lon": -111.98,
+  "tz": -7.0,
+  "elev": 337.0,
+  "station": "722780"
+ },
+ "shape": "rect",
+ "length": 31.0,
+ "width": 19.0,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 2,
+ "f2f": 3.62,
+ "north_axis": 0.0,
+ "zoning": "core_perimeter",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.31,
+  "E": 0.36,
+  "N": 0.26,
+  "W": 0.21
+ },
+ "sill": 0.9,
+ "wall": "wall_cmu_ci",
+ "roof": "roof_insulated_deck",
+ "win_u": 2.85,
+ "win_shgc": 0.25,
+ "win_vt": 0.48,
+ "lpd": 6.889,
+ "epd": 9.42,
+ "occ_density": 4.23,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   7,
+   18
+  ],
+  "saturday": [
+   8,
+   12
+  ],
+  "sunday": null
+ },
+ "infiltration_ach": 0.24,
+ "hvac": "psz_hp",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.87,
+ "cop_heat": 3.32,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "code_lpd",
+  "distractor"
+ ],
+ "style": "narrative",
+ "units": "SI",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V01"
+ }
+}

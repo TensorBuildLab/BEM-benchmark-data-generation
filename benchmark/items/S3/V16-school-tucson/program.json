@@ -1,0 +1,75 @@
+{
+ "id": "V16-school-tucson",
+ "btype": "school",
+ "city": {
+  "name": "Tucson",
+  "state": "AZ",
+  "epw": "USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMYx.2011-2025.epw",
+  "ddy": "USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMYx.2011-2025.ddy",
+  "climate_zone": "2B",
+  "lat": 32.167,
+  "lon": -110.883,
+  "tz": -7.0,
+  "elev": 824.0,
+  "station": "722745"
+ },
+ "shape": "L",
+ "length": 64.0,
+ "width": 13.0,
+ "wing_length": 16.0,
+ "wing_width": 26.0,
+ "n_floors": 1,
+ "f2f": 4.27,
+ "north_axis": 0.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.3,
+  "E": 0.33,
+  "N": 0.27,
+  "W": 0.25
+ },
+ "sill": 0.9,
+ "wall": "wall_brick_steel",
+ "roof": "roof_insulated_deck",
+ "win_u": 2.75,
+ "win_shgc": 0.28,
+ "win_vt": 0.53,
+ "lpd": 8.21,
+ "epd": 4.63,
+ "occ_density": 21.86,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   7,
+   16
+  ],
+  "saturday": null,
+  "sunday": null
+ },
+ "infiltration_ach": 0.34,
+ "hvac": "ptac",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.41,
+ "cop_heat": 2.94,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "units"
+ ],
+ "style": "narrative",
+ "units": "IP",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V16"
+ }
+}

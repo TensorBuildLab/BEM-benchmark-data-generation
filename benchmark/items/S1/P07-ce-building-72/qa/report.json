@@ -1,0 +1,100 @@
+{
+ "item": "P07-ce-building-72",
+ "tier": "Bronze",
+ "gates": {
+  "G0": "pass",
+  "G1": "pass",
+  "G2": "pass",
+  "G3": "pass",
+  "G4": "pass",
+  "G5": "pass",
+  "G6": "pass",
+  "G7": "pending"
+ },
+ "n_findings": {
+  "blocking": 0,
+  "major": 0,
+  "minor": 1,
+  "info": 1
+ },
+ "findings": [
+  {
+   "gate": "G4",
+   "id": "G4-people",
+   "severity": "minor",
+   "message": "assumed value outside the plausible range: capacity 577 is an upper bound; design occupancy 100-577",
+   "evidence": "observed 577.0",
+   "resolution": "",
+   "open": true
+  },
+  {
+   "gate": "G7",
+   "id": "G7-pending",
+   "severity": "info",
+   "message": "no expert sign-off recorded yet; review packet written",
+   "evidence": "",
+   "resolution": "",
+   "open": true
+  }
+ ],
+ "run": {
+  "completed": true,
+  "fatal": false,
+  "severe": 0,
+  "warnings": 2,
+  "elapsed_s": 103.64,
+  "returncode": 0,
+  "severe_messages": [],
+  "instrumentation": [
+   "added Output:Variable Zone Total Internal Total Heating Energy (RunPeriod)"
+  ],
+  "top_warnings": [
+   [
+    "Temperature out of range [-#. to #.] (PsyPsatFnTemp)",
+    2
+   ],
+   [
+    "GetSurfaceData: World Coordinate System selected.  Any non-zero Building/Zone No",
+    1
+   ]
+  ]
+ },
+ "conformance": {
+  "n_facts": 10,
+  "n_pass": 9,
+  "n_fail": 1,
+  "n_na": 0,
+  "conformance": 1.0,
+  "constrained": null,
+  "plausibility": 0.8571428571428571,
+  "by_facet": {
+   "site": 1.0,
+   "geometry": 1.0
+  },
+  "by_probe": {
+   "units": 1.0
+  },
+  "failed": [],
+  "unverified": []
+ },
+ "spec_profile": {
+  "n_facts": 10,
+  "by_kind": {
+   "derived": 1,
+   "stated": 3,
+   "assumed": 6
+  },
+  "determined_fraction": 0.4,
+  "facets": [
+   "envelope",
+   "fenestration",
+   "geometry",
+   "hvac",
+   "loads",
+   "site"
+  ],
+  "probes": [
+   "units"
+  ]
+ }
+}

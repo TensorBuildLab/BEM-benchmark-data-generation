@@ -1,0 +1,79 @@
+{
+ "id": "V02-small-office-chicago",
+ "btype": "office",
+ "city": {
+  "name": "Chicago",
+  "state": "IL",
+  "epw": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+  "ddy": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.ddy",
+  "climate_zone": "5A",
+  "lat": 41.98,
+  "lon": -87.92,
+  "tz": -6.0,
+  "elev": 201.0,
+  "station": "725300"
+ },
+ "shape": "rect",
+ "length": 36.0,
+ "width": 18.0,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 2,
+ "f2f": 3.87,
+ "north_axis": 0.0,
+ "zoning": "core_perimeter",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.33,
+  "E": 0.34,
+  "N": 0.27,
+  "W": 0.33
+ },
+ "sill": 0.9,
+ "wall": "wall_cmu_ci",
+ "roof": "roof_insulated_deck",
+ "win_u": 1.49,
+ "win_shgc": 0.34,
+ "win_vt": 0.46,
+ "lpd": 7.53,
+ "epd": 10.97,
+ "occ_density": 5.77,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   7,
+   18
+  ],
+  "saturday": [
+   8,
+   12
+  ],
+  "sunday": null
+ },
+ "infiltration_ach": 0.42,
+ "hvac": "ideal",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.21,
+ "cop_heat": 3.12,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "units",
+  "layers"
+ ],
+ "style": "spec",
+ "units": "IP",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V02"
+ }
+}

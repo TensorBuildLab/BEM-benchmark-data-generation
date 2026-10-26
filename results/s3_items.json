@@ -1,0 +1,1386 @@
+[
+ {
+  "item": "V01-small-office-phoenix",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 3,
+   "elapsed_s": 257.22
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 24,
+    "derived": 5,
+    "constrained": 1
+   },
+   "determined_fraction": 0.967,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "code_lookup",
+    "distractor",
+    "hvac_vocab",
+    "schedule",
+    "zoning"
+   ]
+  }
+ },
+ {
+  "item": "V02-small-office-chicago",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 28,
+  "n_pass": 28,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 2,
+   "elapsed_s": 72.98
+  },
+  "spec_profile": {
+   "n_facts": 28,
+   "by_kind": {
+    "stated": 21,
+    "derived": 7
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "layers",
+    "schedule",
+    "units",
+    "zoning"
+   ]
+  }
+ },
+ {
+  "item": "V03-small-office-seattle",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 1,
+   "elapsed_s": 204.39
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 20,
+    "derived": 9,
+    "assumed": 1
+   },
+   "determined_fraction": 0.967,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "orientation",
+    "precedence",
+    "schedule",
+    "zoning"
+   ]
+  }
+ },
+ {
+  "item": "V04-small-office-miami",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 0,
+   "elapsed_s": 204.32
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 21,
+    "derived": 9
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "schedule",
+    "units",
+    "window_dims",
+    "zoning"
+   ]
+  }
+ },
+ {
+  "item": "V05-medium-office-baltimore",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 22,
+   "elapsed_s": 300.15
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 19,
+    "derived": 11
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "layers",
+    "orientation",
+    "schedule",
+    "zoning"
+   ]
+  }
+ },
+ {
+  "item": "V06-medium-office-denver",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 29,
+  "n_pass": 29,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 28,
+   "elapsed_s": 320.61
+  },
+  "spec_profile": {
+   "n_facts": 29,
+   "by_kind": {
+    "stated": 22,
+    "derived": 5,
+    "assumed": 2
+   },
+   "determined_fraction": 0.931,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "distractor",
+    "hvac_vocab",
+    "schedule",
+    "units",
+    "zoning"
+   ]
+  }
+ },
+ {
+  "item": "V07-medium-office-houston",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 4,
+   "elapsed_s": 293.36
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 21,
+    "derived": 9
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "precedence",
+    "schedule",
+    "window_dims",
+    "zoning"
+   ]
+  }
+ },
+ {
+  "item": "V08-medium-office-rochester",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 2,
+   "elapsed_s": 278.77
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 22,
+    "derived": 7,
+    "constrained": 1
+   },
+   "determined_fraction": 0.967,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "code_lookup",
+    "hvac_vocab",
+    "layers",
+    "schedule",
+    "units",
+    "zoning"
+   ]
+  }
+ },
+ {
+  "item": "V09-retail-las-vegas",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 31,
+  "n_pass": 31,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 2,
+   "elapsed_s": 46.06
+  },
+  "spec_profile": {
+   "n_facts": 31,
+   "by_kind": {
+    "stated": 26,
+    "derived": 5
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "distractor",
+    "hvac_vocab",
+    "schedule",
+    "units"
+   ]
+  }
+ },
+ {
+  "item": "V10-retail-atlanta",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 2,
+   "elapsed_s": 47.2
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 20,
+    "derived": 8,
+    "assumed": 2
+   },
+   "determined_fraction": 0.933,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "orientation",
+    "schedule"
+   ]
+  }
+ },
+ {
+  "item": "V11-retail-albuquerque",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 31,
+  "n_pass": 31,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 4,
+   "elapsed_s": 51.34
+  },
+  "spec_profile": {
+   "n_facts": 31,
+   "by_kind": {
+    "stated": 24,
+    "derived": 7
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "layers",
+    "precedence",
+    "schedule"
+   ]
+  }
+ },
+ {
+  "item": "V12-retail-duluth",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 3,
+   "elapsed_s": 43.5
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 22,
+    "derived": 7,
+    "assumed": 1
+   },
+   "determined_fraction": 0.967,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "units",
+    "window_dims"
+   ]
+  }
+ },
+ {
+  "item": "V13-school-el-paso",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 2,
+   "elapsed_s": 40.13
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 19,
+    "derived": 11
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "layers",
+    "orientation",
+    "schedule"
+   ]
+  }
+ },
+ {
+  "item": "V14-school-helena",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 2,
+   "elapsed_s": 36.23
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 25,
+    "derived": 5
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "precedence",
+    "schedule",
+    "units"
+   ]
+  }
+ },
+ {
+  "item": "V15-school-san-francisco",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 28,
+  "n_pass": 28,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 2,
+   "elapsed_s": 32.74
+  },
+  "spec_profile": {
+   "n_facts": 28,
+   "by_kind": {
+    "stated": 16,
+    "derived": 9,
+    "assumed": 3
+   },
+   "determined_fraction": 0.893,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "distractor",
+    "hvac_vocab",
+    "schedule",
+    "window_dims"
+   ]
+  }
+ },
+ {
+  "item": "V16-school-tucson",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 29,
+  "n_pass": 29,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 4,
+   "elapsed_s": 32.88
+  },
+  "spec_profile": {
+   "n_facts": 29,
+   "by_kind": {
+    "stated": 24,
+    "derived": 5
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "schedule",
+    "units"
+   ]
+  }
+ },
+ {
+  "item": "V17-house-denver",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 4,
+   "elapsed_s": 67.83
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 22,
+    "derived": 8
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "garage",
+    "hvac_vocab",
+    "schedule",
+    "units"
+   ]
+  }
+ },
+ {
+  "item": "V18-house-atlanta",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 1,
+   "elapsed_s": 62.77
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 20,
+    "derived": 10
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "garage",
+    "hvac_vocab",
+    "layers",
+    "schedule"
+   ]
+  }
+ },
+ {
+  "item": "V19-house-fairbanks",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 2,
+   "elapsed_s": 39.15
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 21,
+    "derived": 8,
+    "assumed": 1
+   },
+   "determined_fraction": 0.967,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "garage",
+    "hvac_vocab",
+    "orientation",
+    "schedule"
+   ]
+  }
+ },
+ {
+  "item": "V20-house-phoenix",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 30,
+  "n_pass": 30,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 1,
+   "elapsed_s": 76.72
+  },
+  "spec_profile": {
+   "n_facts": 30,
+   "by_kind": {
+    "stated": 22,
+    "derived": 8
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "garage",
+    "hvac_vocab",
+    "schedule",
+    "units",
+    "window_dims"
+   ]
+  }
+ },
+ {
+  "item": "V21-rowhouse-chicago",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 28,
+  "n_pass": 28,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 2,
+   "elapsed_s": 54.8
+  },
+  "spec_profile": {
+   "n_facts": 28,
+   "by_kind": {
+    "stated": 22,
+    "derived": 6
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "layers",
+    "party_wall",
+    "schedule"
+   ]
+  }
+ },
+ {
+  "item": "V22-rowhouse-baltimore",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 28,
+  "n_pass": 28,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 2,
+   "elapsed_s": 49.6
+  },
+  "spec_profile": {
+   "n_facts": 28,
+   "by_kind": {
+    "stated": 24,
+    "derived": 4
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "party_wall",
+    "schedule",
+    "units"
+   ]
+  }
+ },
+ {
+  "item": "V23-rowhouse-seattle",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 28,
+  "n_pass": 28,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 2,
+   "elapsed_s": 38.27
+  },
+  "spec_profile": {
+   "n_facts": 28,
+   "by_kind": {
+    "stated": 22,
+    "derived": 6
+   },
+   "determined_fraction": 1.0,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "hvac_vocab",
+    "orientation",
+    "party_wall",
+    "schedule"
+   ]
+  }
+ },
+ {
+  "item": "V24-rowhouse-houston",
+  "tier": "Bronze",
+  "gates": {
+   "G0": "pass",
+   "G1": "pass",
+   "G2": "pass",
+   "G3": "pass",
+   "G4": "pass",
+   "G5": "pass",
+   "G6": "pass",
+   "G7": "pending"
+  },
+  "n_findings": {
+   "blocking": 0,
+   "major": 0,
+   "minor": 0,
+   "info": 1
+  },
+  "conformance": 1.0,
+  "n_facts": 26,
+  "n_pass": 26,
+  "failed": [],
+  "findings": [],
+  "run": {
+   "completed": true,
+   "severe": 0,
+   "warnings": 2,
+   "elapsed_s": 41.37
+  },
+  "spec_profile": {
+   "n_facts": 26,
+   "by_kind": {
+    "stated": 21,
+    "derived": 4,
+    "assumed": 1
+   },
+   "determined_fraction": 0.962,
+   "facets": [
+    "control",
+    "envelope",
+    "fenestration",
+    "geometry",
+    "hvac",
+    "infiltration",
+    "loads",
+    "schedules",
+    "simulation",
+    "site"
+   ],
+   "probes": [
+    "party_wall",
+    "precedence",
+    "schedule",
+    "units"
+   ]
+  }
+ }
+]

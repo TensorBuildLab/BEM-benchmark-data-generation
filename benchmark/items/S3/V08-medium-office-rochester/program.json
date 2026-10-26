@@ -1,0 +1,79 @@
+{
+ "id": "V08-medium-office-rochester",
+ "btype": "office",
+ "city": {
+  "name": "Rochester",
+  "state": "MN",
+  "epw": "USA_MN_Rochester.Intl.AP.726440_TMY3.epw",
+  "ddy": "USA_MN_Rochester.Intl.AP.726440_TMY3.ddy",
+  "climate_zone": "6A",
+  "lat": 43.9,
+  "lon": -92.5,
+  "tz": -6.0,
+  "elev": 398.0,
+  "station": "726440"
+ },
+ "shape": "rect",
+ "length": 53.0,
+ "width": 32.0,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 3,
+ "f2f": 3.74,
+ "north_axis": 0.0,
+ "zoning": "core_perimeter",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.23,
+  "E": 0.33,
+  "N": 0.4,
+  "W": 0.23
+ },
+ "sill": 0.9,
+ "wall": "wall_brick_steel",
+ "roof": "roof_insulated_deck_hi",
+ "win_u": 1.89,
+ "win_shgc": 0.34,
+ "win_vt": 0.49,
+ "lpd": 6.889,
+ "epd": 8.74,
+ "occ_density": 4.19,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   7,
+   18
+  ],
+  "saturday": [
+   8,
+   12
+  ],
+  "sunday": null
+ },
+ "infiltration_ach": 0.24,
+ "hvac": "psz_hp",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.58,
+ "cop_heat": 3.55,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "code_lpd",
+  "layers"
+ ],
+ "style": "spec",
+ "units": "IP",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V08"
+ }
+}

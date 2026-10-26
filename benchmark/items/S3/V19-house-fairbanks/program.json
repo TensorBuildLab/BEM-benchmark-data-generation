@@ -1,0 +1,74 @@
+{
+ "id": "V19-house-fairbanks",
+ "btype": "house",
+ "city": {
+  "name": "Fairbanks",
+  "state": "AK",
+  "epw": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+  "ddy": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.ddy",
+  "climate_zone": "8",
+  "lat": 64.82,
+  "lon": -147.85,
+  "tz": -9.0,
+  "elev": 133.0,
+  "station": "702610"
+ },
+ "shape": "rect",
+ "length": 13.7,
+ "width": 11.7,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 1,
+ "f2f": 2.93,
+ "north_axis": 90.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.18,
+  "E": 0.09,
+  "N": 0.14,
+  "W": 0.14
+ },
+ "sill": 0.9,
+ "wall": "wall_woodframe_ci",
+ "roof": "roof_wood",
+ "win_u": 1.67,
+ "win_shgc": 0.38,
+ "win_vt": 0.54,
+ "lpd": 4.99,
+ "epd": 5.8,
+ "occ_density": null,
+ "people": 4.0,
+ "activity": 120.0,
+ "hours": "residential",
+ "infiltration_ach": 0.4,
+ "hvac": "psz_hp",
+ "heat_sp": 20.1,
+ "cool_sp": 24.9,
+ "heat_setback": null,
+ "cool_setup": null,
+ "cop_cool": 4.12,
+ "cop_heat": 3.06,
+ "party_walls": [],
+ "garage": {
+  "side": "E",
+  "depth": 6.3
+ },
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "orientation",
+  "garage"
+ ],
+ "style": "narrative",
+ "units": "SI",
+ "info_level": "complete",
+ "omitted": [
+  "infiltration"
+ ],
+ "notes": {
+  "name": "Building V19"
+ }
+}

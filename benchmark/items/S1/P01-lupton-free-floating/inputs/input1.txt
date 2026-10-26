@@ -1,0 +1,38 @@
+Lupton Octagonal House (passive, unconditioned)
+
+Overview. A single-story, single-zone ("Living Zone") traditional octagonal house in Lupton, AZ (35.06°N, 109.08°W, 1780 m elevation). It has no HVAC at all: the indoor temperature floats freely with the weather. It is electricity-only and has 4 occupants. It is meant to be run with the nearest EPW, Gallup NM TMY3.
+
+Geometry
+- The main footprint is a regular octagon with 19'4" (5.8928 m) sides, about 167.7 m² of floor.
+- The north wall bulges out 8'2" (2.4892 m), adding about 14.7 m². The NW diagonal wall bulges out 7'8" (2.3368 m), adding about 13.8 m².
+- Walls are 9" (0.2286 m) clay/adobe.
+  - The rectangular wall section is 11'6" (3.5052 m) high.
+  - Above it, each of the 8 faces has a segmental arch, 2'3" (0.6858 m) rise, also 9" clay. EnergyPlus models it as a flat rectangle.
+  - A 10" (0.254 m) gap above the arch crown is modeled as a thin clay surface to close the envelope. The total wall envelope is 4.445 m (about 14'7") high.
+- The roof is an arched wood roof, modeled as a flat horizontal surface at z = 4.445 m. It is a 1.5" wood deck plus 4" closed-cell spray foam, with U ≈ 0.2 W/m²K from the foam alone.
+- The floor is a 4" concrete slab on grade.
+- An internal mass of 14.86 m² of 9" wood side panels is included.
+
+Openings (double-pane glazing, U = 2.05 W/m²K, SHGC = 0.40)
+
+┌─────────────────────────────────────────┬───────────────────────────────────────────────────────────────────────┐
+│                  Face                   │                               Openings                                │
+├─────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────┤
+│ SE diagonal                             │ Center wood door (3'2" × 7') plus a side window on each side (8'1" ×  │
+│                                         │ 8', sill 3'6")                                                        │
+├─────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────┤
+│ SW diagonal                             │ Same as SE                                                            │
+├─────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────┤
+│ South wall                              │ Full-width window, sill 3'6", no door                                 │
+├─────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────┤
+│ West wall                               │ Full-width window, sill 3'6", no door                                 │
+├─────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────┤
+│ East wall, NE diagonal, North wall, NW  │ No openings                                                           │
+│ diagonal                                │                                                                       │
+└─────────────────────────────────────────┴───────────────────────────────────────────────────────────────────────┘
+
+Internal gains and infiltration
+- 4 people at 120 W each (activity schedule). They are home at night and on weekends, and mostly out from 08:00 to 17:00 on weekdays (10% present).
+- LED lighting at 5 W/m², with a residential schedule.
+- Appliances at 7 W/m², with a residential schedule.
+- Infiltration is 0.000302 m³/s per m² of exterior surface, constant all year.

@@ -1,0 +1,79 @@
+{
+ "id": "V15-school-san-francisco",
+ "btype": "school",
+ "city": {
+  "name": "San Francisco",
+  "state": "CA",
+  "epw": "USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw",
+  "ddy": "USA_CA_San.Francisco.Intl.AP.724940_TMY3.ddy",
+  "climate_zone": "3C",
+  "lat": 37.62,
+  "lon": -122.4,
+  "tz": -8.0,
+  "elev": 2.0,
+  "station": "724940"
+ },
+ "shape": "L",
+ "length": 65.0,
+ "width": 14.0,
+ "wing_length": 14.0,
+ "wing_width": 25.0,
+ "n_floors": 1,
+ "f2f": 4.02,
+ "north_axis": 0.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.27,
+  "E": 0.26,
+  "N": 0.25,
+  "W": 0.26
+ },
+ "sill": 0.9,
+ "wall": "wall_cmu_ci",
+ "roof": "roof_insulated_deck",
+ "win_u": 2.08,
+ "win_shgc": 0.32,
+ "win_vt": 0.53,
+ "lpd": 8.73,
+ "epd": 6.62,
+ "occ_density": 22.96,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   7,
+   16
+  ],
+  "saturday": null,
+  "sunday": null
+ },
+ "infiltration_ach": 0.33,
+ "hvac": "ptac",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.2,
+ "cop_heat": 3.33,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "window_dims",
+  "distractor"
+ ],
+ "style": "spec",
+ "units": "SI",
+ "info_level": "complete",
+ "omitted": [
+  "infiltration",
+  "setpoints"
+ ],
+ "notes": {
+  "name": "Building V15"
+ }
+}

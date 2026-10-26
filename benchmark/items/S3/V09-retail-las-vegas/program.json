@@ -1,0 +1,83 @@
+{
+ "id": "V09-retail-las-vegas",
+ "btype": "retail",
+ "city": {
+  "name": "Las Vegas",
+  "state": "NV",
+  "epw": "USA_NV_Las.Vegas-McCarran.Intl.AP.723860_TMYx.2011-2025.epw",
+  "ddy": "USA_NV_Las.Vegas-McCarran.Intl.AP.723860_TMYx.2011-2025.ddy",
+  "climate_zone": "3B",
+  "lat": 36.072,
+  "lon": -115.163,
+  "tz": -8.0,
+  "elev": 664.5,
+  "station": "723860"
+ },
+ "shape": "rect",
+ "length": 53.0,
+ "width": 30.0,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 1,
+ "f2f": 5.45,
+ "north_axis": 0.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.27,
+  "E": 0.05,
+  "N": 0.0,
+  "W": 0.05
+ },
+ "sill": 0.9,
+ "wall": "wall_cmu_ci",
+ "roof": "roof_insulated_deck",
+ "win_u": 2.98,
+ "win_shgc": 0.39,
+ "win_vt": 0.46,
+ "lpd": 12.93,
+ "epd": 2.43,
+ "occ_density": 10.53,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   9,
+   21
+  ],
+  "saturday": [
+   9,
+   21
+  ],
+  "sunday": [
+   10,
+   18
+  ]
+ },
+ "infiltration_ach": 0.51,
+ "hvac": "psz_hp",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.51,
+ "cop_heat": 3.4,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S",
+  "N"
+ ],
+ "year": 2023,
+ "probes": [
+  "distractor",
+  "units"
+ ],
+ "style": "spec",
+ "units": "IP",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V09"
+ }
+}

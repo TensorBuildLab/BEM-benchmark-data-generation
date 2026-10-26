@@ -1,0 +1,6 @@
+omitted_facets:
+- infiltration
+reference_choices:
+  infiltration_ach: 0.23
+note: values the generated reference uses where the documents are silent; graded only
+  for plausibility

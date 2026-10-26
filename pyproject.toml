@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bemgen"
+version = "0.1.0"
+description = "Generate quality-assured end-to-end benchmark data (documents -> EnergyPlus IDF) for generative AI in building energy modeling"
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+authors = [{name = "Liang Zhang", email = "liangzhang1@arizona.edu"}]
+requires-python = ">=3.9"
+dependencies = ["pyyaml>=6", "numpy>=1.22", "matplotlib>=3.5"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: BSD License",
+  "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+ingest = ["openpyxl>=3.1", "pypdf>=4"]
+test = ["pytest>=7"]
+
+[project.scripts]
+bemgen = "bemgen.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+bemgen = ["data/*.yaml"]

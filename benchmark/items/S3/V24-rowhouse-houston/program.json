@@ -1,0 +1,75 @@
+{
+ "id": "V24-rowhouse-houston",
+ "btype": "apartment",
+ "city": {
+  "name": "Houston",
+  "state": "TX",
+  "epw": "USA_TX_Houston-Bush.Intercontinental.AP.722430_TMY3.epw",
+  "ddy": "USA_TX_Houston-Bush.Intercontinental.AP.722430_TMY3.ddy",
+  "climate_zone": "2A",
+  "lat": 30.0,
+  "lon": -95.37,
+  "tz": -6.0,
+  "elev": 29.0,
+  "station": "722430"
+ },
+ "shape": "rect",
+ "length": 7.1,
+ "width": 12.5,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 2,
+ "f2f": 2.89,
+ "north_axis": 0.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.31,
+  "N": 0.27,
+  "E": 0.0,
+  "W": 0.0
+ },
+ "sill": 0.9,
+ "wall": "wall_woodframe_ci",
+ "roof": "roof_wood",
+ "win_u": 2.8,
+ "win_shgc": 0.25,
+ "win_vt": 0.57,
+ "lpd": 5.48,
+ "epd": 5.94,
+ "occ_density": null,
+ "people": 2.0,
+ "activity": 120.0,
+ "hours": "residential",
+ "infiltration_ach": 0.34,
+ "hvac": "pthp",
+ "heat_sp": 20.8,
+ "cool_sp": 24.3,
+ "heat_setback": null,
+ "cool_setup": null,
+ "cop_cool": 3.5,
+ "cop_heat": 3.08,
+ "party_walls": [
+  "E",
+  "W"
+ ],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "party_wall",
+  "precedence",
+  "units"
+ ],
+ "style": "narrative",
+ "units": "IP",
+ "info_level": "complete",
+ "omitted": [
+  "hvac"
+ ],
+ "notes": {
+  "name": "Building V24"
+ }
+}

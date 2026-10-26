@@ -1,0 +1,76 @@
+{
+ "id": "V14-school-helena",
+ "btype": "school",
+ "city": {
+  "name": "Helena",
+  "state": "MT",
+  "epw": "USA_MT_Helena.Rgnl.AP.727720_TMY3.epw",
+  "ddy": "USA_MT_Helena.Rgnl.AP.727720_TMY3.ddy",
+  "climate_zone": "6B",
+  "lat": 46.6,
+  "lon": -111.97,
+  "tz": -7.0,
+  "elev": 1167.0,
+  "station": "727720"
+ },
+ "shape": "L",
+ "length": 68.0,
+ "width": 14.0,
+ "wing_length": 15.0,
+ "wing_width": 25.0,
+ "n_floors": 1,
+ "f2f": 4.12,
+ "north_axis": 0.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.35,
+  "E": 0.25,
+  "N": 0.28,
+  "W": 0.39
+ },
+ "sill": 0.9,
+ "wall": "wall_cmu_ci",
+ "roof": "roof_insulated_deck",
+ "win_u": 2.19,
+ "win_shgc": 0.3,
+ "win_vt": 0.55,
+ "lpd": 7.12,
+ "epd": 4.02,
+ "occ_density": 18.47,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   7,
+   16
+  ],
+  "saturday": null,
+  "sunday": null
+ },
+ "infiltration_ach": 0.45,
+ "hvac": "pthp",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.02,
+ "cop_heat": 3.03,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "units",
+  "precedence"
+ ],
+ "style": "spec",
+ "units": "IP",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V14"
+ }
+}

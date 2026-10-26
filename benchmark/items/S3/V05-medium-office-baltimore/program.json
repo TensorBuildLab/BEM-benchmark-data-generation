@@ -1,0 +1,79 @@
+{
+ "id": "V05-medium-office-baltimore",
+ "btype": "office",
+ "city": {
+  "name": "Baltimore",
+  "state": "MD",
+  "epw": "USA_MD_Baltimore-Washington.Intl.AP.724060_TMY3.epw",
+  "ddy": "USA_MD_Baltimore-Washington.Intl.AP.724060_TMY3.ddy",
+  "climate_zone": "4A",
+  "lat": 39.17,
+  "lon": -76.68,
+  "tz": -5.0,
+  "elev": 45.0,
+  "station": "724060"
+ },
+ "shape": "rect",
+ "length": 57.0,
+ "width": 29.0,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 3,
+ "f2f": 3.92,
+ "north_axis": 180.0,
+ "zoning": "core_perimeter",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.22,
+  "E": 0.37,
+  "N": 0.39,
+  "W": 0.26
+ },
+ "sill": 0.9,
+ "wall": "wall_concrete_ci",
+ "roof": "roof_insulated_deck",
+ "win_u": 2.2,
+ "win_shgc": 0.31,
+ "win_vt": 0.55,
+ "lpd": 8.15,
+ "epd": 6.37,
+ "occ_density": 6.31,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   7,
+   18
+  ],
+  "saturday": [
+   8,
+   12
+  ],
+  "sunday": null
+ },
+ "infiltration_ach": 0.18,
+ "hvac": "psz_hp",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.59,
+ "cop_heat": 3.59,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "layers",
+  "orientation"
+ ],
+ "style": "spec",
+ "units": "SI",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V05"
+ }
+}

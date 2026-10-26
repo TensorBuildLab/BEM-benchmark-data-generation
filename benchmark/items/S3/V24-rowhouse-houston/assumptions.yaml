@@ -1,0 +1,8 @@
+omitted_facets:
+- hvac
+reference_choices:
+  hvac: pthp
+  cop_cool: 3.5
+  cop_heat: 3.08
+note: values the generated reference uses where the documents are silent; graded only
+  for plausibility

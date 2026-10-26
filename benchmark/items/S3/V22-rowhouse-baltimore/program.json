@@ -1,0 +1,72 @@
+{
+ "id": "V22-rowhouse-baltimore",
+ "btype": "apartment",
+ "city": {
+  "name": "Baltimore",
+  "state": "MD",
+  "epw": "USA_MD_Baltimore-Washington.Intl.AP.724060_TMY3.epw",
+  "ddy": "USA_MD_Baltimore-Washington.Intl.AP.724060_TMY3.ddy",
+  "climate_zone": "4A",
+  "lat": 39.17,
+  "lon": -76.68,
+  "tz": -5.0,
+  "elev": 45.0,
+  "station": "724060"
+ },
+ "shape": "rect",
+ "length": 6.2,
+ "width": 12.5,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 2,
+ "f2f": 2.83,
+ "north_axis": 0.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.39,
+  "N": 0.2,
+  "E": 0.0,
+  "W": 0.0
+ },
+ "sill": 0.9,
+ "wall": "wall_brick_steel",
+ "roof": "roof_wood",
+ "win_u": 3.22,
+ "win_shgc": 0.34,
+ "win_vt": 0.51,
+ "lpd": 3.54,
+ "epd": 3.49,
+ "occ_density": null,
+ "people": 2.0,
+ "activity": 120.0,
+ "hours": "residential",
+ "infiltration_ach": 0.22,
+ "hvac": "psz_hp",
+ "heat_sp": 20.6,
+ "cool_sp": 25.3,
+ "heat_setback": null,
+ "cool_setup": null,
+ "cop_cool": 3.45,
+ "cop_heat": 3.28,
+ "party_walls": [
+  "E",
+  "W"
+ ],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "party_wall",
+  "units"
+ ],
+ "style": "spec",
+ "units": "IP",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V22"
+ }
+}

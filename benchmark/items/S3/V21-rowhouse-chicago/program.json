@@ -1,0 +1,72 @@
+{
+ "id": "V21-rowhouse-chicago",
+ "btype": "apartment",
+ "city": {
+  "name": "Chicago",
+  "state": "IL",
+  "epw": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+  "ddy": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.ddy",
+  "climate_zone": "5A",
+  "lat": 41.98,
+  "lon": -87.92,
+  "tz": -6.0,
+  "elev": 201.0,
+  "station": "725300"
+ },
+ "shape": "rect",
+ "length": 6.8,
+ "width": 12.3,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 2,
+ "f2f": 2.94,
+ "north_axis": 0.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.39,
+  "N": 0.28,
+  "E": 0.0,
+  "W": 0.0
+ },
+ "sill": 0.9,
+ "wall": "wall_woodframe_ci",
+ "roof": "roof_wood",
+ "win_u": 1.45,
+ "win_shgc": 0.3,
+ "win_vt": 0.52,
+ "lpd": 4.43,
+ "epd": 4.56,
+ "occ_density": null,
+ "people": 2.0,
+ "activity": 120.0,
+ "hours": "residential",
+ "infiltration_ach": 0.24,
+ "hvac": "psz_hp",
+ "heat_sp": 20.3,
+ "cool_sp": 25.4,
+ "heat_setback": null,
+ "cool_setup": null,
+ "cop_cool": 3.78,
+ "cop_heat": 3.19,
+ "party_walls": [
+  "E",
+  "W"
+ ],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "party_wall",
+  "layers"
+ ],
+ "style": "narrative",
+ "units": "SI",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V21"
+ }
+}

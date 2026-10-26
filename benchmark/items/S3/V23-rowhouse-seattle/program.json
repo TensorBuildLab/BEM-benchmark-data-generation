@@ -1,0 +1,72 @@
+{
+ "id": "V23-rowhouse-seattle",
+ "btype": "apartment",
+ "city": {
+  "name": "Seattle",
+  "state": "WA",
+  "epw": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw",
+  "ddy": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.ddy",
+  "climate_zone": "4C",
+  "lat": 47.47,
+  "lon": -122.32,
+  "tz": -8.0,
+  "elev": 122.0,
+  "station": "727930"
+ },
+ "shape": "rect",
+ "length": 7.3,
+ "width": 11.2,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 2,
+ "f2f": 3.09,
+ "north_axis": 180.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.33,
+  "N": 0.2,
+  "E": 0.0,
+  "W": 0.0
+ },
+ "sill": 0.9,
+ "wall": "wall_woodframe_ci",
+ "roof": "roof_wood",
+ "win_u": 3.29,
+ "win_shgc": 0.33,
+ "win_vt": 0.57,
+ "lpd": 5.99,
+ "epd": 6.49,
+ "occ_density": null,
+ "people": 3.0,
+ "activity": 120.0,
+ "hours": "residential",
+ "infiltration_ach": 0.35,
+ "hvac": "pthp",
+ "heat_sp": 20.7,
+ "cool_sp": 25.0,
+ "heat_setback": null,
+ "cool_setup": null,
+ "cop_cool": 3.32,
+ "cop_heat": 3.47,
+ "party_walls": [
+  "E",
+  "W"
+ ],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "party_wall",
+  "orientation"
+ ],
+ "style": "narrative",
+ "units": "SI",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V23"
+ }
+}

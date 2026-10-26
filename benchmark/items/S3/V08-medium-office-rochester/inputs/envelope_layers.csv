@@ -1,0 +1,7 @@
+Assembly,Layer (outside to inside),Thickness,Conductivity,Density,Specific heat
+Exterior wall,Face brick,3.94 in,6.171 Btu-in/h-ft2-F,119.9 lb/ft3,0.189 Btu/lb-F
+Exterior wall,Mineral wool,3.94 in,0.250 Btu-in/h-ft2-F,4.0 lb/ft3,0.201 Btu/lb-F
+Exterior wall,Gypsum board,0.50 in,1.109 Btu-in/h-ft2-F,49.9 lb/ft3,0.260 Btu/lb-F
+Roof,Roof membrane,0.37 in,1.109 Btu-in/h-ft2-F,70.0 lb/ft3,0.349 Btu/lb-F
+Roof,Polyiso board,5.91 in,0.166 Btu-in/h-ft2-F,1.9 lb/ft3,0.351 Btu/lb-F
+Roof,Metal deck,0.06 in,312.006 Btu-in/h-ft2-F,479.4 lb/ft3,0.100 Btu/lb-F

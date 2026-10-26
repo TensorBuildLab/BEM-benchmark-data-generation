@@ -1,0 +1,84 @@
+{
+ "id": "V10-retail-atlanta",
+ "btype": "retail",
+ "city": {
+  "name": "Atlanta",
+  "state": "GA",
+  "epw": "USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.epw",
+  "ddy": "USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.ddy",
+  "climate_zone": "3A",
+  "lat": 33.63,
+  "lon": -84.43,
+  "tz": -5.0,
+  "elev": 308.0,
+  "station": "722190"
+ },
+ "shape": "rect",
+ "length": 46.0,
+ "width": 36.0,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 1,
+ "f2f": 5.57,
+ "north_axis": 90.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.39,
+  "E": 0.05,
+  "N": 0.0,
+  "W": 0.05
+ },
+ "sill": 0.9,
+ "wall": "wall_cmu_ci",
+ "roof": "roof_insulated_deck",
+ "win_u": 2.41,
+ "win_shgc": 0.4,
+ "win_vt": 0.55,
+ "lpd": 12.81,
+ "epd": 3.9,
+ "occ_density": 8.96,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   9,
+   21
+  ],
+  "saturday": [
+   9,
+   21
+  ],
+  "sunday": [
+   10,
+   18
+  ]
+ },
+ "infiltration_ach": 0.35,
+ "hvac": "psz_hp",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.41,
+ "cop_heat": 3.38,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S",
+  "N"
+ ],
+ "year": 2023,
+ "probes": [
+  "orientation"
+ ],
+ "style": "narrative",
+ "units": "SI",
+ "info_level": "complete",
+ "omitted": [
+  "loads"
+ ],
+ "notes": {
+  "name": "Building V10"
+ }
+}

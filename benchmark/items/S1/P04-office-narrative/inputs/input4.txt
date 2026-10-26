@@ -1,0 +1,10 @@
+This building is a two-story office building with a total floor area of approximately 1,500 m². The building footprint is rectangular, measuring approximately 30 m in length and 25 m in width. Each story has a floor-to-floor height of 3.6 m, resulting in a total building height of approximately 7.2 m.
+
+Both floors consist primarily of open-plan office space. Each floor has an area of approximately 750 m² and accommodates about 75 occupants. Typical office lighting and plug loads are assumed, with a lighting power density of approximately 8 W/m² and an equipment power density of approximately 10 W/m².
+
+The building envelope consists of exterior walls, a roof, floor slabs, and double-pane windows. The exterior walls are constructed using brick, insulation, and gypsum board assemblies. The roof contains thermal insulation, and the ground floor is supported by a concrete slab. The windows are double-pane glazing units.
+
+The building contains two stories. The south façade includes the main entrance door. A large fixed window is located on the south wall of the first floor, with a corresponding fixed window on the second floor. Fixed windows are also located on the north façade at both levels. The east façade contains windows on both floors as well as a service entrance door on the first floor. The west façade contains fixed windows on both floors.
+
+The building has a flat roof. The first floor is located directly on grade, while the second floor is separated from the first floor by an intermediate floor slab. The building is assumed to face due south.
+

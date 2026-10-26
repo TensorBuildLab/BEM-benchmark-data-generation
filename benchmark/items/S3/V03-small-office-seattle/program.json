@@ -1,0 +1,81 @@
+{
+ "id": "V03-small-office-seattle",
+ "btype": "office",
+ "city": {
+  "name": "Seattle",
+  "state": "WA",
+  "epw": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw",
+  "ddy": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.ddy",
+  "climate_zone": "4C",
+  "lat": 47.47,
+  "lon": -122.32,
+  "tz": -8.0,
+  "elev": 122.0,
+  "station": "727930"
+ },
+ "shape": "rect",
+ "length": 39.0,
+ "width": 20.0,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 2,
+ "f2f": 3.87,
+ "north_axis": 270.0,
+ "zoning": "core_perimeter",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.26,
+  "E": 0.36,
+  "N": 0.38,
+  "W": 0.26
+ },
+ "sill": 0.9,
+ "wall": "wall_cmu_ci",
+ "roof": "roof_insulated_deck_hi",
+ "win_u": 2.73,
+ "win_shgc": 0.36,
+ "win_vt": 0.6,
+ "lpd": 10.18,
+ "epd": 9.39,
+ "occ_density": 4.84,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   7,
+   18
+  ],
+  "saturday": [
+   8,
+   12
+  ],
+  "sunday": null
+ },
+ "infiltration_ach": 0.23,
+ "hvac": "psz_hp",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.47,
+ "cop_heat": 3.05,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "orientation",
+  "precedence"
+ ],
+ "style": "narrative",
+ "units": "SI",
+ "info_level": "complete",
+ "omitted": [
+  "infiltration"
+ ],
+ "notes": {
+  "name": "Building V03"
+ }
+}

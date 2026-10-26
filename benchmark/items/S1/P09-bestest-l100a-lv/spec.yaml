@@ -1,0 +1,270 @@
+item: P09-bestest-l100a-lv
+notes: ''
+facts:
+- id: zones
+  facet: geometry
+  kind: stated
+  text: attic modelled as a separate unconditioned zone (2 zones)
+  check:
+    all_of:
+    - path: geometry.n_zones
+      op: eq
+      value: 2
+    - path: geometry.n_conditioned_zones
+      op: eq
+      value: 1
+  source:
+    doc: L100A_Text_L.txt
+    where: 2.2.1
+  severity: major
+- id: cfa
+  facet: geometry
+  kind: stated
+  text: conditioned floor 57 ft x 27 ft = 1539 sq ft (142.98 m2)
+  check:
+    path: geometry.conditioned_floor_area
+    op: approx
+    value: 142.98
+    rtol: 0.01
+  source:
+    doc: L100A_Text_L.txt
+    where: Table 2-3
+  severity: critical
+  probe: units
+- id: cvol
+  facet: geometry
+  kind: stated
+  text: conditioned air volume 12,312 cu ft (348.6 m3)
+  check:
+    path: geometry.conditioned_volume
+    op: approx
+    value: 348.6
+    rtol: 0.02
+  source:
+    doc: L100A_Text_L.txt
+    where: Table 2-4
+  severity: major
+  probe: units
+- id: win-area
+  facet: fenestration
+  kind: stated
+  text: 270 sq ft of windows incl. frame (25.1 m2); glass-only modelling gives about 18.3 m2
+  check:
+    path: fenestration.window_area_total
+    op: range
+    min: 17.5
+    max: 26.0
+  source:
+    doc: L100A_Text_L.txt
+    where: Table 2-3
+  severity: major
+  probe: units
+- id: win-split
+  facet: fenestration
+  kind: stated
+  text: north and south carry twice the window area of east and west
+  check:
+    path: fenestration.window_area.N
+    op: range
+    min: 6.0
+    max: 8.8
+  source:
+    doc: L100A_Text_L.txt
+    where: Table 2-3
+  severity: minor
+- id: win-u
+  facet: fenestration
+  kind: stated
+  text: 'single pane: glass U 1.064, unit 1.039 Btu/h-ft2-F (5.9-6.0 W/m2K)'
+  check:
+    path: fenestration.window_u
+    op: range
+    min: 5.4
+    max: 6.4
+  source:
+    doc: L100A_Text_L.txt
+    where: Table 2-3
+  severity: major
+  probe: units
+- id: win-shgc
+  facet: fenestration
+  kind: stated
+  text: SHGC 0.857 (glass) / 0.670 (unit)
+  check:
+    path: fenestration.window_shgc
+    op: range
+    min: 0.62
+    max: 0.9
+  source:
+    doc: L100A_Text_L.txt
+    where: Table 2-3
+  severity: major
+- id: doors
+  facet: fenestration
+  kind: stated
+  text: 2 doors, 40 sq ft (3.72 m2)
+  check:
+    any_of:
+    - path: fenestration.door_area_total
+      op: approx
+      value: 3.716
+      rtol: 0.06
+    - path: fenestration.door_area_by_construction[*DOOR*]
+      op: approx
+      value: 3.716
+      rtol: 0.06
+      agg: sum
+  source:
+    doc: L100A_Text_L.txt
+    where: Table 2-3
+  severity: minor
+  note: 'equivalence rule: framing modelled as door subsurfaces is accepted if the real doors carry the door construction'
+- id: wall-u
+  facet: envelope
+  kind: stated
+  text: exterior wall U 0.085 Btu/h-ft2-F air-to-air (0.483 W/m2K)
+  check:
+    any_of:
+    - path: envelope.wall_u
+      op: approx
+      value: 0.4827
+      rtol: 0.08
+    - path: envelope.wall_u_composite
+      op: approx
+      value: 0.535
+      rtol: 0.08
+  source:
+    doc: L100A_Text_L.txt
+    where: Table 2-3
+  severity: major
+  probe: units
+  note: 'equivalence rule: with framing as door subsurfaces, the composite of walls and doors (0.535 incl. the real
+    doors) is compared'
+- id: floor-u
+  facet: envelope
+  kind: stated
+  text: floor over vented crawl space U 0.071 Btu/h-ft2-F (0.403 W/m2K)
+  check:
+    path: envelope.floor_u
+    op: approx
+    value: 0.403
+    rtol: 0.12
+  source:
+    doc: L100A_Text_L.txt
+    where: Table 2-3
+  severity: minor
+  probe: units
+- id: infil-house
+  facet: infiltration
+  kind: stated
+  text: 0.67 ACH in the conditioned zone (program corrects for altitude)
+  check:
+    path: infiltration.ach_design_conditioned
+    op: approx
+    value: 0.67
+    tol: 0.04
+  source:
+    doc: L100A_Text_L.txt
+    where: Table 2-4
+  severity: major
+- id: infil-attic
+  facet: infiltration
+  kind: stated
+  text: 2.4 ACH in the attic
+  check:
+    path: infiltration.zones[*ATTIC*].ach
+    op: approx
+    value: 2.4
+    tol: 0.15
+  source:
+    doc: L100A_Text_L.txt
+    where: Table 2-4
+  severity: minor
+- id: gains
+  facet: loads
+  kind: stated
+  text: '56,105 Btu/day sensible (+12,156 latent): 21.6-26.3 GJ/yr of internal gains'
+  check:
+    path: results.internal_gains_gj
+    op: range
+    min: 20.5
+    max: 27.0
+  source:
+    doc: L100A_Text_L.txt
+    where: Table 2-4, Table 2-11
+  severity: major
+  probe: units
+- id: ideal
+  facet: hvac
+  kind: stated
+  text: 'pure loads: 100 % efficient, effectively infinite capacity'
+  check:
+    path: hvac.primary
+    op: eq
+    value: ideal_loads
+  source:
+    doc: L100A_Text_L.txt
+    where: 2.2.10
+  severity: major
+- id: annual
+  facet: simulation
+  kind: stated
+  text: the whole year may be simulated
+  check:
+    path: meta.annual_run
+    op: 'true'
+  source:
+    doc: L100A_Text_L.txt
+    where: 2.2.10.1
+  severity: minor
+- id: elev
+  facet: site
+  kind: stated
+  text: altitude 2178 ft (664 m)
+  check:
+    path: site.elevation
+    op: approx
+    value: 664
+    tol: 40
+  source:
+    doc: L100A_Text_L.txt
+    where: 2.2.5
+  severity: major
+  probe: units
+- id: weather
+  facet: site
+  kind: stated
+  text: Las Vegas weather
+  check:
+    path: meta.weather_file
+    op: contains
+    value: Vegas
+  source:
+    doc: L100A_Text_L.txt
+    where: 2.2.5
+  severity: major
+- id: csp
+  facet: control
+  kind: stated
+  text: COOL = ON IF TEMP > 78 F (25.56 C)
+  check:
+    path: control.cooling_setpoint
+    op: approx
+    value: 25.56
+    tol: 0.1
+  source:
+    doc: L100A_Text_L.txt
+    where: 2.2.10.1
+  severity: critical
+  probe: units
+- id: no-heat
+  facet: control
+  kind: stated
+  text: HEAT = OFF (cooling-only case)
+  check:
+    path: control.any_heating
+    op: 'false'
+  source:
+    doc: L100A_Text_L.txt
+    where: 2.2.10.1
+  severity: critical

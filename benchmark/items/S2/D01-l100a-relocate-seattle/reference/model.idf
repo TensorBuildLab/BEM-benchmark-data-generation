@@ -1,0 +1,1294 @@
+!-Generator gbxml2idf
+!-Option SortedOrder
+! IDF written by gbxml2idf 0.5 (M4) (no date here: the same input gives the same text)
+! gbXML: output8.assembled.gbxml (sha256 cc52cadb1e45cebe98754b1dd7b6a431626f2d61f3bc868566901d23bd00048d)
+! notes: output8.pipeline_notes.xml
+! every object carries its source: stated | derived | assumed | user | reference | EnergyPlus default
+! ---------- Version ----------------------------------------
+
+! source: derived; EnergyPlus 23.1 (the schema in use)
+Version,
+  23.1;
+
+! source: derived; sizing only when an HVAC fragment with sizing objects is inserted (zone and system sizing; plant sizing only when it has Sizing:Plant); the weather-file run period is the simulation
+SimulationControl,
+  No,
+  No,
+  No,
+  No,
+  Yes,
+  ,
+  ;
+
+! source: stated; gbXML: bldg-1; North Axis = CADModelAzimuth of the gbXML; terrain, convergence and warm-up fields are left blank = EnergyPlus defaults
+Building,
+  HERS BESTEST Case L100A,
+  0.0,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ;
+
+! source: EnergyPlus default (schema)
+Timestep,
+  6;
+
+! source: EnergyPlus defaults (schema), written explicitly by the mid key explicit_default_objects; every field is blank: the model is the same as without the object
+SurfaceConvectionAlgorithm:Inside,
+  ;
+
+! source: EnergyPlus defaults (schema), written explicitly by the mid key explicit_default_objects; every field is blank: the model is the same as without the object
+SurfaceConvectionAlgorithm:Outside,
+  ;
+
+! source: EnergyPlus defaults (schema), written explicitly by the mid key explicit_default_objects; every field is blank: the model is the same as without the object
+HeatBalanceAlgorithm,
+  ;
+
+! source: EnergyPlus defaults (schema), written explicitly by the mid key explicit_default_objects; every field is blank: the model is the same as without the object
+ShadowCalculation,
+  ;
+
+! source: derived; the gbXML polygons are counterclockwise seen from outside, in absolute coordinates
+GlobalGeometryRules,
+  UpperLeftCorner,
+  Counterclockwise,
+  World;
+
+! source: user (notes RunPeriod); no year (typical weather); the start day is a Friday as on 2021-01-01
+RunPeriod,
+  Run Period 1,
+  1,
+  1,
+  ,
+  12,
+  31,
+  ,
+  Friday,
+  No,
+  No,
+  No;
+
+! source: derived (notes Holidays); 2021-01-01
+RunPeriodControl:SpecialDays,
+  New Years Day,
+  1/1,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-01-18
+RunPeriodControl:SpecialDays,
+  MLK Day,
+  1/18,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-02-15
+RunPeriodControl:SpecialDays,
+  Presidents Day,
+  2/15,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-05-31
+RunPeriodControl:SpecialDays,
+  Memorial Day,
+  5/31,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-07-04
+RunPeriodControl:SpecialDays,
+  Independence Day,
+  7/4,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-09-06
+RunPeriodControl:SpecialDays,
+  Labor Day,
+  9/6,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-10-11
+RunPeriodControl:SpecialDays,
+  Columbus Day,
+  10/11,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-11-11
+RunPeriodControl:SpecialDays,
+  Veterans Day,
+  11/11,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-11-25
+RunPeriodControl:SpecialDays,
+  Thanksgiving,
+  11/25,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-12-25
+RunPeriodControl:SpecialDays,
+  Christmas,
+  12/25,
+  1,
+  Holiday;
+
+! source: stated (gbXML Surface ExposedFloor); gbXML: surf-sp-house-L1-floor-1
+BuildingSurface:Detailed,
+  surf-sp-house-L1-floor-1,
+  Floor,
+  constr-floor,
+  Conditioned Zone,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  0.0,
+  8.2296,
+  0.0,
+  17.3736,
+  8.2296,
+  0.0,
+  17.3736,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-house-L1-wall-1
+BuildingSurface:Detailed,
+  surf-sp-house-L1-wall-1,
+  Wall,
+  constr-wall,
+  Conditioned Zone,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  0.0,
+  0.0,
+  2.4384,
+  0.0,
+  0.0,
+  0.0,
+  17.3736,
+  0.0,
+  0.0,
+  17.3736,
+  0.0,
+  2.4384;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-house-L1-wall-2
+BuildingSurface:Detailed,
+  surf-sp-house-L1-wall-2,
+  Wall,
+  constr-wall,
+  Conditioned Zone,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  17.3736,
+  0.0,
+  2.4384,
+  17.3736,
+  0.0,
+  0.0,
+  17.3736,
+  8.2296,
+  0.0,
+  17.3736,
+  8.2296,
+  2.4384;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-house-L1-wall-3
+BuildingSurface:Detailed,
+  surf-sp-house-L1-wall-3,
+  Wall,
+  constr-wall,
+  Conditioned Zone,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  17.3736,
+  8.2296,
+  2.4384,
+  17.3736,
+  8.2296,
+  0.0,
+  0.0,
+  8.2296,
+  0.0,
+  0.0,
+  8.2296,
+  2.4384;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-house-L1-wall-4
+BuildingSurface:Detailed,
+  surf-sp-house-L1-wall-4,
+  Wall,
+  constr-wall,
+  Conditioned Zone,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  0.0,
+  8.2296,
+  2.4384,
+  0.0,
+  8.2296,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  2.4384;
+
+! source: stated (gbXML Surface InteriorFloor); gbXML: surf-sp-house-attic-floor-1
+BuildingSurface:Detailed,
+  surf-sp-house-attic-floor-1,
+  Floor,
+  constr-ceiling,
+  Attic,
+  ,
+  Surface,
+  surf-sp-house-attic-floor-1_mirror,
+  NoSun,
+  NoWind,
+  ,
+  4,
+  0.0,
+  8.2296,
+  2.4384,
+  17.3736,
+  8.2296,
+  2.4384,
+  17.3736,
+  0.0,
+  2.4384,
+  0.0,
+  0.0,
+  2.4384;
+
+! source: stated (gbXML Surface InteriorFloor); gbXML: surf-sp-house-attic-floor-1
+BuildingSurface:Detailed,
+  surf-sp-house-attic-floor-1_mirror,
+  Ceiling,
+  constr-ceiling_rev,
+  Conditioned Zone,
+  ,
+  Surface,
+  surf-sp-house-attic-floor-1,
+  NoSun,
+  NoWind,
+  ,
+  4,
+  0.0,
+  0.0,
+  2.4384,
+  17.3736,
+  0.0,
+  2.4384,
+  17.3736,
+  8.2296,
+  2.4384,
+  0.0,
+  8.2296,
+  2.4384;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-house-attic-gable-1
+BuildingSurface:Detailed,
+  surf-sp-house-attic-gable-1,
+  Wall,
+  constr-gable,
+  Attic,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  3,
+  17.3736,
+  0.0,
+  2.4384,
+  17.3736,
+  8.2296,
+  2.4384,
+  17.3736,
+  4.1148,
+  3.81;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-house-attic-gable-2
+BuildingSurface:Detailed,
+  surf-sp-house-attic-gable-2,
+  Wall,
+  constr-gable,
+  Attic,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  3,
+  0.0,
+  8.2296,
+  2.4384,
+  0.0,
+  0.0,
+  2.4384,
+  0.0,
+  4.1148,
+  3.81;
+
+! source: stated (gbXML Surface Roof); gbXML: surf-sp-house-attic-roof-1
+BuildingSurface:Detailed,
+  surf-sp-house-attic-roof-1,
+  Roof,
+  constr-roof,
+  Attic,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  0.0,
+  4.1148,
+  3.81,
+  0.0,
+  0.0,
+  2.4384,
+  17.3736,
+  0.0,
+  2.4384,
+  17.3736,
+  4.1148,
+  3.81;
+
+! source: stated (gbXML Surface Roof); gbXML: surf-sp-house-attic-roof-2
+BuildingSurface:Detailed,
+  surf-sp-house-attic-roof-2,
+  Roof,
+  constr-roof,
+  Attic,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  17.3736,
+  4.1148,
+  3.81,
+  17.3736,
+  8.2296,
+  2.4384,
+  0.0,
+  8.2296,
+  2.4384,
+  0.0,
+  4.1148,
+  3.81;
+
+! source: EnergyPlus defaults (schema), written explicitly by the mid key explicit_default_objects; every field is blank: the model is the same as without the object
+Site:GroundReflectance,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ;
+
+! source: convention (the type limits of the schedule type)
+ScheduleTypeLimits,
+  Temperature,
+  ,
+  ,
+  Continuous,
+  Temperature;
+
+! source: stated; gbXML: sch-sp-heating-1; Heating setpoint
+Schedule:Compact,
+  sch-sp-heating-1,
+  Temperature,
+  Through: 12/31,
+  For: Monday Tuesday Wednesday Thursday Friday Saturday Sunday Holiday WinterDesignDay SummerDesignDay,
+  Until: 24:00,
+  20.0,
+  For: AllOtherDays,
+  Until: 24:00,
+  20.0;
+
+! source: convention (the type limits of the schedule type)
+ScheduleTypeLimits,
+  Fraction,
+  0,
+  1,
+  Continuous,
+  Dimensionless;
+
+! source: stated; gbXML: sch-gains; L100A internal gains, sensible (Table 2-11): hourly profile 1 of 1
+Schedule:Day:Hourly,
+  sch-gains day,
+  Fraction,
+  0.2382,
+  0.2382,
+  0.2382,
+  0.2382,
+  0.2382,
+  0.398,
+  0.5,
+  1.0,
+  0.5834,
+  0.357,
+  0.357,
+  0.4762,
+  0.357,
+  0.2978,
+  0.3095,
+  0.3095,
+  0.4525,
+  0.4881,
+  0.5238,
+  0.8214,
+  0.8214,
+  0.8576,
+  0.8576,
+  0.7739;
+
+! source: stated; gbXML: sch-gains; L100A internal gains, sensible (Table 2-11): period 1 of 1
+Schedule:Week:Daily,
+  sch-gains week,
+  sch-gains day,
+  sch-gains day,
+  sch-gains day,
+  sch-gains day,
+  sch-gains day,
+  sch-gains day,
+  sch-gains day,
+  sch-gains day,
+  sch-gains day,
+  sch-gains day,
+  sch-gains day,
+  sch-gains day;
+
+! source: stated; gbXML: sch-gains; L100A internal gains, sensible (Table 2-11)
+Schedule:Year,
+  sch-gains,
+  Fraction,
+  sch-gains week,
+  1,
+  1,
+  12,
+  31;
+
+! source: convention (the type limits of the schedule type)
+ScheduleTypeLimits,
+  OnOff,
+  0,
+  1,
+  Discrete;
+
+! source: stated (constant all year); the infiltration of the gbXML has no schedule
+Schedule:Compact,
+  Always On,
+  OnOff,
+  Through: 12/31,
+  For: AllDays,
+  Until: 24:00,
+  1;
+
+! source: convention (the type limits of the schedule type)
+ScheduleTypeLimits,
+  Control Type,
+  0,
+  4,
+  Discrete;
+
+! source: convention (thermostat control type 1)
+Schedule:Compact,
+  Control Type HeatingOnly,
+  Control Type,
+  Through: 12/31,
+  For: AllDays,
+  Until: 24:00,
+  1;
+
+! source: derived; gbXML: mat-floor-core; Floor batt and joists, composite (90 % insulated, 10 % frame)
+Material,
+  mat-floor-core,
+  Rough,
+  0.0889,
+  0.05093,
+  59.91,
+  1303.1,
+  0.9,
+  0.6,
+  0.6;
+
+! source: stated; gbXML: mat-plywood34; Plywood 3/4 in
+Material,
+  mat-plywood34,
+  Rough,
+  0.01905,
+  0.11544,
+  544.63,
+  1214.2,
+  0.9,
+  0.6,
+  0.6;
+
+! source: stated; gbXML: mat-carpet; Carpet with fibrous pad
+Material:NoMass,
+  mat-carpet,
+  Rough,
+  0.36631,
+  0.9,
+  0.6,
+  0.6;
+
+! source: stated; gbXML: constr-floor; Floor over vented crawl space (table 2-7)
+Construction,
+  constr-floor,
+  mat-floor-core,
+  mat-plywood34,
+  mat-carpet;
+
+! source: stated; gbXML: mat-siding; Hardboard siding 7/16 in
+Material,
+  mat-siding,
+  Rough,
+  0.01118,
+  0.09415,
+  640.74,
+  1172.3,
+  0.9,
+  0.6,
+  0.6;
+
+! source: stated; gbXML: mat-sheathing; Fiberboard sheathing 1/2 in
+Material,
+  mat-sheathing,
+  Rough,
+  0.0127,
+  0.05469,
+  288.33,
+  1297.9,
+  0.9,
+  0.6,
+  0.6;
+
+! source: derived; gbXML: mat-wall-core; Wall batt and 2x4 frame, composite (75 % insulated, 25 % frame)
+Material,
+  mat-wall-core,
+  Rough,
+  0.0889,
+  0.05966,
+  135.36,
+  1352.7,
+  0.9,
+  0.6,
+  0.6;
+
+! source: stated; gbXML: mat-plasterboard; Plasterboard 1/2 in
+Material,
+  mat-plasterboard,
+  Rough,
+  0.0127,
+  0.16027,
+  800.92,
+  1088.6,
+  0.9,
+  0.6,
+  0.6;
+
+! source: stated; gbXML: constr-wall; Exterior wall (document table 2-6)
+Construction,
+  constr-wall,
+  mat-siding,
+  mat-sheathing,
+  mat-wall-core,
+  mat-plasterboard;
+
+! source: stated; gbXML: mat-door-core; Solid core door 1.75 in
+Material,
+  mat-door-core,
+  Rough,
+  0.04445,
+  0.11579,
+  512.59,
+  1381.6,
+  0.9,
+  0.6,
+  0.6;
+
+! source: stated; gbXML: constr-door; Door (solid core, table 2-6)
+Construction,
+  constr-door,
+  mat-door-core;
+
+! source: derived; gbXML: mat-ceil-core; Ceiling batt R-19 and joists, composite (90 % insulated, 10 % frame)
+Material,
+  mat-ceil-core,
+  Rough,
+  0.15875,
+  0.05472,
+  59.91,
+  1303.1,
+  0.9,
+  0.6,
+  0.6;
+
+! source: stated; gbXML: constr-ceiling; Ceiling under the attic (table 2-8)
+Construction,
+  constr-ceiling,
+  mat-ceil-core,
+  mat-plasterboard;
+
+! source: stated; gbXML: mat-plywood12; Plywood 1/2 in
+Material,
+  mat-plywood12,
+  Rough,
+  0.0127,
+  0.11544,
+  544.63,
+  1214.2,
+  0.9,
+  0.6,
+  0.6;
+
+! source: stated; gbXML: constr-gable; Gable end (hardboard siding and plywood, table 2-8)
+Construction,
+  constr-gable,
+  mat-siding,
+  mat-plywood12;
+
+! source: stated; gbXML: mat-shingle; Asphalt shingle 1/4 in
+Material,
+  mat-shingle,
+  Rough,
+  0.00635,
+  0.08186,
+  1121.29,
+  1256.0,
+  0.9,
+  0.6,
+  0.6;
+
+! source: stated; gbXML: constr-roof; Roof deck (plywood and shingle, table 2-8)
+Construction,
+  constr-roof,
+  mat-shingle,
+  mat-plywood12;
+
+! source: stated; gbXML: constr-ceiling; the layers of constr-ceiling in the opposite order (for the partner surface of an interior pair)
+Construction,
+  constr-ceiling_rev,
+  mat-plasterboard,
+  mat-ceil-core;
+
+! source: mid window_detail.glass (stated: Table 2-6 'Glass pane' thickness 0.118 in = 0.0029972 m, Trans (dir. nor.) 0.837 (used for solar and visible); conductivity 0.8402 W/m-K derived from the glass pane U 49.371 Btu/(h ft2 F) x thickness; reflectances 0.075, IR emissivity 0.84 and IR transmittance 0 COPIED FROM THE REFERENCE (the document gives none; user rule 2026-10-15)); gbXML: wtype-window; Single pane, aluminium frame with thermal break (composite window)
+WindowMaterial:Glazing,
+  wtype-window_glass,
+  SpectralAverage,
+  ,
+  0.0029972,
+  0.837,
+  0.075,
+  0.075,
+  0.837,
+  0.075,
+  0.075,
+  0.0,
+  0.84,
+  0.84,
+  0.8402;
+
+! source: stated; gbXML: wtype-window; window Single pane, aluminium frame with thermal break (composite window): single pane (mid window_detail); the frame is a WindowProperty:FrameAndDivider on each window
+Construction,
+  wtype-window,
+  wtype-window_glass;
+
+! source: mid window_detail.frame (stated: Figure 2-8 window detail 'vertical slider (NFRC AA) with 2 3/4 in wide frame' = 0.06985 m; Table 2-6 'Aluminum sash w/ thermal break' U 9.096 Btu/(h ft2 F) = 51.65 W/m2K; Table 2-4 shortwave (visible and UV) absorptance 0.6 and longwave emittance 0.9)
+WindowProperty:FrameAndDivider,
+  wtype-window_frame,
+  0.06985,
+  ,
+  ,
+  51.6498,
+  ,
+  0.6,
+  0.6,
+  0.9,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ;
+
+! source: stated (gbXML Space); gbXML: sp-conditioned; Space sp-conditioned; area and volume are the gbXML values
+Zone,
+  Conditioned Zone,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  348.637015,
+  142.977779;
+
+! source: stated (gbXML Space); gbXML: sp-attic; Space sp-attic; area and volume are the gbXML values; unconditioned: not part of the total floor area
+Zone,
+  Attic,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  98.054161,
+  142.977779,
+  ,
+  ,
+  No;
+
+! source: stated (gbXML Opening NonSlidingDoor); gbXML: op-door-S
+FenestrationSurface:Detailed,
+  op-door-S,
+  Door,
+  constr-door,
+  surf-sp-house-L1-wall-1,
+  ,
+  ,
+  ,
+  ,
+  4,
+  8.2296,
+  0.0,
+  2.032,
+  8.2296,
+  0.0,
+  0.0,
+  9.144,
+  0.0,
+  0.0,
+  9.144,
+  0.0,
+  2.032;
+
+! source: stated (gbXML Opening NonSlidingDoor); gbXML: op-door-N
+FenestrationSurface:Detailed,
+  op-door-N,
+  Door,
+  constr-door,
+  surf-sp-house-L1-wall-3,
+  ,
+  ,
+  ,
+  ,
+  4,
+  9.144,
+  8.2296,
+  2.032,
+  9.144,
+  8.2296,
+  0.0,
+  8.2296,
+  8.2296,
+  0.0,
+  8.2296,
+  8.2296,
+  2.032;
+
+! source: stated (gbXML AirChangesPerHour); gbXML: sp-conditioned; no original flow in the notes
+ZoneInfiltration:DesignFlowRate,
+  Conditioned Zone Infiltration,
+  Conditioned Zone,
+  Always On,
+  AirChanges/Hour,
+  ,
+  ,
+  ,
+  0.67,
+  ,
+  ,
+  ,
+  ;
+
+! source: stated (gbXML AirChangesPerHour); gbXML: sp-attic; no original flow in the notes
+ZoneInfiltration:DesignFlowRate,
+  Attic Infiltration,
+  Attic,
+  Always On,
+  AirChanges/Hour,
+  ,
+  ,
+  ,
+  2.4,
+  ,
+  ,
+  ,
+  ;
+
+! source: stated (gbXML Zone); gbXML: zone-conditioned
+ZoneControl:Thermostat,
+  Conditioned Zone Thermostat,
+  Conditioned Zone,
+  Control Type HeatingOnly,
+  ThermostatSetpoint:SingleHeating,
+  Conditioned Zone Setpoints;
+
+! source: user (hvac=ideal); gbXML: zone-conditioned
+ZoneHVAC:IdealLoadsAirSystem,
+  Conditioned Zone Ideal Loads,
+  ,
+  Conditioned Zone Zone Inlet Node,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ;
+
+! source: user (hvac=ideal); gbXML: zone-conditioned
+ZoneHVAC:EquipmentList,
+  Conditioned Zone Equipment,
+  SequentialLoad,
+  ZoneHVAC:IdealLoadsAirSystem,
+  Conditioned Zone Ideal Loads,
+  1,
+  1,
+  ,
+  ;
+
+! source: user (hvac=ideal); gbXML: zone-conditioned
+ZoneHVAC:EquipmentConnections,
+  Conditioned Zone,
+  Conditioned Zone Equipment,
+  Conditioned Zone Zone Inlet Node,
+  ,
+  Conditioned Zone Zone Node,
+  Conditioned Zone Return Node;
+
+! source: stated (gbXML Space, the sensible part) and user (mid equipment_latent_fraction 0.1781) and user (mid equipment_radiant_fraction 0.7); gbXML: sp-conditioned; total = sensible / (1 - latent fraction); the sensible gain equals the gbXML 9.8020 W/m2; radiant fraction 0.5753 = 0.7 x (1 - 0.1781) of the design level
+ElectricEquipment,
+  Conditioned Zone Equipment,
+  Conditioned Zone,
+  sch-gains,
+  Watts/Area,
+  ,
+  11.92602506,
+  ,
+  0.1781,
+  0.57533,
+  ;
+
+! source: stated (gbXML Zone heatSchedIdRef / coolSchedIdRef); gbXML: zone-conditioned
+ThermostatSetpoint:SingleHeating,
+  Conditioned Zone Setpoints,
+  sch-sp-heating-1;
+
+! source: stated (gbXML Meter); gbXML: meter-electricity
+Output:Meter,
+  Electricity:Facility,
+  Hourly;
+
+! source: standard set
+Output:Variable,
+  *,
+  Site Outdoor Air Drybulb Temperature,
+  Hourly;
+
+! source: standard set
+Output:Variable,
+  *,
+  Zone Mean Air Temperature,
+  Hourly;
+
+! source: standard set
+Output:Variable,
+  *,
+  Zone Air Relative Humidity,
+  Hourly;
+
+! source: standard set
+Output:Variable,
+  *,
+  Zone Air System Sensible Heating Energy,
+  Hourly;
+
+! source: standard set
+Output:Variable,
+  *,
+  Zone Air System Sensible Cooling Energy,
+  Hourly;
+
+! source: standard set
+Output:Variable,
+  *,
+  Facility Total Purchased Electricity Energy,
+  Hourly;
+
+! source: standard set
+Output:Table:SummaryReports,
+  AllSummary;
+
+! source: standard set; CommaAndHTML so that eplustbl.csv (read by /energyplus-analyze) and eplustbl.htm are both written
+OutputControl:Table:Style,
+  CommaAndHTML;
+
+! source: standard set; read by /energyplus-sim
+Output:SQLite,
+  SimpleAndTabular;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-S-1
+Window,
+  op-win-S-1,
+  wtype-window,
+  surf-sp-house-L1-wall-1,
+  wtype-window_frame,
+  1,
+  1.44145,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-S-2
+Window,
+  op-win-S-2,
+  wtype-window,
+  surf-sp-house-L1-wall-1,
+  wtype-window_frame,
+  1,
+  3.72745,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-S-3
+Window,
+  op-win-S-3,
+  wtype-window,
+  surf-sp-house-L1-wall-1,
+  wtype-window_frame,
+  1,
+  6.01345,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-S-4
+Window,
+  op-win-S-4,
+  wtype-window,
+  surf-sp-house-L1-wall-1,
+  wtype-window_frame,
+  1,
+  10.58545,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-S-5
+Window,
+  op-win-S-5,
+  wtype-window,
+  surf-sp-house-L1-wall-1,
+  wtype-window_frame,
+  1,
+  12.87145,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-S-6
+Window,
+  op-win-S-6,
+  wtype-window,
+  surf-sp-house-L1-wall-1,
+  wtype-window_frame,
+  1,
+  15.15745,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-E-1
+Window,
+  op-win-E-1,
+  wtype-window,
+  surf-sp-house-L1-wall-2,
+  wtype-window_frame,
+  1,
+  1.44145,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-E-2
+Window,
+  op-win-E-2,
+  wtype-window,
+  surf-sp-house-L1-wall-2,
+  wtype-window_frame,
+  1,
+  3.72745,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-E-3
+Window,
+  op-win-E-3,
+  wtype-window,
+  surf-sp-house-L1-wall-2,
+  wtype-window_frame,
+  1,
+  6.01345,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-N-1
+Window,
+  op-win-N-1,
+  wtype-window,
+  surf-sp-house-L1-wall-3,
+  wtype-window_frame,
+  1,
+  1.44145,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-N-2
+Window,
+  op-win-N-2,
+  wtype-window,
+  surf-sp-house-L1-wall-3,
+  wtype-window_frame,
+  1,
+  3.72745,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-N-3
+Window,
+  op-win-N-3,
+  wtype-window,
+  surf-sp-house-L1-wall-3,
+  wtype-window_frame,
+  1,
+  6.01345,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-N-4
+Window,
+  op-win-N-4,
+  wtype-window,
+  surf-sp-house-L1-wall-3,
+  wtype-window_frame,
+  1,
+  10.58545,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-N-5
+Window,
+  op-win-N-5,
+  wtype-window,
+  surf-sp-house-L1-wall-3,
+  wtype-window_frame,
+  1,
+  12.87145,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-N-6
+Window,
+  op-win-N-6,
+  wtype-window,
+  surf-sp-house-L1-wall-3,
+  wtype-window_frame,
+  1,
+  15.15745,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-W-1
+Window,
+  op-win-W-1,
+  wtype-window,
+  surf-sp-house-L1-wall-4,
+  wtype-window_frame,
+  1,
+  1.44145,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-W-2
+Window,
+  op-win-W-2,
+  wtype-window,
+  surf-sp-house-L1-wall-4,
+  wtype-window_frame,
+  1,
+  3.72745,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: stated (gbXML Opening OperableWindow); simple Window class (mid window_class); gbXML: op-win-W-3
+Window,
+  op-win-W-3,
+  wtype-window,
+  surf-sp-house-L1-wall-4,
+  wtype-window_frame,
+  1,
+  6.01345,
+  0.52705,
+  0.7747,
+  1.3843;
+
+! source: transform (relocate)
+Site:Location,
+  Seattle Seattle Tacoma Intl A WA,
+  47.47,
+  -122.32,
+  -8,
+  122;
+
+! source: transform (relocate)
+SizingPeriod:DesignDay,
+  Seattle Seattle Tacoma Intl A Ann Htg 99.6% Condns DB,
+  12,
+  21,
+  WinterDesignDay,
+  -4.2,
+  0.0,
+  DefaultMultipliers,
+  ,
+  Wetbulb,
+  -4.2,
+  ,
+  ,
+  ,
+  ,
+  99868.,
+  4.3,
+  20,
+  No,
+  No,
+  No,
+  ASHRAEClearSky,
+  ,
+  ,
+  ,
+  ,
+  0.00;
+
+! source: transform (relocate)
+SizingPeriod:DesignDay,
+  Seattle Seattle Tacoma Intl A Ann Clg .4% Condns DB=>MWB,
+  8,
+  21,
+  SummerDesignDay,
+  29.4,
+  10.4,
+  DefaultMultipliers,
+  ,
+  Wetbulb,
+  18.3,
+  ,
+  ,
+  ,
+  ,
+  99868.,
+  4.2,
+  350,
+  No,
+  No,
+  No,
+  ASHRAETau,
+  ,
+  ,
+  0.352,
+  2.561;
+

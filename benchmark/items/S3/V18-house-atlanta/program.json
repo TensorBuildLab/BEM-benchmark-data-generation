@@ -1,0 +1,72 @@
+{
+ "id": "V18-house-atlanta",
+ "btype": "house",
+ "city": {
+  "name": "Atlanta",
+  "state": "GA",
+  "epw": "USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.epw",
+  "ddy": "USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.ddy",
+  "climate_zone": "3A",
+  "lat": 33.63,
+  "lon": -84.43,
+  "tz": -5.0,
+  "elev": 308.0,
+  "station": "722190"
+ },
+ "shape": "rect",
+ "length": 15.9,
+ "width": 11.7,
+ "wing_length": 0.0,
+ "wing_width": 0.0,
+ "n_floors": 2,
+ "f2f": 2.92,
+ "north_axis": 0.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.19,
+  "E": 0.09,
+  "N": 0.1,
+  "W": 0.1
+ },
+ "sill": 0.9,
+ "wall": "wall_woodframe",
+ "roof": "roof_wood",
+ "win_u": 3.22,
+ "win_shgc": 0.36,
+ "win_vt": 0.51,
+ "lpd": 5.34,
+ "epd": 3.93,
+ "occ_density": null,
+ "people": 3.0,
+ "activity": 120.0,
+ "hours": "residential",
+ "infiltration_ach": 0.34,
+ "hvac": "psz_hp",
+ "heat_sp": 20.7,
+ "cool_sp": 25.2,
+ "heat_setback": null,
+ "cool_setup": null,
+ "cop_cool": 3.67,
+ "cop_heat": 3.37,
+ "party_walls": [],
+ "garage": {
+  "side": "W",
+  "depth": 6.7
+ },
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "garage",
+  "layers"
+ ],
+ "style": "spec",
+ "units": "SI",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V18"
+ }
+}

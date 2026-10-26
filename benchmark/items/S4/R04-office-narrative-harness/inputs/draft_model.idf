@@ -1,0 +1,1779 @@
+!-Generator gbxml2idf
+!-Option SortedOrder
+
+! IDF written by gbxml2idf 0.5 (M4) (no date here: the same input gives the same text)
+! gbXML: output4.assembled.gbxml (sha256 afcce50b557862ec069281626a5fe26145f6cfc5658dbeb4d0465472edb86811)
+! notes: output4.pipeline_notes.xml
+! every object carries its source: stated | derived | assumed | user | reference | EnergyPlus default
+
+! ---------- Version ----------------------------------------
+
+! source: derived; EnergyPlus 23.1 (the schema in use)
+Version,
+  23.1;  !- Version Identifier
+
+! ---------- Simulation parameters ----------------------------------------
+
+! source: derived; sizing only when an HVAC fragment with sizing objects is inserted (zone and system sizing; plant sizing only when it has Sizing:Plant); the weather-file run period is the simulation
+SimulationControl,
+  Yes,  !- Do Zone Sizing Calculation
+  Yes,  !- Do System Sizing Calculation
+  No,  !- Do Plant Sizing Calculation
+  Yes,  !- Run Simulation for Sizing Periods
+  Yes,  !- Run Simulation for Weather File Run Periods
+  ,  !- Do HVAC Sizing Simulation for Sizing Periods
+  ;  !- Maximum Number of HVAC Sizing Simulation Passes
+
+! source: stated; gbXML: bldg-1; North Axis = CADModelAzimuth of the gbXML; terrain, convergence and warm-up fields are left blank = EnergyPlus defaults
+Building,
+  Office Building,  !- Name
+  0.0,  !- North Axis {deg}
+  ,  !- Terrain
+  ,  !- Loads Convergence Tolerance Value {W}
+  ,  !- Temperature Convergence Tolerance Value {deltaC}
+  ,  !- Solar Distribution
+  ,  !- Maximum Number of Warmup Days
+  ;  !- Minimum Number of Warmup Days
+
+! source: EnergyPlus default (schema)
+Timestep,
+  6;  !- Number of Timesteps per Hour
+
+! source: derived; the gbXML polygons are counterclockwise seen from outside, in absolute coordinates
+GlobalGeometryRules,
+  UpperLeftCorner,  !- Starting Vertex Position
+  Counterclockwise,  !- Vertex Entry Direction
+  World;  !- Coordinate System
+
+! source: assumed (notes RunPeriod); no year (typical weather); the start day is a Friday as on 2021-01-01
+RunPeriod,
+  Run Period 1,  !- Name
+  1,  !- Begin Month
+  1,  !- Begin Day of Month
+  ,  !- Begin Year
+  12,  !- End Month
+  31,  !- End Day of Month
+  ,  !- End Year
+  Friday,  !- Day of Week for Start Day
+  No,  !- Use Weather File Holidays and Special Days
+  No,  !- Use Weather File Daylight Saving Period
+  No;  !- Apply Weekend Holiday Rule
+
+! source: derived (notes Holidays); 2021-01-01
+RunPeriodControl:SpecialDays,
+  New Years Day,  !- Name
+  1/1,  !- Start Date
+  1,  !- Duration {days}
+  Holiday;  !- Special Day Type
+
+! source: derived (notes Holidays); 2021-01-18
+RunPeriodControl:SpecialDays,
+  MLK Day,  !- Name
+  1/18,  !- Start Date
+  1,  !- Duration {days}
+  Holiday;  !- Special Day Type
+
+! source: derived (notes Holidays); 2021-02-15
+RunPeriodControl:SpecialDays,
+  Presidents Day,  !- Name
+  2/15,  !- Start Date
+  1,  !- Duration {days}
+  Holiday;  !- Special Day Type
+
+! source: derived (notes Holidays); 2021-05-31
+RunPeriodControl:SpecialDays,
+  Memorial Day,  !- Name
+  5/31,  !- Start Date
+  1,  !- Duration {days}
+  Holiday;  !- Special Day Type
+
+! source: derived (notes Holidays); 2021-07-04
+RunPeriodControl:SpecialDays,
+  Independence Day,  !- Name
+  7/4,  !- Start Date
+  1,  !- Duration {days}
+  Holiday;  !- Special Day Type
+
+! source: derived (notes Holidays); 2021-09-06
+RunPeriodControl:SpecialDays,
+  Labor Day,  !- Name
+  9/6,  !- Start Date
+  1,  !- Duration {days}
+  Holiday;  !- Special Day Type
+
+! source: derived (notes Holidays); 2021-10-11
+RunPeriodControl:SpecialDays,
+  Columbus Day,  !- Name
+  10/11,  !- Start Date
+  1,  !- Duration {days}
+  Holiday;  !- Special Day Type
+
+! source: derived (notes Holidays); 2021-11-11
+RunPeriodControl:SpecialDays,
+  Veterans Day,  !- Name
+  11/11,  !- Start Date
+  1,  !- Duration {days}
+  Holiday;  !- Special Day Type
+
+! source: derived (notes Holidays); 2021-11-25
+RunPeriodControl:SpecialDays,
+  Thanksgiving,  !- Name
+  11/25,  !- Start Date
+  1,  !- Duration {days}
+  Holiday;  !- Special Day Type
+
+! source: derived (notes Holidays); 2021-12-25
+RunPeriodControl:SpecialDays,
+  Christmas,  !- Name
+  12/25,  !- Start Date
+  1,  !- Duration {days}
+  Holiday;  !- Special Day Type
+
+! source: stated (gbXML Surface SlabOnGrade); gbXML: surf-sp-main-L1-floor-1
+BuildingSurface:Detailed,
+  surf-sp-main-L1-floor-1,  !- Name
+  Floor,  !- Surface Type
+  constr-slab,  !- Construction Name
+  Level 1 - Open Office,  !- Zone Name
+  ,  !- Space Name
+  Ground,  !- Outside Boundary Condition
+  ,  !- Outside Boundary Condition Object
+  NoSun,  !- Sun Exposure
+  NoWind,  !- Wind Exposure
+  ,  !- View Factor to Ground
+  4,  !- Number of Vertices
+  0.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  0.0,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  0.0,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  0.0,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  0.0;  !- Vertex Z Coordinate {m}
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L1-wall-1
+BuildingSurface:Detailed,
+  surf-sp-main-L1-wall-1,  !- Name
+  Wall,  !- Surface Type
+  constr-wall,  !- Construction Name
+  Level 1 - Open Office,  !- Zone Name
+  ,  !- Space Name
+  Outdoors,  !- Outside Boundary Condition
+  ,  !- Outside Boundary Condition Object
+  SunExposed,  !- Sun Exposure
+  WindExposed,  !- Wind Exposure
+  ,  !- View Factor to Ground
+  4,  !- Number of Vertices
+  0.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  0.0,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  0.0,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  3.6;  !- Vertex Z Coordinate {m}
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L1-wall-2
+BuildingSurface:Detailed,
+  surf-sp-main-L1-wall-2,  !- Name
+  Wall,  !- Surface Type
+  constr-wall,  !- Construction Name
+  Level 1 - Open Office,  !- Zone Name
+  ,  !- Space Name
+  Outdoors,  !- Outside Boundary Condition
+  ,  !- Outside Boundary Condition Object
+  SunExposed,  !- Sun Exposure
+  WindExposed,  !- Wind Exposure
+  ,  !- View Factor to Ground
+  4,  !- Number of Vertices
+  30.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  0.0,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  0.0,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  3.6;  !- Vertex Z Coordinate {m}
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L1-wall-3
+BuildingSurface:Detailed,
+  surf-sp-main-L1-wall-3,  !- Name
+  Wall,  !- Surface Type
+  constr-wall,  !- Construction Name
+  Level 1 - Open Office,  !- Zone Name
+  ,  !- Space Name
+  Outdoors,  !- Outside Boundary Condition
+  ,  !- Outside Boundary Condition Object
+  SunExposed,  !- Sun Exposure
+  WindExposed,  !- Wind Exposure
+  ,  !- View Factor to Ground
+  4,  !- Number of Vertices
+  30.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  0.0,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  0.0,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  3.6;  !- Vertex Z Coordinate {m}
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L1-wall-4
+BuildingSurface:Detailed,
+  surf-sp-main-L1-wall-4,  !- Name
+  Wall,  !- Surface Type
+  constr-wall,  !- Construction Name
+  Level 1 - Open Office,  !- Zone Name
+  ,  !- Space Name
+  Outdoors,  !- Outside Boundary Condition
+  ,  !- Outside Boundary Condition Object
+  SunExposed,  !- Sun Exposure
+  WindExposed,  !- Wind Exposure
+  ,  !- View Factor to Ground
+  4,  !- Number of Vertices
+  0.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  0.0,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  0.0,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  3.6;  !- Vertex Z Coordinate {m}
+
+! source: stated (gbXML Surface InteriorFloor); gbXML: surf-sp-main-L2-floor-1
+BuildingSurface:Detailed,
+  surf-sp-main-L2-floor-1,  !- Name
+  Floor,  !- Surface Type
+  constr-default-interiorfloor,  !- Construction Name
+  Level 2 - Open Office,  !- Zone Name
+  ,  !- Space Name
+  Surface,  !- Outside Boundary Condition
+  surf-sp-main-L2-floor-1_mirror,  !- Outside Boundary Condition Object
+  NoSun,  !- Sun Exposure
+  NoWind,  !- Wind Exposure
+  ,  !- View Factor to Ground
+  4,  !- Number of Vertices
+  0.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  3.6;  !- Vertex Z Coordinate {m}
+
+! source: stated (gbXML Surface InteriorFloor); gbXML: surf-sp-main-L2-floor-1
+BuildingSurface:Detailed,
+  surf-sp-main-L2-floor-1_mirror,  !- Name
+  Ceiling,  !- Surface Type
+  constr-default-interiorfloor_rev,  !- Construction Name
+  Level 1 - Open Office,  !- Zone Name
+  ,  !- Space Name
+  Surface,  !- Outside Boundary Condition
+  surf-sp-main-L2-floor-1,  !- Outside Boundary Condition Object
+  NoSun,  !- Sun Exposure
+  NoWind,  !- Wind Exposure
+  ,  !- View Factor to Ground
+  4,  !- Number of Vertices
+  0.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  3.6;  !- Vertex Z Coordinate {m}
+
+! source: stated (gbXML Surface Roof); gbXML: surf-sp-main-L2-roof-1
+BuildingSurface:Detailed,
+  surf-sp-main-L2-roof-1,  !- Name
+  Roof,  !- Surface Type
+  constr-roof,  !- Construction Name
+  Level 2 - Open Office,  !- Zone Name
+  ,  !- Space Name
+  Outdoors,  !- Outside Boundary Condition
+  ,  !- Outside Boundary Condition Object
+  SunExposed,  !- Sun Exposure
+  WindExposed,  !- Wind Exposure
+  ,  !- View Factor to Ground
+  4,  !- Number of Vertices
+  0.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  7.2,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  7.2,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  7.2,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  7.2;  !- Vertex Z Coordinate {m}
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L2-wall-1
+BuildingSurface:Detailed,
+  surf-sp-main-L2-wall-1,  !- Name
+  Wall,  !- Surface Type
+  constr-wall,  !- Construction Name
+  Level 2 - Open Office,  !- Zone Name
+  ,  !- Space Name
+  Outdoors,  !- Outside Boundary Condition
+  ,  !- Outside Boundary Condition Object
+  SunExposed,  !- Sun Exposure
+  WindExposed,  !- Wind Exposure
+  ,  !- View Factor to Ground
+  4,  !- Number of Vertices
+  0.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  7.2,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  7.2;  !- Vertex Z Coordinate {m}
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L2-wall-2
+BuildingSurface:Detailed,
+  surf-sp-main-L2-wall-2,  !- Name
+  Wall,  !- Surface Type
+  constr-wall,  !- Construction Name
+  Level 2 - Open Office,  !- Zone Name
+  ,  !- Space Name
+  Outdoors,  !- Outside Boundary Condition
+  ,  !- Outside Boundary Condition Object
+  SunExposed,  !- Sun Exposure
+  WindExposed,  !- Wind Exposure
+  ,  !- View Factor to Ground
+  4,  !- Number of Vertices
+  30.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  7.2,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  7.2;  !- Vertex Z Coordinate {m}
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L2-wall-3
+BuildingSurface:Detailed,
+  surf-sp-main-L2-wall-3,  !- Name
+  Wall,  !- Surface Type
+  constr-wall,  !- Construction Name
+  Level 2 - Open Office,  !- Zone Name
+  ,  !- Space Name
+  Outdoors,  !- Outside Boundary Condition
+  ,  !- Outside Boundary Condition Object
+  SunExposed,  !- Sun Exposure
+  WindExposed,  !- Wind Exposure
+  ,  !- View Factor to Ground
+  4,  !- Number of Vertices
+  30.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  7.2,  !- Vertex Z Coordinate {m}
+  30.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  7.2;  !- Vertex Z Coordinate {m}
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L2-wall-4
+BuildingSurface:Detailed,
+  surf-sp-main-L2-wall-4,  !- Name
+  Wall,  !- Surface Type
+  constr-wall,  !- Construction Name
+  Level 2 - Open Office,  !- Zone Name
+  ,  !- Space Name
+  Outdoors,  !- Outside Boundary Condition
+  ,  !- Outside Boundary Condition Object
+  SunExposed,  !- Sun Exposure
+  WindExposed,  !- Wind Exposure
+  ,  !- View Factor to Ground
+  4,  !- Number of Vertices
+  0.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  7.2,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  25.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  3.6,  !- Vertex Z Coordinate {m}
+  0.0,  !- Vertex X Coordinate {m}
+  0.0,  !- Vertex Y Coordinate {m}
+  7.2;  !- Vertex Z Coordinate {m}
+
+! ---------- Location and climate ----------------------------------------
+
+! source: stated (gbXML Location); time zone derived from the weather file (notes)
+Site:Location,
+  Tucson AZ,  !- Name
+  32.22174,  !- Latitude {deg}
+  -110.92648,  !- Longitude {deg}
+  -7.0,  !- Time Zone {hr}
+  758.0;  !- Elevation {m}
+! 
+! source: EnergyPlus default (schema); the .stat file says its ground temperatures must not be used for building floor losses ("These ground temperatures should NOT BE USED in the GroundTemperatures object to compute building floor losses")
+! Site:GroundTemperature:BuildingSurface,
+!   18.0,  !- January Ground Temperature {C}
+!   18.0,  !- February Ground Temperature {C}
+!   18.0,  !- March Ground Temperature {C}
+!   18.0,  !- April Ground Temperature {C}
+!   18.0,  !- May Ground Temperature {C}
+!   18.0,  !- June Ground Temperature {C}
+!   18.0,  !- July Ground Temperature {C}
+!   18.0,  !- August Ground Temperature {C}
+!   18.0,  !- September Ground Temperature {C}
+!   18.0,  !- October Ground Temperature {C}
+!   18.0,  !- November Ground Temperature {C}
+!   18.0;  !- December Ground Temperature {C}
+
+! source: reference USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMYx.2011-2025.ddy; used for cooling
+SizingPeriod:DesignDay,
+  Tucson-Davis-Monthan.AFB Ann Clg .4% Condns DB=>MWB,  !- Name
+  6,  !- Month
+  21,  !- Day of Month
+  SummerDesignDay,  !- Day Type
+  40.8,  !- Maximum Dry-Bulb Temperature {C}
+  16.9,  !- Daily Dry-Bulb Temperature Range {deltaC}
+  DefaultMultipliers,  !- Dry-Bulb Temperature Range Modifier Type
+  ,  !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  WetBulb,  !- Humidity Condition Type
+  18.6,  !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,  !- Humidity Condition Day Schedule Name
+  ,  !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,  !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  6.0,  !- Daily Wet-Bulb Temperature Range {deltaC}
+  91810.0,  !- Barometric Pressure {Pa}
+  4.6,  !- Wind Speed {m/s}
+  310.0,  !- Wind Direction {deg}
+  No,  !- Rain Indicator
+  No,  !- Snow Indicator
+  No,  !- Daylight Saving Time Indicator
+  ASHRAETau2017,  !- Solar Model Indicator
+  ,  !- Beam Solar Day Schedule Name
+  ,  !- Diffuse Solar Day Schedule Name
+  0.357,  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub) {dimensionless}
+  2.321;  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud) {dimensionless}
+
+! source: reference USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMYx.2011-2025.ddy; used for heating
+SizingPeriod:DesignDay,
+  Tucson-Davis-Monthan.AFB Ann Htg 99.6% Condns DB,  !- Name
+  12,  !- Month
+  21,  !- Day of Month
+  WinterDesignDay,  !- Day Type
+  0.1,  !- Maximum Dry-Bulb Temperature {C}
+  0.0,  !- Daily Dry-Bulb Temperature Range {deltaC}
+  DefaultMultipliers,  !- Dry-Bulb Temperature Range Modifier Type
+  ,  !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  WetBulb,  !- Humidity Condition Type
+  0.1,  !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,  !- Humidity Condition Day Schedule Name
+  ,  !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,  !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,  !- Daily Wet-Bulb Temperature Range {deltaC}
+  91810.0,  !- Barometric Pressure {Pa}
+  2.4,  !- Wind Speed {m/s}
+  140.0,  !- Wind Direction {deg}
+  No,  !- Rain Indicator
+  No,  !- Snow Indicator
+  No,  !- Daylight Saving Time Indicator
+  ASHRAEClearSky,  !- Solar Model Indicator
+  ,  !- Beam Solar Day Schedule Name
+  ,  !- Diffuse Solar Day Schedule Name
+  ,  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub) {dimensionless}
+  ,  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud) {dimensionless}
+  0.0;  !- Sky Clearness
+
+! ---------- Schedules ----------------------------------------
+
+! source: convention (the type limits of the schedule type)
+ScheduleTypeLimits,
+  Fraction,  !- Name
+  0,  !- Lower Limit Value
+  1,  !- Upper Limit Value
+  Continuous,  !- Numeric Type
+  Dimensionless;  !- Unit Type
+
+! source: assumed; gbXML: sch-lib-office-occupancy; Office Occupancy
+Schedule:Compact,
+  sch-lib-office-occupancy,  !- Name
+  Fraction,  !- Schedule Type Limits Name
+  Through: 12/31,  !- Field 1
+  For: Monday Tuesday Wednesday Thursday Friday SummerDesignDay,  !- Field 2
+  Until: 06:00,  !- Field 3
+  0.0,  !- Field 4
+  Until: 07:00,  !- Field 5
+  0.1,  !- Field 6
+  Until: 08:00,  !- Field 7
+  0.2,  !- Field 8
+  Until: 12:00,  !- Field 9
+  0.95,  !- Field 10
+  Until: 13:00,  !- Field 11
+  0.5,  !- Field 12
+  Until: 17:00,  !- Field 13
+  0.95,  !- Field 14
+  Until: 18:00,  !- Field 15
+  0.3,  !- Field 16
+  Until: 22:00,  !- Field 17
+  0.1,  !- Field 18
+  Until: 24:00,  !- Field 19
+  0.05,  !- Field 20
+  For: Saturday WinterDesignDay,  !- Field 21
+  Until: 06:00,  !- Field 22
+  0.0,  !- Field 23
+  Until: 08:00,  !- Field 24
+  0.1,  !- Field 25
+  Until: 12:00,  !- Field 26
+  0.3,  !- Field 27
+  Until: 17:00,  !- Field 28
+  0.1,  !- Field 29
+  Until: 19:00,  !- Field 30
+  0.05,  !- Field 31
+  Until: 24:00,  !- Field 32
+  0.0,  !- Field 33
+  For: Sunday Holiday,  !- Field 34
+  Until: 06:00,  !- Field 35
+  0.0,  !- Field 36
+  Until: 18:00,  !- Field 37
+  0.05,  !- Field 38
+  Until: 24:00,  !- Field 39
+  0.0,  !- Field 40
+  For: AllOtherDays,  !- Field 41
+  Until: 06:00,  !- Field 42
+  0.0,  !- Field 43
+  Until: 18:00,  !- Field 44
+  0.05,  !- Field 45
+  Until: 24:00,  !- Field 46
+  0.0;  !- Field 47
+
+! source: assumed; gbXML: sch-lib-office-lighting; Office Lighting
+Schedule:Compact,
+  sch-lib-office-lighting,  !- Name
+  Fraction,  !- Schedule Type Limits Name
+  Through: 12/31,  !- Field 1
+  For: Monday Tuesday Wednesday Thursday Friday SummerDesignDay,  !- Field 2
+  Until: 05:00,  !- Field 3
+  0.05,  !- Field 4
+  Until: 07:00,  !- Field 5
+  0.1,  !- Field 6
+  Until: 08:00,  !- Field 7
+  0.3,  !- Field 8
+  Until: 17:00,  !- Field 9
+  0.9,  !- Field 10
+  Until: 18:00,  !- Field 11
+  0.5,  !- Field 12
+  Until: 20:00,  !- Field 13
+  0.3,  !- Field 14
+  Until: 22:00,  !- Field 15
+  0.2,  !- Field 16
+  Until: 23:00,  !- Field 17
+  0.1,  !- Field 18
+  Until: 24:00,  !- Field 19
+  0.05,  !- Field 20
+  For: Saturday WinterDesignDay,  !- Field 21
+  Until: 06:00,  !- Field 22
+  0.05,  !- Field 23
+  Until: 08:00,  !- Field 24
+  0.1,  !- Field 25
+  Until: 12:00,  !- Field 26
+  0.3,  !- Field 27
+  Until: 17:00,  !- Field 28
+  0.15,  !- Field 29
+  Until: 24:00,  !- Field 30
+  0.05,  !- Field 31
+  For: Sunday Holiday,  !- Field 32
+  Until: 24:00,  !- Field 33
+  0.05,  !- Field 34
+  For: AllOtherDays,  !- Field 35
+  Until: 24:00,  !- Field 36
+  0.05;  !- Field 37
+
+! source: convention (the type limits of the schedule type)
+ScheduleTypeLimits,
+  Temperature,  !- Name
+  ,  !- Lower Limit Value
+  ,  !- Upper Limit Value
+  Continuous,  !- Numeric Type
+  Temperature;  !- Unit Type
+
+! source: assumed; gbXML: sch-sp-heating-1; Heating setpoint
+Schedule:Compact,
+  sch-sp-heating-1,  !- Name
+  Temperature,  !- Schedule Type Limits Name
+  Through: 12/31,  !- Field 1
+  For: Monday Tuesday Wednesday Thursday Friday,  !- Field 2
+  Until: 06:00,  !- Field 3
+  15.56,  !- Field 4
+  Until: 19:00,  !- Field 5
+  21.11,  !- Field 6
+  Until: 24:00,  !- Field 7
+  15.56,  !- Field 8
+  For: Saturday Sunday Holiday SummerDesignDay,  !- Field 9
+  Until: 24:00,  !- Field 10
+  15.56,  !- Field 11
+  For: WinterDesignDay,  !- Field 12
+  Until: 24:00,  !- Field 13
+  21.11,  !- Field 14
+  For: AllOtherDays,  !- Field 15
+  Until: 24:00,  !- Field 16
+  15.56;  !- Field 17
+
+! source: assumed; gbXML: sch-sp-cooling-1; Cooling setpoint
+Schedule:Compact,
+  sch-sp-cooling-1,  !- Name
+  Temperature,  !- Schedule Type Limits Name
+  Through: 12/31,  !- Field 1
+  For: Monday Tuesday Wednesday Thursday Friday,  !- Field 2
+  Until: 06:00,  !- Field 3
+  29.44,  !- Field 4
+  Until: 18:00,  !- Field 5
+  23.89,  !- Field 6
+  Until: 24:00,  !- Field 7
+  29.44,  !- Field 8
+  For: Saturday Sunday Holiday WinterDesignDay,  !- Field 9
+  Until: 24:00,  !- Field 10
+  29.44,  !- Field 11
+  For: SummerDesignDay,  !- Field 12
+  Until: 24:00,  !- Field 13
+  23.89,  !- Field 14
+  For: AllOtherDays,  !- Field 15
+  Until: 24:00,  !- Field 16
+  29.44;  !- Field 17
+
+! source: convention (the type limits of the schedule type)
+ScheduleTypeLimits,
+  ActivityLevel,  !- Name
+  0,  !- Lower Limit Value
+  ,  !- Upper Limit Value
+  Continuous,  !- Numeric Type
+  ActivityLevel;  !- Unit Type
+
+! source: derived (PeopleHeatGain of the gbXML Space)
+Schedule:Compact,
+  Activity 120 W,  !- Name
+  ActivityLevel,  !- Schedule Type Limits Name
+  Through: 12/31,  !- Field 1
+  For: AllDays,  !- Field 2
+  Until: 24:00,  !- Field 3
+  120;  !- Field 4
+
+! source: convention (the type limits of the schedule type)
+ScheduleTypeLimits,
+  OnOff,  !- Name
+  0,  !- Lower Limit Value
+  1,  !- Upper Limit Value
+  Discrete;  !- Numeric Type
+
+! source: stated (constant all year); the infiltration of the gbXML has no schedule
+Schedule:Compact,
+  Always On,  !- Name
+  OnOff,  !- Schedule Type Limits Name
+  Through: 12/31,  !- Field 1
+  For: AllDays,  !- Field 2
+  Until: 24:00,  !- Field 3
+  1;  !- Field 4
+
+! source: stated (the notes: fan operation continuous); a value above 0 = the fan runs continuously
+Schedule:Compact,
+  HVAC Continuous Fan,  !- Name
+  OnOff,  !- Schedule Type Limits Name
+  Through: 12/31,  !- Field 1
+  For: AllDays,  !- Field 2
+  Until: 24:00,  !- Field 3
+  1;  !- Field 4
+
+! ---------- Materials and constructions ----------------------------------------
+
+! source: user; gbXML: mat-s1; M14 150mm heavyweight concrete
+Material,
+  mat-s1,  !- Name
+  MediumRough,  !- Roughness
+  0.1524,  !- Thickness {m}
+  1.95,  !- Conductivity {W/m-K}
+  2240.0,  !- Density {kg/m3}
+  900.0;  !- Specific Heat {J/kg-K}
+
+! source: user; gbXML: constr-slab; Concrete slab on grade
+Construction,
+  constr-slab,  !- Name
+  mat-s1;  !- Outside Layer
+
+! source: derived; gbXML: mat-lib-m01-100mm-brick; M01 100mm brick
+Material,
+  mat-lib-m01-100mm-brick,  !- Name
+  MediumRough,  !- Roughness
+  0.1016,  !- Thickness {m}
+  0.89,  !- Conductivity {W/m-K}
+  1920.0,  !- Density {kg/m3}
+  790.0;  !- Specific Heat {J/kg-K}
+
+! source: derived; gbXML: mat-lib-i02-50mm-insulation-board; I02 50mm insulation board
+Material,
+  mat-lib-i02-50mm-insulation-board,  !- Name
+  MediumRough,  !- Roughness
+  0.0508,  !- Thickness {m}
+  0.03,  !- Conductivity {W/m-K}
+  43.0,  !- Density {kg/m3}
+  1210.0;  !- Specific Heat {J/kg-K}
+
+! source: derived; gbXML: mat-lib-f04-wall-air-space-resistance; F04 Wall air space resistance
+Material:NoMass,
+  mat-lib-f04-wall-air-space-resistance,  !- Name
+  MediumRough,  !- Roughness
+  0.15;  !- Thermal Resistance {m2-K/W}
+
+! source: derived; gbXML: mat-lib-g01a-19mm-gypsum-board; G01a 19mm gypsum board
+Material,
+  mat-lib-g01a-19mm-gypsum-board,  !- Name
+  MediumSmooth,  !- Roughness
+  0.019,  !- Thickness {m}
+  0.16,  !- Conductivity {W/m-K}
+  800.0,  !- Density {kg/m3}
+  1090.0;  !- Specific Heat {J/kg-K}
+
+! source: user; gbXML: constr-wall; Brick + insulation + gypsum wall
+Construction,
+  constr-wall,  !- Name
+  mat-lib-m01-100mm-brick,  !- Outside Layer
+  mat-lib-i02-50mm-insulation-board,  !- Layer 2
+  mat-lib-f04-wall-air-space-resistance,  !- Layer 3
+  mat-lib-g01a-19mm-gypsum-board;  !- Layer 4
+
+! source: derived; gbXML: mat-lib-f16-acoustic-tile; F16 Acoustic tile
+Material,
+  mat-lib-f16-acoustic-tile,  !- Name
+  MediumSmooth,  !- Roughness
+  0.0191,  !- Thickness {m}
+  0.06,  !- Conductivity {W/m-K}
+  368.0,  !- Density {kg/m3}
+  590.0;  !- Specific Heat {J/kg-K}
+
+! source: derived; gbXML: mat-lib-f05-ceiling-air-space-resistance; F05 Ceiling air space resistance
+Material:NoMass,
+  mat-lib-f05-ceiling-air-space-resistance,  !- Name
+  MediumRough,  !- Roughness
+  0.18;  !- Thermal Resistance {m2-K/W}
+
+! source: derived; gbXML: mat-lib-m14a-100mm-heavyweight-concrete; M14a 100mm heavyweight concrete
+Material,
+  mat-lib-m14a-100mm-heavyweight-concrete,  !- Name
+  MediumRough,  !- Roughness
+  0.1016,  !- Thickness {m}
+  1.95,  !- Conductivity {W/m-K}
+  2240.0,  !- Density {kg/m3}
+  900.0;  !- Specific Heat {J/kg-K}
+
+! source: user; gbXML: constr-default-interiorfloor; Default InteriorFloor
+Construction,
+  constr-default-interiorfloor,  !- Name
+  mat-lib-f16-acoustic-tile,  !- Outside Layer
+  mat-lib-f05-ceiling-air-space-resistance,  !- Layer 2
+  mat-lib-m14a-100mm-heavyweight-concrete;  !- Layer 3
+
+! source: derived; gbXML: mat-r1; F13 Built-up roofing
+Material,
+  mat-r1,  !- Name
+  Rough,  !- Roughness
+  0.0095,  !- Thickness {m}
+  0.16,  !- Conductivity {W/m-K}
+  1120.0,  !- Density {kg/m3}
+  1460.0;  !- Specific Heat {J/kg-K}
+
+! source: user; gbXML: mat-r2; I03 75mm insulation board
+Material,
+  mat-r2,  !- Name
+  MediumRough,  !- Roughness
+  0.0762,  !- Thickness {m}
+  0.03,  !- Conductivity {W/m-K}
+  43.0,  !- Density {kg/m3}
+  1210.0;  !- Specific Heat {J/kg-K}
+
+! source: derived; gbXML: mat-r3; M14a 100mm heavyweight concrete
+Material,
+  mat-r3,  !- Name
+  MediumRough,  !- Roughness
+  0.1016,  !- Thickness {m}
+  1.95,  !- Conductivity {W/m-K}
+  2240.0,  !- Density {kg/m3}
+  900.0;  !- Specific Heat {J/kg-K}
+
+! source: user; gbXML: constr-roof; Insulated flat roof
+Construction,
+  constr-roof,  !- Name
+  mat-r1,  !- Outside Layer
+  mat-r2,  !- Layer 2
+  mat-r3;  !- Layer 3
+
+! source: user; gbXML: constr-default-interiorfloor; the layers of constr-default-interiorfloor in the opposite order (for the partner surface of an interior pair)
+Construction,
+  constr-default-interiorfloor_rev,  !- Name
+  mat-lib-m14a-100mm-heavyweight-concrete,  !- Outside Layer
+  mat-lib-f05-ceiling-air-space-resistance,  !- Layer 2
+  mat-lib-f16-acoustic-tile;  !- Layer 3
+
+! ---------- Geometry ----------------------------------------
+
+! source: stated (gbXML Space); gbXML: sp-L1-open-office; Space sp-L1-open-office; area and volume are the gbXML values
+Zone,
+  Level 1 - Open Office,  !- Name
+  ,  !- Direction of Relative North {deg}
+  ,  !- X Origin {m}
+  ,  !- Y Origin {m}
+  ,  !- Z Origin {m}
+  ,  !- Type
+  ,  !- Multiplier
+  ,  !- Ceiling Height {m}
+  2700.0,  !- Volume {m3}
+  750.0;  !- Floor Area {m2}
+
+! source: stated (gbXML Space); gbXML: sp-L2-open-office; Space sp-L2-open-office; area and volume are the gbXML values
+Zone,
+  Level 2 - Open Office,  !- Name
+  ,  !- Direction of Relative North {deg}
+  ,  !- X Origin {m}
+  ,  !- Y Origin {m}
+  ,  !- Z Origin {m}
+  ,  !- Type
+  ,  !- Multiplier
+  ,  !- Ceiling Height {m}
+  2700.0,  !- Volume {m3}
+  750.0;  !- Floor Area {m2}
+
+! source: assumed (notes loads_infiltration: the original flow per exterior wall area); gbXML: sp-L1-open-office; gbXML AirChangesPerHour 0.3004 = q x A x 3600 / V with A = 396.00 m2
+ZoneInfiltration:DesignFlowRate,
+  Level 1 - Open Office Infiltration,  !- Name
+  Level 1 - Open Office,  !- Zone or ZoneList or Space or SpaceList Name
+  Always On,  !- Schedule Name
+  Flow/ExteriorWallArea,  !- Design Flow Rate Calculation Method
+  ,  !- Design Flow Rate {m3/s}
+  ,  !- Flow Rate per Floor Area {m3/s-m2}
+  0.00056896,  !- Flow Rate per Exterior Surface Area {m3/s-m2}
+  ,  !- Air Changes per Hour {1/hr}
+  ,  !- Constant Term Coefficient
+  ,  !- Temperature Term Coefficient
+  ,  !- Velocity Term Coefficient
+  ;  !- Velocity Squared Term Coefficient
+
+! source: assumed (notes loads_infiltration: the original flow per exterior wall area); gbXML: sp-L2-open-office; gbXML AirChangesPerHour 0.3004 = q x A x 3600 / V with A = 396.00 m2
+ZoneInfiltration:DesignFlowRate,
+  Level 2 - Open Office Infiltration,  !- Name
+  Level 2 - Open Office,  !- Zone or ZoneList or Space or SpaceList Name
+  Always On,  !- Schedule Name
+  Flow/ExteriorWallArea,  !- Design Flow Rate Calculation Method
+  ,  !- Design Flow Rate {m3/s}
+  ,  !- Flow Rate per Floor Area {m3/s-m2}
+  0.00056896,  !- Flow Rate per Exterior Surface Area {m3/s-m2}
+  ,  !- Air Changes per Hour {1/hr}
+  ,  !- Constant Term Coefficient
+  ,  !- Temperature Term Coefficient
+  ,  !- Velocity Term Coefficient
+  ;  !- Velocity Squared Term Coefficient
+
+! ---------- Internal gains ----------------------------------------
+
+! source: user (mid people_activity_w); gbXML: sp-L1-open-office
+People,
+  Level 1 - Open Office People,  !- Name
+  Level 1 - Open Office,  !- Zone or ZoneList or Space or SpaceList Name
+  sch-lib-office-occupancy,  !- Number of People Schedule Name
+  People,  !- Number of People Calculation Method
+  75.0,  !- Number of People
+  ,  !- People per Floor Area {person/m2}
+  ,  !- Floor Area per Person {m2/person}
+  ,  !- Fraction Radiant
+  ,  !- Sensible Heat Fraction
+  Activity 120 W;  !- Activity Level Schedule Name
+
+! source: stated (gbXML Space); gbXML: sp-L1-open-office
+Lights,
+  Level 1 - Open Office Lights,  !- Name
+  Level 1 - Open Office,  !- Zone or ZoneList or Space or SpaceList Name
+  sch-lib-office-lighting,  !- Schedule Name
+  Watts/Area,  !- Design Level Calculation Method
+  ,  !- Lighting Level {W}
+  8.0,  !- Watts per Zone Floor Area {W/m2}
+  ,  !- Watts per Person {W/person}
+  ,  !- Return Air Fraction
+  ,  !- Fraction Radiant
+  ,  !- Fraction Visible
+  ;  !- Fraction Replaceable
+
+! source: stated (gbXML Space); gbXML: sp-L1-open-office
+ElectricEquipment,
+  Level 1 - Open Office Equipment,  !- Name
+  Level 1 - Open Office,  !- Zone or ZoneList or Space or SpaceList Name
+  sch-lib-office-occupancy,  !- Schedule Name
+  Watts/Area,  !- Design Level Calculation Method
+  ,  !- Design Level {W}
+  10.0,  !- Watts per Zone Floor Area {W/m2}
+  ,  !- Watts per Person {W/person}
+  ,  !- Fraction Latent
+  ,  !- Fraction Radiant
+  ;  !- Fraction Lost
+
+! source: user (mid people_activity_w); gbXML: sp-L2-open-office
+People,
+  Level 2 - Open Office People,  !- Name
+  Level 2 - Open Office,  !- Zone or ZoneList or Space or SpaceList Name
+  sch-lib-office-occupancy,  !- Number of People Schedule Name
+  People,  !- Number of People Calculation Method
+  75.0,  !- Number of People
+  ,  !- People per Floor Area {person/m2}
+  ,  !- Floor Area per Person {m2/person}
+  ,  !- Fraction Radiant
+  ,  !- Sensible Heat Fraction
+  Activity 120 W;  !- Activity Level Schedule Name
+
+! source: stated (gbXML Space); gbXML: sp-L2-open-office
+Lights,
+  Level 2 - Open Office Lights,  !- Name
+  Level 2 - Open Office,  !- Zone or ZoneList or Space or SpaceList Name
+  sch-lib-office-lighting,  !- Schedule Name
+  Watts/Area,  !- Design Level Calculation Method
+  ,  !- Lighting Level {W}
+  8.0,  !- Watts per Zone Floor Area {W/m2}
+  ,  !- Watts per Person {W/person}
+  ,  !- Return Air Fraction
+  ,  !- Fraction Radiant
+  ,  !- Fraction Visible
+  ;  !- Fraction Replaceable
+
+! source: stated (gbXML Space); gbXML: sp-L2-open-office
+ElectricEquipment,
+  Level 2 - Open Office Equipment,  !- Name
+  Level 2 - Open Office,  !- Zone or ZoneList or Space or SpaceList Name
+  sch-lib-office-occupancy,  !- Schedule Name
+  Watts/Area,  !- Design Level Calculation Method
+  ,  !- Design Level {W}
+  10.0,  !- Watts per Zone Floor Area {W/m2}
+  ,  !- Watts per Person {W/person}
+  ,  !- Fraction Latent
+  ,  !- Fraction Radiant
+  ;  !- Fraction Lost
+
+! ---------- Output ----------------------------------------
+
+! source: stated (gbXML Meter); gbXML: meter-electricity
+Output:Meter,
+  Electricity:Facility,  !- Key Name
+  Hourly;  !- Reporting Frequency
+
+! source: stated (gbXML Meter); gbXML: meter-naturalgas
+Output:Meter,
+  NaturalGas:Facility,  !- Key Name
+  Hourly;  !- Reporting Frequency
+
+! source: standard set
+Output:Variable,
+  *,  !- Key Value
+  Site Outdoor Air Drybulb Temperature,  !- Variable Name
+  Hourly;  !- Reporting Frequency
+
+! source: standard set
+Output:Variable,
+  *,  !- Key Value
+  Zone Mean Air Temperature,  !- Variable Name
+  Hourly;  !- Reporting Frequency
+
+! source: standard set
+Output:Variable,
+  *,  !- Key Value
+  Zone Air Relative Humidity,  !- Variable Name
+  Hourly;  !- Reporting Frequency
+
+! source: standard set
+Output:Variable,
+  *,  !- Key Value
+  Zone Air System Sensible Heating Energy,  !- Variable Name
+  Hourly;  !- Reporting Frequency
+
+! source: standard set
+Output:Variable,
+  *,  !- Key Value
+  Zone Air System Sensible Cooling Energy,  !- Variable Name
+  Hourly;  !- Reporting Frequency
+
+! source: standard set
+Output:Variable,
+  *,  !- Key Value
+  Facility Total Purchased Electricity Energy,  !- Variable Name
+  Hourly;  !- Reporting Frequency
+
+! source: standard set
+Output:Table:SummaryReports,
+  AllSummary;  !- Report Name 1
+
+! source: standard set; CommaAndHTML so that eplustbl.csv (read by /energyplus-analyze) and eplustbl.htm are both written
+OutputControl:Table:Style,
+  CommaAndHTML;  !- Column Separator
+
+! source: standard set; read by /energyplus-sim
+Output:SQLite,
+  SimpleAndTabular;  !- Option Type
+! 
+! ---------- Other ----------------------------------------
+! 
+! source: mid hvac_template.systems[hvac-default] (ASSUMED system of the notes (decision system_default; the document names none): packaged single-zone DX heat pump with gas supplemental heat, constant volume, from the ASHRAE 90.1 OfficeSmall reference building (AirLoopHVAC:UnitaryHeatPump:AirToAir, Coil:Heating:Fuel efficiency 0.8); every other field is the default of the template; the design supply air temperatures 12.8 C (cooling) and 50 C (heating) are the documented defaults of the template
+! HVACTemplate:System:UnitaryHeatPump:AirToAir,
+!   hvac-default,  !- Name
+!   ,  !- System Availability Schedule Name
+!   Level 1 - Open Office,  !- Control Zone or Thermostat Location Name
+!   ,  !- Cooling Supply Air Flow Rate {m3/s}
+!   ,  !- Heating Supply Air Flow Rate {m3/s}
+!   ,  !- No Load Supply Air Flow Rate {m3/s}
+!   HVAC Continuous Fan,  !- Supply Fan Operating Mode Schedule Name
+!   BlowThrough,  !- Supply Fan Placement
+!   ,  !- Supply Fan Total Efficiency
+!   ,  !- Supply Fan Delta Pressure {Pa}
+!   ,  !- Supply Fan Motor Efficiency
+!   ,  !- Supply Fan Motor in Air Stream Fraction
+!   SingleSpeedDX,  !- Cooling Coil Type
+!   ,  !- Cooling Coil Availability Schedule Name
+!   12.8,  !- Cooling Design Supply Air Temperature {C}
+!   ,  !- Cooling Coil Gross Rated Total Capacity {W}
+!   ,  !- Cooling Coil Gross Rated Sensible Heat Ratio
+!   ,  !- Cooling Coil Gross Rated COP {W/W}
+!   SingleSpeedDXHeatPump,  !- Heat Pump Heating Coil Type
+!   ,  !- Heat Pump Heating Coil Availability Schedule Name
+!   50,  !- Heating Design Supply Air Temperature {C}
+!   ,  !- Heat Pump Heating Coil Gross Rated Capacity {W}
+!   ,  !- Heat Pump Heating Coil Rated COP {W/W}
+!   ,  !- Heat Pump Heating Minimum Outdoor Dry-Bulb Temperature {C}
+!   ,  !- Heat Pump Defrost Maximum Outdoor Dry-Bulb Temperature {C}
+!   ,  !- Heat Pump Defrost Strategy
+!   ,  !- Heat Pump Defrost Control
+!   ,  !- Heat Pump Defrost Time Period Fraction
+!   Gas,  !- Supplemental Heating Coil Type
+!   ,  !- Supplemental Heating Coil Availability Schedule Name
+!   ,  !- Supplemental Heating Coil Capacity {W}
+!   ,  !- Supplemental Heating Coil Maximum Outdoor Dry-Bulb Temperature {C}
+!   0.8,  !- Supplemental Gas Heating Coil Efficiency
+!   ,  !- Supplemental Gas Heating Coil Parasitic Electric Load {W}
+!   ,  !- Maximum Outdoor Air Flow Rate {m3/s}
+!   ,  !- Minimum Outdoor Air Flow Rate {m3/s}
+!   ,  !- Minimum Outdoor Air Schedule Name
+!   ,  !- Economizer Type
+!   ,  !- Economizer Lockout
+!   ,  !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+!   ,  !- Economizer Maximum Limit Enthalpy {J/kg}
+!   ,  !- Economizer Maximum Limit Dewpoint Temperature {C}
+!   ,  !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+!   ,  !- Supply Plenum Name
+!   ,  !- Return Plenum Name
+!   ,  !- Night Cycle Control
+!   ,  !- Night Cycle Control Zone Name
+!   ,  !- Heat Recovery Type
+!   ,  !- Sensible Heat Recovery Effectiveness
+!   ,  !- Latent Heat Recovery Effectiveness
+!   ,  !- Humidifier Type
+!   ,  !- Humidifier Availability Schedule Name
+!   ,  !- Humidifier Rated Capacity {m3/s}
+!   ,  !- Humidifier Rated Electric Power {W}
+!   ,  !- Humidifier Control Zone Name
+!   ,  !- Humidifier Setpoint {percent}
+!   ,  !- Return Fan
+!   ,  !- Return Fan Total Efficiency
+!   ,  !- Return Fan Delta Pressure {Pa}
+!   ,  !- Return Fan Motor Efficiency
+!   ;  !- Return Fan Motor in Air Stream Fraction
+! 
+! source: stated (gbXML Zone heatSchedIdRef / coolSchedIdRef); gbXML: zone-l1-open-office
+! HVACTemplate:Thermostat,
+!   Level 1 - Open Office Thermostat,  !- Name
+!   sch-sp-heating-1,  !- Heating Setpoint Schedule Name
+!   ,  !- Constant Heating Setpoint {C}
+!   sch-sp-cooling-1,  !- Cooling Setpoint Schedule Name
+!   ;  !- Constant Cooling Setpoint {C}
+! 
+! source: stated (gbXML Zone OAFlow*; thermostat of the gbXML Zone); gbXML: zone-l1-open-office
+! HVACTemplate:Zone:Unitary,
+!   Level 1 - Open Office,  !- Zone Name
+!   hvac-default,  !- Template Unitary System Name
+!   Level 1 - Open Office Thermostat,  !- Template Thermostat Name
+!   ,  !- Supply Air Maximum Flow Rate {m3/s}
+!   ,  !- Zone Heating Sizing Factor
+!   ,  !- Zone Cooling Sizing Factor
+!   Flow/Area,  !- Outdoor Air Method
+!   ,  !- Outdoor Air Flow Rate per Person {m3/s}
+!   0.000432,  !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+!   ,  !- Outdoor Air Flow Rate per Zone {m3/s}
+!   ,  !- Supply Plenum Name
+!   ,  !- Return Plenum Name
+!   ,  !- Baseboard Heating Type
+!   ,  !- Baseboard Heating Availability Schedule Name
+!   ,  !- Baseboard Heating Capacity {W}
+!   ,  !- Zone Cooling Design Supply Air Temperature Input Method
+!   ,  !- Zone Cooling Design Supply Air Temperature {C}
+!   ,  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
+!   ,  !- Zone Heating Design Supply Air Temperature Input Method
+!   ,  !- Zone Heating Design Supply Air Temperature {C}
+!   ;  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
+! 
+! source: stated (gbXML Zone heatSchedIdRef / coolSchedIdRef); gbXML: zone-l2-open-office
+! HVACTemplate:Thermostat,
+!   Level 2 - Open Office Thermostat,  !- Name
+!   sch-sp-heating-1,  !- Heating Setpoint Schedule Name
+!   ,  !- Constant Heating Setpoint {C}
+!   sch-sp-cooling-1,  !- Cooling Setpoint Schedule Name
+!   ;  !- Constant Cooling Setpoint {C}
+! 
+! source: stated (gbXML Zone OAFlow*; thermostat of the gbXML Zone); gbXML: zone-l2-open-office
+! HVACTemplate:Zone:Unitary,
+!   Level 2 - Open Office,  !- Zone Name
+!   hvac-default,  !- Template Unitary System Name
+!   Level 2 - Open Office Thermostat,  !- Template Thermostat Name
+!   ,  !- Supply Air Maximum Flow Rate {m3/s}
+!   ,  !- Zone Heating Sizing Factor
+!   ,  !- Zone Cooling Sizing Factor
+!   Flow/Area,  !- Outdoor Air Method
+!   ,  !- Outdoor Air Flow Rate per Person {m3/s}
+!   0.000432,  !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+!   ,  !- Outdoor Air Flow Rate per Zone {m3/s}
+!   ,  !- Supply Plenum Name
+!   ,  !- Return Plenum Name
+!   ,  !- Baseboard Heating Type
+!   ,  !- Baseboard Heating Availability Schedule Name
+!   ,  !- Baseboard Heating Capacity {W}
+!   ,  !- Zone Cooling Design Supply Air Temperature Input Method
+!   ,  !- Zone Cooling Design Supply Air Temperature {C}
+!   ,  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
+!   ,  !- Zone Heating Design Supply Air Temperature Input Method
+!   ,  !- Zone Heating Design Supply Air Temperature {C}
+!   ;  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
+! 
+! -------------------------------------------------------------
+! New objects created from ExpandObjects
+! -------------------------------------------------------------
+! 
+
+ThermostatSetpoint:DualSetpoint,
+  Level 1 - Open Office Thermostat Dual SP Control,        !- Name
+  sch-sp-heating-1,                                        !- Heating Setpoint Temperature Schedule Name
+  sch-sp-cooling-1;                                        !- Cooling Setpoint Temperature Schedule Name
+
+ThermostatSetpoint:DualSetpoint,
+  Level 2 - Open Office Thermostat Dual SP Control,        !- Name
+  sch-sp-heating-1,                                        !- Heating Setpoint Temperature Schedule Name
+  sch-sp-cooling-1;                                        !- Cooling Setpoint Temperature Schedule Name
+
+ScheduleTypeLimits,
+  HVACTemplate Any Number;                                 !- Name
+
+Schedule:Compact,
+  HVACTemplate-Always 4,                                   !- Name
+  HVACTemplate Any Number,                                 !- Schedule Type Limits Name
+  Through: 12/31,                                          !- Field 1
+  For: AllDays,                                            !- Field 2
+  Until: 24:00,                                            !- Field 3
+  4;                                                       !- Field 4
+
+ZoneControl:Thermostat,
+  Level 1 - Open Office Thermostat,                        !- Name
+  Level 1 - Open Office,                                   !- Zone or ZoneList Name
+  HVACTemplate-Always 4,                                   !- Control Type Schedule Name
+  ThermostatSetpoint:DualSetpoint,                         !- Control Object Type
+  Level 1 - Open Office Thermostat Dual SP Control;        !- Control Name
+
+DesignSpecification:OutdoorAir,
+  SZ DSOA Level 1 - Open Office,                           !- Name
+  Flow/Area,                                               !- Outdoor Air Method
+  0.00944,                                                 !- Outdoor Air Flow per Person {m3/s}
+  0.000432,                                                !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+  0.0;                                                     !- Outdoor Air Flow per Zone {m3/s}
+
+Sizing:Zone,
+  Level 1 - Open Office,                                   !- Zone or ZoneList Name
+  SupplyAirTemperature,                                    !- Zone Cooling Design Supply Air Temperature Input Method
+  12.8,                                                    !- Zone Cooling Design Supply Air Temperature {C}
+  11.11,                                                   !- Zone Cooling Design Supply Air Temperature Difference {delta C}
+  SupplyAirTemperature,                                    !- Zone Heating Design Supply Air Temperature Input Method
+  50,                                                      !- Zone Heating Design Supply Air Temperature {C}
+  ,                                                        !- Zone Heating Design Supply Air Temperature Difference {delta C}
+  0.008,                                                   !- Zone Cooling Design Supply Air Humidity Ratio {kg-H20/kg-air}
+  0.008,                                                   !- Zone Heating Design Supply Air Humidity Ratio {kg-H2O/kg-air}
+  SZ DSOA Level 1 - Open Office,                           !- Design Specification Outdoor Air Object Name
+  ,                                                        !- Zone Heating Sizing Factor
+  ,                                                        !- Zone Cooling Sizing Factor
+  DesignDay,                                               !- Cooling Design Air Flow Method
+  0,                                                       !- Cooling Design Air Flow Rate {m3/s}
+  ,                                                        !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                                                        !- Cooling Minimum Air Flow {m3/s}
+  0,                                                       !- Cooling Minimum Air Flow Fraction {}
+  DesignDay,                                               !- Heating Design Air Flow Method
+  0,                                                       !- Heating Design Air Flow Rate {m3/s}
+  ,                                                        !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                                                        !- Heating Maximum Air Flow {m3/s}
+  0,                                                       !- Heating Maximum Air Flow Fraction {}
+  SZ DSZAD Level 1 - Open Office;                          !- Design Specification Zone Air Distribution Object Name
+
+DesignSpecification:ZoneAirDistribution,
+  SZ DSZAD Level 1 - Open Office,                          !- Name
+  1,                                                       !- Zone Air Distribution Effectiveness in Cooling Mode {}
+  1;                                                       !- Zone Air Distribution Effectiveness in Heating Mode {}
+
+ZoneHVAC:EquipmentConnections,
+  Level 1 - Open Office,                                   !- Zone Name
+  Level 1 - Open Office Equipment,                         !- Zone Conditioning Equipment List Name
+  Level 1 - Open Office Supply Inlet,                      !- Zone Air Inlet Node or NodeList Name
+  ,                                                        !- Zone Air Exhaust Node or NodeList Name
+  Level 1 - Open Office Zone Air Node,                     !- Zone Air Node Name
+  Level 1 - Open Office Return Outlet;                     !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentList,
+  Level 1 - Open Office Equipment,                         !- Name
+  SequentialLoad,                                          !- Load Distribution Scheme
+  ZoneHVAC:AirDistributionUnit,                            !- Zone Equipment Object Type
+  Level 1 - Open Office ATU,                               !- Zone Equipment Name
+  1,                                                       !- Zone Equipment Cooling Sequence
+  1,                                                       !- Zone Equipment Heating or No-Load Sequence
+  ,                                                        !- Zone Equipment Sequential Cooling Fraction Schedule Name
+  ;                                                        !- Zone Equipment Sequential Heating Fraction Schedule Name
+
+ZoneHVAC:AirDistributionUnit,
+  Level 1 - Open Office ATU,                               !- Name
+  Level 1 - Open Office Supply Inlet,                      !- Air Distribution Unit Outlet Node Name
+  AirTerminal:SingleDuct:ConstantVolume:NoReheat,          !- Air Terminal Object Type
+  Level 1 - Open Office CV;                                !- Air Terminal Name
+
+AirTerminal:SingleDuct:ConstantVolume:NoReheat,
+  Level 1 - Open Office CV,                                !- Name
+  ,                                                        !- Availability Schedule Name
+  Level 1 - Open Office Zone Equip Inlet,                  !- Air Inlet Node Name
+  Level 1 - Open Office Supply Inlet,                      !- Air Outlet Node Name
+  autosize,                                                !- Maximum air flow rate {m3/s}
+  ,                                                        !- Design Specification Outdoor Air Object Name
+  ;                                                        !- Per Person Ventilation Rate Mode
+
+ZoneControl:Thermostat,
+  Level 2 - Open Office Thermostat,                        !- Name
+  Level 2 - Open Office,                                   !- Zone or ZoneList Name
+  HVACTemplate-Always 4,                                   !- Control Type Schedule Name
+  ThermostatSetpoint:DualSetpoint,                         !- Control Object Type
+  Level 2 - Open Office Thermostat Dual SP Control;        !- Control Name
+
+DesignSpecification:OutdoorAir,
+  SZ DSOA Level 2 - Open Office,                           !- Name
+  Flow/Area,                                               !- Outdoor Air Method
+  0.00944,                                                 !- Outdoor Air Flow per Person {m3/s}
+  0.000432,                                                !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
+  0.0;                                                     !- Outdoor Air Flow per Zone {m3/s}
+
+Sizing:Zone,
+  Level 2 - Open Office,                                   !- Zone or ZoneList Name
+  SupplyAirTemperature,                                    !- Zone Cooling Design Supply Air Temperature Input Method
+  12.8,                                                    !- Zone Cooling Design Supply Air Temperature {C}
+  11.11,                                                   !- Zone Cooling Design Supply Air Temperature Difference {delta C}
+  SupplyAirTemperature,                                    !- Zone Heating Design Supply Air Temperature Input Method
+  50,                                                      !- Zone Heating Design Supply Air Temperature {C}
+  ,                                                        !- Zone Heating Design Supply Air Temperature Difference {delta C}
+  0.008,                                                   !- Zone Cooling Design Supply Air Humidity Ratio {kg-H20/kg-air}
+  0.008,                                                   !- Zone Heating Design Supply Air Humidity Ratio {kg-H2O/kg-air}
+  SZ DSOA Level 2 - Open Office,                           !- Design Specification Outdoor Air Object Name
+  ,                                                        !- Zone Heating Sizing Factor
+  ,                                                        !- Zone Cooling Sizing Factor
+  DesignDay,                                               !- Cooling Design Air Flow Method
+  0,                                                       !- Cooling Design Air Flow Rate {m3/s}
+  ,                                                        !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                                                        !- Cooling Minimum Air Flow {m3/s}
+  0,                                                       !- Cooling Minimum Air Flow Fraction {}
+  DesignDay,                                               !- Heating Design Air Flow Method
+  0,                                                       !- Heating Design Air Flow Rate {m3/s}
+  ,                                                        !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                                                        !- Heating Maximum Air Flow {m3/s}
+  0,                                                       !- Heating Maximum Air Flow Fraction {}
+  SZ DSZAD Level 2 - Open Office;                          !- Design Specification Zone Air Distribution Object Name
+
+DesignSpecification:ZoneAirDistribution,
+  SZ DSZAD Level 2 - Open Office,                          !- Name
+  1,                                                       !- Zone Air Distribution Effectiveness in Cooling Mode {}
+  1;                                                       !- Zone Air Distribution Effectiveness in Heating Mode {}
+
+ZoneHVAC:EquipmentConnections,
+  Level 2 - Open Office,                                   !- Zone Name
+  Level 2 - Open Office Equipment,                         !- Zone Conditioning Equipment List Name
+  Level 2 - Open Office Supply Inlet,                      !- Zone Air Inlet Node or NodeList Name
+  ,                                                        !- Zone Air Exhaust Node or NodeList Name
+  Level 2 - Open Office Zone Air Node,                     !- Zone Air Node Name
+  Level 2 - Open Office Return Outlet;                     !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentList,
+  Level 2 - Open Office Equipment,                         !- Name
+  SequentialLoad,                                          !- Load Distribution Scheme
+  ZoneHVAC:AirDistributionUnit,                            !- Zone Equipment Object Type
+  Level 2 - Open Office ATU,                               !- Zone Equipment Name
+  1,                                                       !- Zone Equipment Cooling Sequence
+  1,                                                       !- Zone Equipment Heating or No-Load Sequence
+  ,                                                        !- Zone Equipment Sequential Cooling Fraction Schedule Name
+  ;                                                        !- Zone Equipment Sequential Heating Fraction Schedule Name
+
+ZoneHVAC:AirDistributionUnit,
+  Level 2 - Open Office ATU,                               !- Name
+  Level 2 - Open Office Supply Inlet,                      !- Air Distribution Unit Outlet Node Name
+  AirTerminal:SingleDuct:ConstantVolume:NoReheat,          !- Air Terminal Object Type
+  Level 2 - Open Office CV;                                !- Air Terminal Name
+
+AirTerminal:SingleDuct:ConstantVolume:NoReheat,
+  Level 2 - Open Office CV,                                !- Name
+  ,                                                        !- Availability Schedule Name
+  Level 2 - Open Office Zone Equip Inlet,                  !- Air Inlet Node Name
+  Level 2 - Open Office Supply Inlet,                      !- Air Outlet Node Name
+  autosize,                                                !- Maximum air flow rate {m3/s}
+  ,                                                        !- Design Specification Outdoor Air Object Name
+  ;                                                        !- Per Person Ventilation Rate Mode
+
+Sizing:System,
+  hvac-default,                                            !- AirLoop Name
+  Sensible,                                                !- Type of Load to Size On
+  Autosize,                                                !- Design Outdoor Air Flow Rate {m3/s}
+  1,                                                       !- Central Heating Maximum System Air Flow Ratio
+  7,                                                       !- Preheat Design Set Temperature {C}
+  0.008,                                                   !- Preheat Design Humidity Ratio {kg-H2O/kg-air}
+  11,                                                      !- Precool Design Temperature {C}
+  0.008,                                                   !- Precool Design Humidity Ratio {kg-H2O/kg-air}
+  12.8,                                                    !- Central Cooling Design Supply Air Temperature {C}
+  50,                                                      !- Central Heating Design Supply Air Temperature {C}
+  NonCoincident,                                           !- Sizing Option
+  No,                                                      !- 100% Outdoor Air in Cooling
+  No,                                                      !- 100% Outdoor Air in Heating
+  0.008,                                                   !- Central Cooling Design Supply Air Humidity Ratio {kg-H2O/kg-air}
+  0.008,                                                   !- Central Heating Design Supply Air Humidity Ratio {kg-H2O/kg-air}
+  DesignDay,                                               !- Cooling Supply Air Flow Rate Method
+  0,                                                       !- Cooling Supply Air Flow Rate {m3/s}
+  ,                                                        !- Cooling Supply Air Flow Rate Per Floor Area {m3/s-m2}
+  ,                                                        !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
+  ,                                                        !- Cooling Supply Air Flow Rate Per Unit Cooling Capacity {m3/s-W}
+  DesignDay,                                               !- Heating Supply Air Flow Rate Method
+  0,                                                       !- Heating Supply Air Flow Rate {m3/s}
+  ,                                                        !- Heating Supply Air Flow Rate Per Floor Area {m3/s-m2}
+  ,                                                        !- Heating Fraction of Autosized Heating Supply Air Flow Rate
+  ,                                                        !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
+  ,                                                        !- Heating Supply Air Flow Rate Per Unit Heating Capacity {m3/s-W}
+  ZoneSum,                                                 !- System Outdoor Air Method
+  1.0,                                                     !- Zone Maximum Outdoor Air Fraction
+  CoolingDesignCapacity,                                   !- Cooling Design Capacity Method
+  autosize,                                                !- Cooling Design Capacity {W}
+  ,                                                        !- Cooling Design Capacity Per Floor Area {W/m2}
+  ,                                                        !- Fraction of Autosized Cooling Design Capacity
+  HeatingDesignCapacity,                                   !- Heating Design Capacity Method
+  autosize,                                                !- Heating Design Capacity {W}
+  ,                                                        !- Heating Design Capacity Per Floor Area {W/m2}
+  ,                                                        !- Fraction of Autosized Heating Design Capacity
+  OnOff;                                                   !- Central Cooling Capacity Control Method
+
+AirLoopHVAC,
+  hvac-default,                                            !- Name
+  ,                                                        !- Controller List Name
+  hvac-default Availability Managers,                      !- Availability Manager List Name
+  autosize,                                                !- Design Supply Air Flow Rate {m3/s}
+  hvac-default Branches,                                   !- Branch List Name
+  ,                                                        !- Connector List Name
+  hvac-default Air Loop Inlet,                             !- Supply Side Inlet Node Name
+  hvac-default Return Air Outlet,                          !- Demand Side Outlet Node Name
+  hvac-default Supply Path Inlet,                          !- Demand Side Inlet Node Names
+  hvac-default Air Loop Outlet;                            !- Supply Side Outlet Node Names
+
+BranchList,
+  hvac-default Branches,                                   !- Name
+  hvac-default Main Branch;                                !- Branch Name
+
+Branch,
+  hvac-default Main Branch,                                !- Name
+  ,                                                        !- Pressure Drop Curve Name
+  AirLoopHVAC:OutdoorAirSystem,                            !- Component Object Type
+  hvac-default OA System,                                  !- Component Name
+  hvac-default Air Loop Inlet,                             !- Component Inlet Node Name
+  hvac-default Mixed Air Outlet,                           !- Component Outlet Node Name
+  AirLoopHVAC:UnitaryHeatPump:AirToAir,                    !- Component Object Type
+  hvac-default Heat Pump,                                  !- Component Name
+  hvac-default Mixed Air Outlet,                           !- Component Inlet Node Name
+  hvac-default Air Loop Outlet;                            !- Component Outlet Node Name
+
+AirLoopHVAC:SupplyPath,
+  hvac-default Supply Path,                                !- Name
+  hvac-default Supply Path Inlet,                          !- Supply Air Path Inlet Node Name
+  AirLoopHVAC:ZoneSplitter,                                !- Component Object Type
+  hvac-default Zone Splitter;                              !- Component Name
+
+AirLoopHVAC:ZoneSplitter,
+  hvac-default Zone Splitter,                              !- Name
+  hvac-default Supply Path Inlet,                          !- Inlet Node Name
+  Level 1 - Open Office Zone Equip Inlet,                  !- Outlet Node Name
+  Level 2 - Open Office Zone Equip Inlet;                  !- Outlet Node Name
+
+AirLoopHVAC:ReturnPath,
+  hvac-default Return Path,                                !- Name
+  hvac-default Return Air Outlet,                          !- Return Air Path Outlet Node Name
+  AirLoopHVAC:ZoneMixer,                                   !- Component Object Type
+  hvac-default Zone Mixer;                                 !- Component Name
+
+AirLoopHVAC:ZoneMixer,
+  hvac-default Zone Mixer,                                 !- Name
+  hvac-default Return Air Outlet,                          !- Outlet Node Name
+  Level 1 - Open Office Return Outlet,                     !- Inlet Node Name
+  Level 2 - Open Office Return Outlet;                     !- Inlet Node Name
+
+AvailabilityManagerAssignmentList,
+  hvac-default Availability Managers,                      !- Name
+  AvailabilityManager:NightCycle,                          !- Availability Manager Object Type
+  hvac-default Availability;                               !- Availability Manager Name
+
+AvailabilityManager:NightCycle,
+  hvac-default Availability,                               !- Name
+  HVACTemplate-Always 1,                                   !- Applicability Schedule Name
+  HVACTemplate-Always 1,                                   !- Fan Schedule Name
+  StayOff,                                                 !- Control Type
+  0.2,                                                     !- Thermostat Tolerance {deltaC}
+  FixedRunTime,                                            !- Cycling Run Time Control Type
+  3600,                                                    !- Cycling run time {s}
+  ;                                                        !- Control Zone Name
+
+Schedule:Compact,
+  HVACTemplate-Always 1,                                   !- Name
+  HVACTemplate Any Number,                                 !- Schedule Type Limits Name
+  Through: 12/31,                                          !- Field 1
+  For: AllDays,                                            !- Field 2
+  Until: 24:00,                                            !- Field 3
+  1;                                                       !- Field 4
+
+AirLoopHVAC:UnitaryHeatPump:AirToAir,
+  hvac-default Heat Pump,                                  !- Name
+  ,                                                        !- Availability Schedule Name
+  hvac-default Mixed Air Outlet,                           !- Air Inlet Node Name
+  hvac-default Air Loop Outlet,                            !- Air Outlet Node Name
+  Autosize,                                                !- Cooling Supply Air Flow Rate
+  Autosize,                                                !- Heating Supply Air Flow Rate
+  Autosize,                                                !- No Load Supply Air Flow Rate
+  Level 1 - Open Office,                                   !- Controlling Zone or Thermostat Location
+  Fan:OnOff,                                               !- Supply Air Fan Object Type
+  hvac-default Supply Fan,                                 !- Supply Air Fan Name
+  Coil:Heating:DX:SingleSpeed,                             !- Heating Coil Object Type
+  hvac-default HP Heating Coil,                            !- Heating Coil Name
+  Coil:Cooling:DX:SingleSpeed,                             !- Cooling Coil Object Type
+  hvac-default Cooling Coil,                               !- Cooling Coil Name
+  Coil:Heating:Fuel,                                       !- Supplemental Heating Coil Object Type
+  hvac-default Sup Heat Coil,                              !- Supplemental Heating Coil Name
+  Autosize,                                                !- Maximum Supply Air Temperature from Supplemental Heater
+  21.0,                                                    !- Maximum Outdoor Dry-Bulb Temperature for Supplemental Heater Operation
+  BlowThrough,                                             !- Fan Placement
+  HVAC Continuous Fan;                                     !- Supply Air Fan Operating Mode Schedule Name
+
+Coil:Heating:DX:SingleSpeed,
+  hvac-default HP Heating Coil,                            !- Name
+  ,                                                        !- Availability Schedule Name
+  Autosize,                                                !- Rated Total Heating Capacity {W}
+  2.75,                                                    !- Rated COP
+  autosize,                                                !- Rated Air Flow Rate {m3/s}
+  ,                                                        !- 2017 Rated Evaporator Fan Power Per Volume Flow Rate
+  ,                                                        !- 2023 Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+  hvac-default Cooling Coil Outlet,                        !- Air Inlet Node Name
+  hvac-default Heating Coil Outlet,                        !- Air Outlet Node Name
+  hvac-default HP Heating Coil Cap-FT,                     !- Total Heating Capacity Function of Temperature Curve Name
+  hvac-default HP Heating Coil Cap-FF,                     !- Total Heating Capacity Function of Flow Fraction Curve Name
+  hvac-default HP Heating Coil EIR-FT,                     !- Energy Input Ratio Function of Temperature Curve Name
+  hvac-default HP Heating Coil EIR-FF,                     !- Energy Input Ratio Function of Flow Fraction Curve Name
+  hvac-default HP Heating Coil PLF,                        !- Part Load Fraction Correlation Curve Name
+  hvac-default HP Heating Coil DefrEIR-FT,                 !- Defrost Energy Input Ratio Function of Temperature Curve Name
+  -8.0,                                                    !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+  ,                                                        !- Outdoor Dry-Bulb Temperature to Turn On Compressor
+  5.0,                                                     !- Maximum Outdoor Dry-Bulb Temperature for Defrost Operation {C}
+  0,                                                       !- Crankcase Heater Capacity {W}
+  0,                                                       !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+  ReverseCycle,                                            !- Defrost Strategy
+  Timed,                                                   !- Defrost Control
+  0.058333,                                                !- Defrost Time Period Fraction
+  autosize;                                                !- Resistive Defrost Heater Capacity {W}
+
+Curve:Cubic,
+  hvac-default HP Heating Coil Cap-FT,                     !- Name
+  0.758746,                                                !- Coefficient1 Constant
+  0.027626,                                                !- Coefficient2 x
+  0.000148716,                                             !- Coefficient3 x**2
+  0.0000034992,                                            !- Coefficient4 x**3
+  -20.0,                                                   !- Minimum Value of x
+  20.0;                                                    !- Maximum Value of x
+
+Curve:Cubic,
+  hvac-default HP Heating Coil Cap-FF,                     !- Name
+  0.84,                                                    !- Coefficient1 Constant
+  0.16,                                                    !- Coefficient2 x
+  0.0,                                                     !- Coefficient3 x**2
+  0.0,                                                     !- Coefficient4 x**3
+  0.5,                                                     !- Minimum Value of x
+  1.5;                                                     !- Maximum Value of x
+
+Curve:Cubic,
+  hvac-default HP Heating Coil EIR-FT,                     !- Name
+  1.19248,                                                 !- Coefficient1 Constant
+  -0.0300438,                                              !- Coefficient2 x
+  0.00103745,                                              !- Coefficient3 x**2
+  -0.000023328,                                            !- Coefficient4 x**3
+  -20.0,                                                   !- Minimum Value of x
+  20.0;                                                    !- Maximum Value of x
+
+Curve:Quadratic,
+  hvac-default HP Heating Coil EIR-FF,                     !- Name
+  1.3824,                                                  !- Coefficient1 Constant
+  -0.4336,                                                 !- Coefficient2 x
+  0.0512,                                                  !- Coefficient3 x**2
+  0.0,                                                     !- Minimum Value of x
+  1.0;                                                     !- Maximum Value of x
+
+Curve:Quadratic,
+  hvac-default HP Heating Coil PLF,                        !- Name
+  0.75,                                                    !- Coefficient1 Constant
+  0.25,                                                    !- Coefficient2 x
+  0.0,                                                     !- Coefficient3 x**2
+  0.0,                                                     !- Minimum Value of x
+  1.0;                                                     !- Maximum Value of x
+
+Curve:Biquadratic,
+  hvac-default HP Heating Coil DefrEIR-FT,                 !- Name
+  1,                                                       !- Coefficient1 Constant
+  0,                                                       !- Coefficient2 x
+  0,                                                       !- Coefficient3 x**2
+  0,                                                       !- Coefficient4 y
+  0,                                                       !- Coefficient5 y**2
+  0,                                                       !- Coefficient6 x*y
+  0,                                                       !- Minimum Value of x
+  50,                                                      !- Maximum Value of x
+  0,                                                       !- Minimum Value of y
+  50;                                                      !- Maximum Value of y
+
+Coil:Heating:Fuel,
+  hvac-default Sup Heat Coil,                              !- Name
+  ,                                                        !- Availability Schedule Name
+  NaturalGas,                                              !- Fuel Type
+  0.8,                                                     !- Gas Burner Efficiency
+  Autosize,                                                !- Nominal Capacity of the Coil {W}
+  hvac-default Heating Coil Outlet,                        !- Air Inlet Node Name
+  hvac-default Air Loop Outlet,                            !- Air Outlet Node Name
+  ,                                                        !- Coil Temp Setpoint Node
+  0.0,                                                     !- Parasitic Electric Load {W}
+  hvac-default Sup Heating Coil PLF-FPLR,                  !- Part load fraction correlation (function of part load ratio)
+  0;                                                       !- Parasitic Gas Load {W}
+
+Curve:Cubic,
+  hvac-default Sup Heating Coil PLF-FPLR,                  !- Name
+  0.8,                                                     !- Coefficient1 Constant
+  0.2,                                                     !- Coefficient2 x
+  0,                                                       !- Coefficient3 x**2
+  0,                                                       !- Coefficient4 x**3
+  0,                                                       !- Minimum Value of x
+  1;                                                       !- Maximum Value of x
+
+Coil:Cooling:DX:SingleSpeed,
+  hvac-default Cooling Coil,                               !- Name
+  ,                                                        !- Availability Schedule Name
+  Autosize,                                                !- Gross Rated Total Cooling Capacity {W}
+  Autosize,                                                !- Gross Rated Sensible Heat Ratio
+  3.0,                                                     !- Rated COP
+  autosize,                                                !- Rated Air Flow Rate {m3/s}
+  ,                                                        !- 2017 Rated Evaporator Fan Power per Volume Flow Rate {W/(m3/s)}
+  ,                                                        !- 2023 Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+  hvac-default Supply Fan Outlet,                          !- Air Inlet Node Name
+  hvac-default Cooling Coil Outlet,                        !- Air Outlet Node Name
+  hvac-default Cool Coil Cap-FT,                           !- Total Cooling Capacity Function of Temperature Curve Name
+  hvac-default Cool Coil Cap-FF,                           !- Total Cooling Capacity Function of Flow Fraction Curve Name
+  hvac-default Cool Coil EIR-FT,                           !- Energy Input Ratio Function of Temperature Curve Name
+  hvac-default Cool Coil EIR-FF,                           !- Energy Input Ratio Function of Flow Fraction Curve Name
+  hvac-default Cool Coil PLF,                              !- Part Load Fraction Correlation Curve Name
+  ,                                                        !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+  0,                                                       !- Nominal Time for Condensate Removal to Begin
+  0,                                                       !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity
+  0,                                                       !- Maximum Cycling Rate
+  0,                                                       !- Latent Capacity Time Constant
+  hvac-default Cooling Coil Condenser Inlet,               !- Condenser Air Inlet Node Name
+  AirCooled,                                               !- Condenser Type
+  0,                                                       !- Evaporative Condenser Effectiveness
+  ,                                                        !- Evaporative Condenser Air Flow Rate
+  0,                                                       !- Evaporative Condenser Pump Rated Power Consumption
+  0,                                                       !- Crankcase Heater Capacity
+  10;                                                      !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation
+
+Curve:Biquadratic,
+! DOE-2.1E, COOL-CAP-FT for PTAC w/ SI temps
+  hvac-default Cool Coil Cap-FT,                           !- Name
+  0.942587793,                                             !- Coefficient1 Constant
+  0.009543347,                                             !- Coefficient2 x
+  0.00068377,                                              !- Coefficient3 x**2
+  -0.011042676,                                            !- Coefficient4 y
+  0.000005249,                                             !- Coefficient5 y**2
+  -0.00000972,                                             !- Coefficient6 x*y
+  12.77778,                                                !- Minimum Value of x
+  23.88889,                                                !- Maximum Value of x
+  18.0,                                                    !- Minimum Value of y
+  46.11111;                                                !- Maximum Value of y
+
+Curve:Quadratic,
+! DOE-2.1E, RATED-CCAP-FFLOW for PTAC
+  hvac-default Cool Coil Cap-FF,                           !- Name
+  0.8,                                                     !- Coefficient1 Constant
+  0.2,                                                     !- Coefficient2 x
+  0,                                                       !- Coefficient3 x**2
+  0.5,                                                     !- Minimum Value of x
+  1.5;                                                     !- Maximum Value of x
+
+Curve:Biquadratic,
+! DOE-2.1E, COOL-EIR-FT for PTAC w/ SI temps
+  hvac-default Cool Coil EIR-FT,                           !- Name
+  0.342414409,                                             !- Coefficient1 Constant
+  0.034885008,                                             !- Coefficient2 x
+  -0.0006237,                                              !- Coefficient3 x**2
+  0.004977216,                                             !- Coefficient4 y
+  0.000437951,                                             !- Coefficient5 y**2
+  -0.000728028,                                            !- Coefficient6 x*y
+  12.77778,                                                !- Minimum Value of x
+  23.88889,                                                !- Maximum Value of x
+  18.0,                                                    !- Minimum Value of y
+  46.11111;                                                !- Maximum Value of y
+
+Curve:Quadratic,
+! DOE-2.1E, RATED-CEIR-FFLOW for PTAC
+  hvac-default Cool Coil EIR-FF,                           !- Name
+  1.1552,                                                  !- Coefficient1 Constant
+  -0.1808,                                                 !- Coefficient2 x
+  0.0256,                                                  !- Coefficient3 x**2
+  0.5,                                                     !- Minimum Value of x
+  1.5;                                                     !- Maximum Value of x
+
+Curve:Quadratic,
+! PLF = l.- Cd(1.-PLR) where Cd = 0.15
+  hvac-default Cool Coil PLF,                              !- Name
+  0.85,                                                    !- Coefficient1 Constant
+  0.15,                                                    !- Coefficient2 x
+  0,                                                       !- Coefficient3 x**2
+  0,                                                       !- Minimum Value of x
+  1;                                                       !- Maximum Value of x
+
+OutdoorAir:Node,
+  hvac-default Cooling Coil Condenser Inlet,               !- Name
+  -1;                                                      !- Height Above Ground
+
+Fan:OnOff,
+  hvac-default Supply Fan,                                 !- Name
+  HVACTemplate-Always 1,                                   !- Availability Schedule Name
+  0.7,                                                     !- Fan Efficiency
+  600,                                                     !- Pressure Rise {Pa}
+  autosize,                                                !- Maximum Flow Rate {m3/s}
+  0.9,                                                     !- Motor Efficiency
+  1.0,                                                     !- Motor in Airstream Fraction
+  hvac-default Mixed Air Outlet,                           !- Air Inlet Node Name
+  hvac-default Supply Fan Outlet;                          !- Air Outlet Node Name
+
+OutdoorAir:NodeList,
+  hvac-default Outside Air Inlet;                          !- Node or NodeList Name 1
+
+AirLoopHVAC:OutdoorAirSystem,
+  hvac-default OA System,                                  !- Name
+  hvac-default OA System Controllers,                      !- Controller List Name
+  hvac-default OA System Equipment;                        !- Outdoor Air Equipment List Name
+
+AirLoopHVAC:ControllerList,
+  hvac-default OA System Controllers,                      !- Name
+  Controller:OutdoorAir,                                   !- Controller Object Type
+  hvac-default OA Controller;                              !- Controller Name
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+  hvac-default OA System Equipment,                        !- Name
+  OutdoorAir:Mixer,                                        !- Component Object Type
+  hvac-default OA Mixing Box;                              !- Component Name
+
+OutdoorAir:Mixer,
+  hvac-default OA Mixing Box,                              !- Name
+  hvac-default Mixed Air Outlet,                           !- Mixed Air Node Name
+  hvac-default Outside Air Inlet,                          !- Outside Air Stream Node Name
+  hvac-default Relief Air Outlet,                          !- Relief Air Stream Node Name
+  hvac-default Air Loop Inlet;                             !- Return Air Stream Node Name
+
+SetpointManager:SingleZone:Cooling,
+  hvac-default Economizer Supply Air Temp Manager,         !- Name
+  Temperature,                                             !- Control Variable
+  13,                                                      !- minimum supply air temperature {C}
+  45,                                                      !- maximum supply air temperature {C}
+  Level 1 - Open Office,                                   !- Control Zone Name
+  Level 1 - Open Office Zone Air Node,                     !- Zone Node Name
+  Level 1 - Open Office Supply Inlet,                      !- Zone Inlet Node Name
+  hvac-default Air Loop Outlet;                            !- Setpoint Node or NodeList Name
+
+SetpointManager:MixedAir,
+  hvac-default Cooling Coil Air Temp Manager,              !- Name
+  Temperature,                                             !- Control Variable
+  hvac-default Air Loop Outlet,                            !- Reference Setpoint Node Name
+  hvac-default Mixed Air Outlet,                           !- Fan Inlet Node Name
+  hvac-default Supply Fan Outlet,                          !- Fan Outlet Node Name
+  hvac-default Mixed Air Outlet;                           !- Setpoint Node or NodeList Name
+
+Controller:OutdoorAir,
+  hvac-default OA Controller,                              !- Name
+  hvac-default Relief Air Outlet,                          !- Relief Air Outlet Node Name
+  hvac-default Air Loop Inlet,                             !- Return Air Node Name
+  hvac-default Mixed Air Outlet,                           !- Mixed Air Node Name
+  hvac-default Outside Air Inlet,                          !- Actuator Node Name
+  Autosize,                                                !- Minimum Outdoor Air Flow Rate {m3/s}
+  Autosize,                                                !- Maximum Outdoor Air Flow Rate {m3/s}
+  NoEconomizer,                                            !- Economizer Control Type
+  ModulateFlow,                                            !- Economizer Control Action Type
+  ,                                                        !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+  ,                                                        !- Economizer Maximum Limit Enthalpy {J/kg}
+  ,                                                        !- Economizer Maximum Limit Dewpoint Temperature (C)
+  ,                                                        !- Electronic Enthalpy Limit Curve Name
+  ,                                                        !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+  NoLockout,                                               !- Lockout Type
+  FixedMinimum,                                            !- Minimum Limit Type
+  ,                                                        !- Minimum Outdoor Air Schedule Name
+  ,                                                        !- Minimum Fraction of Outdoor Air Schedule Name
+  ,                                                        !- Maximum Fraction of Outdoor Air Schedule Name
+  ;                                                        !- Mechanical Ventilation Controller Name
+
+Site:GroundTemperature:BuildingSurface,
+  18.0,                                                    !- January Ground Temperature
+  18.0,                                                    !- February Ground Temperature
+  18.0,                                                    !- March Ground Temperature
+  18.0,                                                    !- April Ground Temperature
+  18.0,                                                    !- May Ground Temperature
+  18.0,                                                    !- June Ground Temperature
+  18.0,                                                    !- July Ground Temperature
+  18.0,                                                    !- August Ground Temperature
+  18.0,                                                    !- September Ground Temperature
+  18.0,                                                    !- October Ground Temperature
+  18.0,                                                    !- November Ground Temperature
+  18.0;                                                    !- December Ground Temperature

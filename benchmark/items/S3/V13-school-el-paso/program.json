@@ -1,0 +1,76 @@
+{
+ "id": "V13-school-el-paso",
+ "btype": "school",
+ "city": {
+  "name": "El Paso",
+  "state": "TX",
+  "epw": "USA_TX_El.Paso.Intl.AP.722700_TMY3.epw",
+  "ddy": "USA_TX_El.Paso.Intl.AP.722700_TMY3.ddy",
+  "climate_zone": "3B",
+  "lat": 31.77,
+  "lon": -106.5,
+  "tz": -7.0,
+  "elev": 1186.0,
+  "station": "722700"
+ },
+ "shape": "L",
+ "length": 69.0,
+ "width": 14.0,
+ "wing_length": 15.0,
+ "wing_width": 33.0,
+ "n_floors": 1,
+ "f2f": 4.11,
+ "north_axis": 180.0,
+ "zoning": "per_floor",
+ "perimeter_depth": 4.57,
+ "wwr": {
+  "S": 0.26,
+  "E": 0.34,
+  "N": 0.28,
+  "W": 0.36
+ },
+ "sill": 0.9,
+ "wall": "wall_cmu_ci",
+ "roof": "roof_insulated_deck",
+ "win_u": 2.6,
+ "win_shgc": 0.42,
+ "win_vt": 0.47,
+ "lpd": 7.76,
+ "epd": 6.47,
+ "occ_density": 23.05,
+ "people": null,
+ "activity": 120.0,
+ "hours": {
+  "weekday": [
+   7,
+   16
+  ],
+  "saturday": null,
+  "sunday": null
+ },
+ "infiltration_ach": 0.35,
+ "hvac": "pthp",
+ "heat_sp": 21.0,
+ "cool_sp": 24.0,
+ "heat_setback": 15.6,
+ "cool_setup": 29.4,
+ "cop_cool": 3.29,
+ "cop_heat": 3.3,
+ "party_walls": [],
+ "garage": null,
+ "doors": [
+  "S"
+ ],
+ "year": 2023,
+ "probes": [
+  "orientation",
+  "layers"
+ ],
+ "style": "narrative",
+ "units": "SI",
+ "info_level": "complete",
+ "omitted": [],
+ "notes": {
+  "name": "Building V13"
+ }
+}

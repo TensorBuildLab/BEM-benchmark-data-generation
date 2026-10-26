@@ -1,0 +1,1894 @@
+!-Generator gbxml2idf
+!-Option SortedOrder
+! IDF written by gbxml2idf 0.5 (M4) (no date here: the same input gives the same text)
+! gbXML: output4.assembled.gbxml (sha256 afcce50b557862ec069281626a5fe26145f6cfc5658dbeb4d0465472edb86811)
+! notes: output4.pipeline_notes.xml
+! every object carries its source: stated | derived | assumed | user | reference | EnergyPlus default
+! ---------- Version ----------------------------------------
+
+! source: derived; EnergyPlus 23.1 (the schema in use)
+Version,
+  23.1;
+
+! source: derived; sizing only when an HVAC fragment with sizing objects is inserted (zone and system sizing; plant sizing only when it has Sizing:Plant); the weather-file run period is the simulation
+SimulationControl,
+  Yes,
+  Yes,
+  No,
+  Yes,
+  Yes,
+  ,
+  ;
+
+! source: stated; gbXML: bldg-1; North Axis = CADModelAzimuth of the gbXML; terrain, convergence and warm-up fields are left blank = EnergyPlus defaults
+Building,
+  Office Building,
+  0.0,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ;
+
+! source: EnergyPlus default (schema)
+Timestep,
+  6;
+
+! source: derived; the gbXML polygons are counterclockwise seen from outside, in absolute coordinates
+GlobalGeometryRules,
+  UpperLeftCorner,
+  Counterclockwise,
+  World;
+
+! source: assumed (notes RunPeriod); no year (typical weather); the start day is a Friday as on 2021-01-01
+RunPeriod,
+  Run Period 1,
+  1,
+  1,
+  ,
+  12,
+  31,
+  ,
+  Friday,
+  No,
+  No,
+  No;
+
+! source: derived (notes Holidays); 2021-01-01
+RunPeriodControl:SpecialDays,
+  New Years Day,
+  1/1,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-01-18
+RunPeriodControl:SpecialDays,
+  MLK Day,
+  1/18,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-02-15
+RunPeriodControl:SpecialDays,
+  Presidents Day,
+  2/15,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-05-31
+RunPeriodControl:SpecialDays,
+  Memorial Day,
+  5/31,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-07-04
+RunPeriodControl:SpecialDays,
+  Independence Day,
+  7/4,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-09-06
+RunPeriodControl:SpecialDays,
+  Labor Day,
+  9/6,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-10-11
+RunPeriodControl:SpecialDays,
+  Columbus Day,
+  10/11,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-11-11
+RunPeriodControl:SpecialDays,
+  Veterans Day,
+  11/11,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-11-25
+RunPeriodControl:SpecialDays,
+  Thanksgiving,
+  11/25,
+  1,
+  Holiday;
+
+! source: derived (notes Holidays); 2021-12-25
+RunPeriodControl:SpecialDays,
+  Christmas,
+  12/25,
+  1,
+  Holiday;
+
+! source: stated (gbXML Surface SlabOnGrade); gbXML: surf-sp-main-L1-floor-1
+BuildingSurface:Detailed,
+  surf-sp-main-L1-floor-1,
+  Floor,
+  constr-slab,
+  Level 1 - Open Office,
+  ,
+  Ground,
+  ,
+  NoSun,
+  NoWind,
+  ,
+  4,
+  0.0,
+  25.0,
+  0.0,
+  30.0,
+  25.0,
+  0.0,
+  30.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L1-wall-1
+BuildingSurface:Detailed,
+  surf-sp-main-L1-wall-1,
+  Wall,
+  constr-wall,
+  Level 1 - Open Office,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  0.0,
+  0.0,
+  3.6,
+  0.0,
+  0.0,
+  0.0,
+  30.0,
+  0.0,
+  0.0,
+  30.0,
+  0.0,
+  3.6;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L1-wall-2
+BuildingSurface:Detailed,
+  surf-sp-main-L1-wall-2,
+  Wall,
+  constr-wall,
+  Level 1 - Open Office,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  30.0,
+  0.0,
+  3.6,
+  30.0,
+  0.0,
+  0.0,
+  30.0,
+  25.0,
+  0.0,
+  30.0,
+  25.0,
+  3.6;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L1-wall-3
+BuildingSurface:Detailed,
+  surf-sp-main-L1-wall-3,
+  Wall,
+  constr-wall,
+  Level 1 - Open Office,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  30.0,
+  25.0,
+  3.6,
+  30.0,
+  25.0,
+  0.0,
+  0.0,
+  25.0,
+  0.0,
+  0.0,
+  25.0,
+  3.6;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L1-wall-4
+BuildingSurface:Detailed,
+  surf-sp-main-L1-wall-4,
+  Wall,
+  constr-wall,
+  Level 1 - Open Office,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  0.0,
+  25.0,
+  3.6,
+  0.0,
+  25.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  3.6;
+
+! source: stated (gbXML Surface InteriorFloor); gbXML: surf-sp-main-L2-floor-1
+BuildingSurface:Detailed,
+  surf-sp-main-L2-floor-1,
+  Floor,
+  constr-default-interiorfloor,
+  Level 2 - Open Office,
+  ,
+  Surface,
+  surf-sp-main-L2-floor-1_mirror,
+  NoSun,
+  NoWind,
+  ,
+  4,
+  0.0,
+  25.0,
+  3.6,
+  30.0,
+  25.0,
+  3.6,
+  30.0,
+  0.0,
+  3.6,
+  0.0,
+  0.0,
+  3.6;
+
+! source: stated (gbXML Surface InteriorFloor); gbXML: surf-sp-main-L2-floor-1
+BuildingSurface:Detailed,
+  surf-sp-main-L2-floor-1_mirror,
+  Ceiling,
+  constr-default-interiorfloor_rev,
+  Level 1 - Open Office,
+  ,
+  Surface,
+  surf-sp-main-L2-floor-1,
+  NoSun,
+  NoWind,
+  ,
+  4,
+  0.0,
+  0.0,
+  3.6,
+  30.0,
+  0.0,
+  3.6,
+  30.0,
+  25.0,
+  3.6,
+  0.0,
+  25.0,
+  3.6;
+
+! source: stated (gbXML Surface Roof); gbXML: surf-sp-main-L2-roof-1
+BuildingSurface:Detailed,
+  surf-sp-main-L2-roof-1,
+  Roof,
+  constr-roof,
+  Level 2 - Open Office,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  0.0,
+  0.0,
+  7.2,
+  30.0,
+  0.0,
+  7.2,
+  30.0,
+  25.0,
+  7.2,
+  0.0,
+  25.0,
+  7.2;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L2-wall-1
+BuildingSurface:Detailed,
+  surf-sp-main-L2-wall-1,
+  Wall,
+  constr-wall,
+  Level 2 - Open Office,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  0.0,
+  0.0,
+  7.2,
+  0.0,
+  0.0,
+  3.6,
+  30.0,
+  0.0,
+  3.6,
+  30.0,
+  0.0,
+  7.2;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L2-wall-2
+BuildingSurface:Detailed,
+  surf-sp-main-L2-wall-2,
+  Wall,
+  constr-wall,
+  Level 2 - Open Office,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  30.0,
+  0.0,
+  7.2,
+  30.0,
+  0.0,
+  3.6,
+  30.0,
+  25.0,
+  3.6,
+  30.0,
+  25.0,
+  7.2;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L2-wall-3
+BuildingSurface:Detailed,
+  surf-sp-main-L2-wall-3,
+  Wall,
+  constr-wall,
+  Level 2 - Open Office,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  30.0,
+  25.0,
+  7.2,
+  30.0,
+  25.0,
+  3.6,
+  0.0,
+  25.0,
+  3.6,
+  0.0,
+  25.0,
+  7.2;
+
+! source: stated (gbXML Surface ExteriorWall); gbXML: surf-sp-main-L2-wall-4
+BuildingSurface:Detailed,
+  surf-sp-main-L2-wall-4,
+  Wall,
+  constr-wall,
+  Level 2 - Open Office,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  4,
+  0.0,
+  25.0,
+  7.2,
+  0.0,
+  25.0,
+  3.6,
+  0.0,
+  0.0,
+  3.6,
+  0.0,
+  0.0,
+  7.2;
+
+! source: stated (gbXML Location); time zone derived from the weather file (notes)
+Site:Location,
+  Tucson AZ,
+  32.22174,
+  -110.92648,
+  -7.0,
+  758.0;
+
+! source: reference USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMYx.2011-2025.ddy; used for cooling
+SizingPeriod:DesignDay,
+  Tucson-Davis-Monthan.AFB Ann Clg .4% Condns DB=>MWB,
+  6,
+  21,
+  SummerDesignDay,
+  40.8,
+  16.9,
+  DefaultMultipliers,
+  ,
+  WetBulb,
+  18.6,
+  ,
+  ,
+  ,
+  6.0,
+  91810.0,
+  4.6,
+  310.0,
+  No,
+  No,
+  No,
+  ASHRAETau2017,
+  ,
+  ,
+  0.357,
+  2.321;
+
+! source: reference USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMYx.2011-2025.ddy; used for heating
+SizingPeriod:DesignDay,
+  Tucson-Davis-Monthan.AFB Ann Htg 99.6% Condns DB,
+  12,
+  21,
+  WinterDesignDay,
+  0.1,
+  0.0,
+  DefaultMultipliers,
+  ,
+  WetBulb,
+  0.1,
+  ,
+  ,
+  ,
+  ,
+  91810.0,
+  2.4,
+  140.0,
+  No,
+  No,
+  No,
+  ASHRAEClearSky,
+  ,
+  ,
+  ,
+  ,
+  0.0;
+
+! source: convention (the type limits of the schedule type)
+ScheduleTypeLimits,
+  Fraction,
+  0,
+  1,
+  Continuous,
+  Dimensionless;
+
+! source: assumed; gbXML: sch-lib-office-occupancy; Office Occupancy
+Schedule:Compact,
+  sch-lib-office-occupancy,
+  Fraction,
+  Through: 12/31,
+  For: Monday Tuesday Wednesday Thursday Friday SummerDesignDay,
+  Until: 06:00,
+  0.0,
+  Until: 07:00,
+  0.1,
+  Until: 08:00,
+  0.2,
+  Until: 12:00,
+  0.95,
+  Until: 13:00,
+  0.5,
+  Until: 17:00,
+  0.95,
+  Until: 18:00,
+  0.3,
+  Until: 22:00,
+  0.1,
+  Until: 24:00,
+  0.05,
+  For: Saturday WinterDesignDay,
+  Until: 06:00,
+  0.0,
+  Until: 08:00,
+  0.1,
+  Until: 12:00,
+  0.3,
+  Until: 17:00,
+  0.1,
+  Until: 19:00,
+  0.05,
+  Until: 24:00,
+  0.0,
+  For: Sunday Holiday,
+  Until: 06:00,
+  0.0,
+  Until: 18:00,
+  0.05,
+  Until: 24:00,
+  0.0,
+  For: AllOtherDays,
+  Until: 06:00,
+  0.0,
+  Until: 18:00,
+  0.05,
+  Until: 24:00,
+  0.0;
+
+! source: assumed; gbXML: sch-lib-office-lighting; Office Lighting
+Schedule:Compact,
+  sch-lib-office-lighting,
+  Fraction,
+  Through: 12/31,
+  For: Monday Tuesday Wednesday Thursday Friday SummerDesignDay,
+  Until: 05:00,
+  0.05,
+  Until: 07:00,
+  0.1,
+  Until: 08:00,
+  0.3,
+  Until: 17:00,
+  0.9,
+  Until: 18:00,
+  0.5,
+  Until: 20:00,
+  0.3,
+  Until: 22:00,
+  0.2,
+  Until: 23:00,
+  0.1,
+  Until: 24:00,
+  0.05,
+  For: Saturday WinterDesignDay,
+  Until: 06:00,
+  0.05,
+  Until: 08:00,
+  0.1,
+  Until: 12:00,
+  0.3,
+  Until: 17:00,
+  0.15,
+  Until: 24:00,
+  0.05,
+  For: Sunday Holiday,
+  Until: 24:00,
+  0.05,
+  For: AllOtherDays,
+  Until: 24:00,
+  0.05;
+
+! source: convention (the type limits of the schedule type)
+ScheduleTypeLimits,
+  Temperature,
+  ,
+  ,
+  Continuous,
+  Temperature;
+
+! source: assumed; gbXML: sch-sp-heating-1; Heating setpoint
+Schedule:Compact,
+  sch-sp-heating-1,
+  Temperature,
+  Through: 12/31,
+  For: Monday Tuesday Wednesday Thursday Friday,
+  Until: 06:00,
+  15.56,
+  Until: 19:00,
+  21.11,
+  Until: 24:00,
+  15.56,
+  For: Saturday Sunday Holiday SummerDesignDay,
+  Until: 24:00,
+  15.56,
+  For: WinterDesignDay,
+  Until: 24:00,
+  21.11,
+  For: AllOtherDays,
+  Until: 24:00,
+  15.56;
+
+! source: assumed; gbXML: sch-sp-cooling-1; Cooling setpoint
+Schedule:Compact,
+  sch-sp-cooling-1,
+  Temperature,
+  Through: 12/31,
+  For: Monday Tuesday Wednesday Thursday Friday,
+  Until: 06:00,
+  29.44,
+  Until: 18:00,
+  23.89,
+  Until: 24:00,
+  29.44,
+  For: Saturday Sunday Holiday WinterDesignDay,
+  Until: 24:00,
+  29.44,
+  For: SummerDesignDay,
+  Until: 24:00,
+  23.89,
+  For: AllOtherDays,
+  Until: 24:00,
+  29.44;
+
+! source: convention (the type limits of the schedule type)
+ScheduleTypeLimits,
+  ActivityLevel,
+  0,
+  ,
+  Continuous,
+  ActivityLevel;
+
+! source: derived (PeopleHeatGain of the gbXML Space)
+Schedule:Compact,
+  Activity 120 W,
+  ActivityLevel,
+  Through: 12/31,
+  For: AllDays,
+  Until: 24:00,
+  120;
+
+! source: convention (the type limits of the schedule type)
+ScheduleTypeLimits,
+  OnOff,
+  0,
+  1,
+  Discrete;
+
+! source: stated (constant all year); the infiltration of the gbXML has no schedule
+Schedule:Compact,
+  Always On,
+  OnOff,
+  Through: 12/31,
+  For: AllDays,
+  Until: 24:00,
+  1;
+
+! source: stated (the notes: fan operation continuous); a value above 0 = the fan runs continuously
+Schedule:Compact,
+  HVAC Continuous Fan,
+  OnOff,
+  Through: 12/31,
+  For: AllDays,
+  Until: 24:00,
+  1;
+
+! source: user; gbXML: mat-s1; M14 150mm heavyweight concrete
+Material,
+  mat-s1,
+  MediumRough,
+  0.1524,
+  1.95,
+  2240.0,
+  900.0;
+
+! source: user; gbXML: constr-slab; Concrete slab on grade
+Construction,
+  constr-slab,
+  mat-s1;
+
+! source: derived; gbXML: mat-lib-m01-100mm-brick; M01 100mm brick
+Material,
+  mat-lib-m01-100mm-brick,
+  MediumRough,
+  0.1016,
+  0.89,
+  1920.0,
+  790.0;
+
+! source: derived; gbXML: mat-lib-i02-50mm-insulation-board; I02 50mm insulation board
+Material,
+  mat-lib-i02-50mm-insulation-board,
+  MediumRough,
+  0.0508,
+  0.03,
+  43.0,
+  1210.0;
+
+! source: derived; gbXML: mat-lib-f04-wall-air-space-resistance; F04 Wall air space resistance
+Material:NoMass,
+  mat-lib-f04-wall-air-space-resistance,
+  MediumRough,
+  0.15;
+
+! source: derived; gbXML: mat-lib-g01a-19mm-gypsum-board; G01a 19mm gypsum board
+Material,
+  mat-lib-g01a-19mm-gypsum-board,
+  MediumSmooth,
+  0.019,
+  0.16,
+  800.0,
+  1090.0;
+
+! source: user; gbXML: constr-wall; Brick + insulation + gypsum wall
+Construction,
+  constr-wall,
+  mat-lib-m01-100mm-brick,
+  mat-lib-i02-50mm-insulation-board,
+  mat-lib-f04-wall-air-space-resistance,
+  mat-lib-g01a-19mm-gypsum-board;
+
+! source: derived; gbXML: mat-lib-f16-acoustic-tile; F16 Acoustic tile
+Material,
+  mat-lib-f16-acoustic-tile,
+  MediumSmooth,
+  0.0191,
+  0.06,
+  368.0,
+  590.0;
+
+! source: derived; gbXML: mat-lib-f05-ceiling-air-space-resistance; F05 Ceiling air space resistance
+Material:NoMass,
+  mat-lib-f05-ceiling-air-space-resistance,
+  MediumRough,
+  0.18;
+
+! source: derived; gbXML: mat-lib-m14a-100mm-heavyweight-concrete; M14a 100mm heavyweight concrete
+Material,
+  mat-lib-m14a-100mm-heavyweight-concrete,
+  MediumRough,
+  0.1016,
+  1.95,
+  2240.0,
+  900.0;
+
+! source: user; gbXML: constr-default-interiorfloor; Default InteriorFloor
+Construction,
+  constr-default-interiorfloor,
+  mat-lib-f16-acoustic-tile,
+  mat-lib-f05-ceiling-air-space-resistance,
+  mat-lib-m14a-100mm-heavyweight-concrete;
+
+! source: derived; gbXML: mat-r1; F13 Built-up roofing
+Material,
+  mat-r1,
+  Rough,
+  0.0095,
+  0.16,
+  1120.0,
+  1460.0;
+
+! source: user; gbXML: mat-r2; I03 75mm insulation board
+Material,
+  mat-r2,
+  MediumRough,
+  0.0762,
+  0.03,
+  43.0,
+  1210.0;
+
+! source: derived; gbXML: mat-r3; M14a 100mm heavyweight concrete
+Material,
+  mat-r3,
+  MediumRough,
+  0.1016,
+  1.95,
+  2240.0,
+  900.0;
+
+! source: user; gbXML: constr-roof; Insulated flat roof
+Construction,
+  constr-roof,
+  mat-r1,
+  mat-r2,
+  mat-r3;
+
+! source: user; gbXML: constr-default-interiorfloor; the layers of constr-default-interiorfloor in the opposite order (for the partner surface of an interior pair)
+Construction,
+  constr-default-interiorfloor_rev,
+  mat-lib-m14a-100mm-heavyweight-concrete,
+  mat-lib-f05-ceiling-air-space-resistance,
+  mat-lib-f16-acoustic-tile;
+
+! source: stated (gbXML Space); gbXML: sp-L1-open-office; Space sp-L1-open-office; area and volume are the gbXML values
+Zone,
+  Level 1 - Open Office,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  2700.0,
+  750.0;
+
+! source: stated (gbXML Space); gbXML: sp-L2-open-office; Space sp-L2-open-office; area and volume are the gbXML values
+Zone,
+  Level 2 - Open Office,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  ,
+  2700.0,
+  750.0;
+
+! source: assumed (notes loads_infiltration: the original flow per exterior wall area); gbXML: sp-L1-open-office; gbXML AirChangesPerHour 0.3004 = q x A x 3600 / V with A = 396.00 m2
+ZoneInfiltration:DesignFlowRate,
+  Level 1 - Open Office Infiltration,
+  Level 1 - Open Office,
+  Always On,
+  Flow/ExteriorWallArea,
+  ,
+  ,
+  0.00056896,
+  ,
+  ,
+  ,
+  ,
+  ;
+
+! source: assumed (notes loads_infiltration: the original flow per exterior wall area); gbXML: sp-L2-open-office; gbXML AirChangesPerHour 0.3004 = q x A x 3600 / V with A = 396.00 m2
+ZoneInfiltration:DesignFlowRate,
+  Level 2 - Open Office Infiltration,
+  Level 2 - Open Office,
+  Always On,
+  Flow/ExteriorWallArea,
+  ,
+  ,
+  0.00056896,
+  ,
+  ,
+  ,
+  ,
+  ;
+
+! source: user (mid people_activity_w); gbXML: sp-L1-open-office
+People,
+  Level 1 - Open Office People,
+  Level 1 - Open Office,
+  sch-lib-office-occupancy,
+  People,
+  75.0,
+  ,
+  ,
+  ,
+  ,
+  Activity 120 W;
+
+! source: stated (gbXML Space); gbXML: sp-L1-open-office
+Lights,
+  Level 1 - Open Office Lights,
+  Level 1 - Open Office,
+  sch-lib-office-lighting,
+  Watts/Area,
+  ,
+  8.0,
+  ,
+  ,
+  ,
+  ,
+  ;
+
+! source: stated (gbXML Space); gbXML: sp-L1-open-office
+ElectricEquipment,
+  Level 1 - Open Office Equipment,
+  Level 1 - Open Office,
+  sch-lib-office-occupancy,
+  Watts/Area,
+  ,
+  10.0,
+  ,
+  ,
+  ,
+  ;
+
+! source: user (mid people_activity_w); gbXML: sp-L2-open-office
+People,
+  Level 2 - Open Office People,
+  Level 2 - Open Office,
+  sch-lib-office-occupancy,
+  People,
+  75.0,
+  ,
+  ,
+  ,
+  ,
+  Activity 120 W;
+
+! source: stated (gbXML Space); gbXML: sp-L2-open-office
+Lights,
+  Level 2 - Open Office Lights,
+  Level 2 - Open Office,
+  sch-lib-office-lighting,
+  Watts/Area,
+  ,
+  8.0,
+  ,
+  ,
+  ,
+  ,
+  ;
+
+! source: stated (gbXML Space); gbXML: sp-L2-open-office
+ElectricEquipment,
+  Level 2 - Open Office Equipment,
+  Level 2 - Open Office,
+  sch-lib-office-occupancy,
+  Watts/Area,
+  ,
+  10.0,
+  ,
+  ,
+  ,
+  ;
+
+! source: stated (gbXML Meter); gbXML: meter-electricity
+Output:Meter,
+  Electricity:Facility,
+  Hourly;
+
+! source: stated (gbXML Meter); gbXML: meter-naturalgas
+Output:Meter,
+  NaturalGas:Facility,
+  Hourly;
+
+! source: standard set
+Output:Variable,
+  *,
+  Site Outdoor Air Drybulb Temperature,
+  Hourly;
+
+! source: standard set
+Output:Variable,
+  *,
+  Zone Mean Air Temperature,
+  Hourly;
+
+! source: standard set
+Output:Variable,
+  *,
+  Zone Air Relative Humidity,
+  Hourly;
+
+! source: standard set
+Output:Variable,
+  *,
+  Zone Air System Sensible Heating Energy,
+  Hourly;
+
+! source: standard set
+Output:Variable,
+  *,
+  Zone Air System Sensible Cooling Energy,
+  Hourly;
+
+! source: standard set
+Output:Variable,
+  *,
+  Facility Total Purchased Electricity Energy,
+  Hourly;
+
+! source: standard set
+Output:Table:SummaryReports,
+  AllSummary;
+
+! source: standard set; CommaAndHTML so that eplustbl.csv (read by /energyplus-analyze) and eplustbl.htm are both written
+OutputControl:Table:Style,
+  CommaAndHTML;
+
+! source: standard set; read by /energyplus-sim
+Output:SQLite,
+  SimpleAndTabular;
+
+ThermostatSetpoint:DualSetpoint,
+  Level 1 - Open Office Thermostat Dual SP Control,
+  sch-sp-heating-1,
+  sch-sp-cooling-1;
+
+ThermostatSetpoint:DualSetpoint,
+  Level 2 - Open Office Thermostat Dual SP Control,
+  sch-sp-heating-1,
+  sch-sp-cooling-1;
+
+ScheduleTypeLimits,
+  HVACTemplate Any Number;
+
+Schedule:Compact,
+  HVACTemplate-Always 4,
+  HVACTemplate Any Number,
+  Through: 12/31,
+  For: AllDays,
+  Until: 24:00,
+  4;
+
+ZoneControl:Thermostat,
+  Level 1 - Open Office Thermostat,
+  Level 1 - Open Office,
+  HVACTemplate-Always 4,
+  ThermostatSetpoint:DualSetpoint,
+  Level 1 - Open Office Thermostat Dual SP Control;
+
+DesignSpecification:OutdoorAir,
+  SZ DSOA Level 1 - Open Office,
+  Flow/Area,
+  0.00944,
+  0.000432,
+  0.0;
+
+Sizing:Zone,
+  Level 1 - Open Office,
+  SupplyAirTemperature,
+  12.8,
+  11.11,
+  SupplyAirTemperature,
+  50,
+  ,
+  0.008,
+  0.008,
+  SZ DSOA Level 1 - Open Office,
+  ,
+  ,
+  DesignDay,
+  0,
+  ,
+  ,
+  0,
+  DesignDay,
+  0,
+  ,
+  ,
+  0,
+  SZ DSZAD Level 1 - Open Office;
+
+DesignSpecification:ZoneAirDistribution,
+  SZ DSZAD Level 1 - Open Office,
+  1,
+  1;
+
+ZoneHVAC:EquipmentConnections,
+  Level 1 - Open Office,
+  Level 1 - Open Office Equipment,
+  Level 1 - Open Office Supply Inlet,
+  ,
+  Level 1 - Open Office Zone Air Node,
+  Level 1 - Open Office Return Outlet;
+
+ZoneHVAC:EquipmentList,
+  Level 1 - Open Office Equipment,
+  SequentialLoad,
+  ZoneHVAC:AirDistributionUnit,
+  Level 1 - Open Office ATU,
+  1,
+  1,
+  ,
+  ;
+
+ZoneHVAC:AirDistributionUnit,
+  Level 1 - Open Office ATU,
+  Level 1 - Open Office Supply Inlet,
+  AirTerminal:SingleDuct:ConstantVolume:NoReheat,
+  Level 1 - Open Office CV;
+
+AirTerminal:SingleDuct:ConstantVolume:NoReheat,
+  Level 1 - Open Office CV,
+  ,
+  Level 1 - Open Office Zone Equip Inlet,
+  Level 1 - Open Office Supply Inlet,
+  autosize,
+  ,
+  ;
+
+ZoneControl:Thermostat,
+  Level 2 - Open Office Thermostat,
+  Level 2 - Open Office,
+  HVACTemplate-Always 4,
+  ThermostatSetpoint:DualSetpoint,
+  Level 2 - Open Office Thermostat Dual SP Control;
+
+DesignSpecification:OutdoorAir,
+  SZ DSOA Level 2 - Open Office,
+  Flow/Area,
+  0.00944,
+  0.000432,
+  0.0;
+
+Sizing:Zone,
+  Level 2 - Open Office,
+  SupplyAirTemperature,
+  12.8,
+  11.11,
+  SupplyAirTemperature,
+  50,
+  ,
+  0.008,
+  0.008,
+  SZ DSOA Level 2 - Open Office,
+  ,
+  ,
+  DesignDay,
+  0,
+  ,
+  ,
+  0,
+  DesignDay,
+  0,
+  ,
+  ,
+  0,
+  SZ DSZAD Level 2 - Open Office;
+
+DesignSpecification:ZoneAirDistribution,
+  SZ DSZAD Level 2 - Open Office,
+  1,
+  1;
+
+ZoneHVAC:EquipmentConnections,
+  Level 2 - Open Office,
+  Level 2 - Open Office Equipment,
+  Level 2 - Open Office Supply Inlet,
+  ,
+  Level 2 - Open Office Zone Air Node,
+  Level 2 - Open Office Return Outlet;
+
+ZoneHVAC:EquipmentList,
+  Level 2 - Open Office Equipment,
+  SequentialLoad,
+  ZoneHVAC:AirDistributionUnit,
+  Level 2 - Open Office ATU,
+  1,
+  1,
+  ,
+  ;
+
+ZoneHVAC:AirDistributionUnit,
+  Level 2 - Open Office ATU,
+  Level 2 - Open Office Supply Inlet,
+  AirTerminal:SingleDuct:ConstantVolume:NoReheat,
+  Level 2 - Open Office CV;
+
+AirTerminal:SingleDuct:ConstantVolume:NoReheat,
+  Level 2 - Open Office CV,
+  ,
+  Level 2 - Open Office Zone Equip Inlet,
+  Level 2 - Open Office Supply Inlet,
+  autosize,
+  ,
+  ;
+
+Sizing:System,
+  hvac-default,
+  Sensible,
+  Autosize,
+  1,
+  7,
+  0.008,
+  11,
+  0.008,
+  12.8,
+  50,
+  NonCoincident,
+  No,
+  No,
+  0.008,
+  0.008,
+  DesignDay,
+  0,
+  ,
+  ,
+  ,
+  DesignDay,
+  0,
+  ,
+  ,
+  ,
+  ,
+  ZoneSum,
+  1.0,
+  CoolingDesignCapacity,
+  autosize,
+  ,
+  ,
+  HeatingDesignCapacity,
+  autosize,
+  ,
+  ,
+  OnOff;
+
+AirLoopHVAC,
+  hvac-default,
+  ,
+  hvac-default Availability Managers,
+  autosize,
+  hvac-default Branches,
+  ,
+  hvac-default Air Loop Inlet,
+  hvac-default Return Air Outlet,
+  hvac-default Supply Path Inlet,
+  hvac-default Air Loop Outlet;
+
+BranchList,
+  hvac-default Branches,
+  hvac-default Main Branch;
+
+Branch,
+  hvac-default Main Branch,
+  ,
+  AirLoopHVAC:OutdoorAirSystem,
+  hvac-default OA System,
+  hvac-default Air Loop Inlet,
+  hvac-default Mixed Air Outlet,
+  AirLoopHVAC:UnitaryHeatPump:AirToAir,
+  hvac-default Heat Pump,
+  hvac-default Mixed Air Outlet,
+  hvac-default Air Loop Outlet;
+
+AirLoopHVAC:SupplyPath,
+  hvac-default Supply Path,
+  hvac-default Supply Path Inlet,
+  AirLoopHVAC:ZoneSplitter,
+  hvac-default Zone Splitter;
+
+AirLoopHVAC:ZoneSplitter,
+  hvac-default Zone Splitter,
+  hvac-default Supply Path Inlet,
+  Level 1 - Open Office Zone Equip Inlet,
+  Level 2 - Open Office Zone Equip Inlet;
+
+AirLoopHVAC:ReturnPath,
+  hvac-default Return Path,
+  hvac-default Return Air Outlet,
+  AirLoopHVAC:ZoneMixer,
+  hvac-default Zone Mixer;
+
+AirLoopHVAC:ZoneMixer,
+  hvac-default Zone Mixer,
+  hvac-default Return Air Outlet,
+  Level 1 - Open Office Return Outlet,
+  Level 2 - Open Office Return Outlet;
+
+AvailabilityManagerAssignmentList,
+  hvac-default Availability Managers,
+  AvailabilityManager:NightCycle,
+  hvac-default Availability;
+
+AvailabilityManager:NightCycle,
+  hvac-default Availability,
+  HVACTemplate-Always 1,
+  HVACTemplate-Always 1,
+  StayOff,
+  0.2,
+  FixedRunTime,
+  3600,
+  ;
+
+Schedule:Compact,
+  HVACTemplate-Always 1,
+  HVACTemplate Any Number,
+  Through: 12/31,
+  For: AllDays,
+  Until: 24:00,
+  1;
+
+AirLoopHVAC:UnitaryHeatPump:AirToAir,
+  hvac-default Heat Pump,
+  ,
+  hvac-default Mixed Air Outlet,
+  hvac-default Air Loop Outlet,
+  Autosize,
+  Autosize,
+  Autosize,
+  Level 1 - Open Office,
+  Fan:OnOff,
+  hvac-default Supply Fan,
+  Coil:Heating:DX:SingleSpeed,
+  hvac-default HP Heating Coil,
+  Coil:Cooling:DX:SingleSpeed,
+  hvac-default Cooling Coil,
+  Coil:Heating:Fuel,
+  hvac-default Sup Heat Coil,
+  Autosize,
+  21.0,
+  BlowThrough,
+  HVAC Continuous Fan;
+
+Coil:Heating:DX:SingleSpeed,
+  hvac-default HP Heating Coil,
+  ,
+  Autosize,
+  2.75,
+  autosize,
+  ,
+  ,
+  hvac-default Cooling Coil Outlet,
+  hvac-default Heating Coil Outlet,
+  hvac-default HP Heating Coil Cap-FT,
+  hvac-default HP Heating Coil Cap-FF,
+  hvac-default HP Heating Coil EIR-FT,
+  hvac-default HP Heating Coil EIR-FF,
+  hvac-default HP Heating Coil PLF,
+  hvac-default HP Heating Coil DefrEIR-FT,
+  -8.0,
+  ,
+  5.0,
+  0,
+  0,
+  ReverseCycle,
+  Timed,
+  0.058333,
+  autosize;
+
+Curve:Cubic,
+  hvac-default HP Heating Coil Cap-FT,
+  0.758746,
+  0.027626,
+  0.000148716,
+  0.0000034992,
+  -20.0,
+  20.0;
+
+Curve:Cubic,
+  hvac-default HP Heating Coil Cap-FF,
+  0.84,
+  0.16,
+  0.0,
+  0.0,
+  0.5,
+  1.5;
+
+Curve:Cubic,
+  hvac-default HP Heating Coil EIR-FT,
+  1.19248,
+  -0.0300438,
+  0.00103745,
+  -0.000023328,
+  -20.0,
+  20.0;
+
+Curve:Quadratic,
+  hvac-default HP Heating Coil EIR-FF,
+  1.3824,
+  -0.4336,
+  0.0512,
+  0.0,
+  1.0;
+
+Curve:Quadratic,
+  hvac-default HP Heating Coil PLF,
+  0.75,
+  0.25,
+  0.0,
+  0.0,
+  1.0;
+
+Curve:Biquadratic,
+  hvac-default HP Heating Coil DefrEIR-FT,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  50,
+  0,
+  50;
+
+Coil:Heating:Fuel,
+  hvac-default Sup Heat Coil,
+  ,
+  NaturalGas,
+  0.8,
+  Autosize,
+  hvac-default Heating Coil Outlet,
+  hvac-default Air Loop Outlet,
+  ,
+  0.0,
+  hvac-default Sup Heating Coil PLF-FPLR,
+  0;
+
+Curve:Cubic,
+  hvac-default Sup Heating Coil PLF-FPLR,
+  0.8,
+  0.2,
+  0,
+  0,
+  0,
+  1;
+
+Coil:Cooling:DX:SingleSpeed,
+  hvac-default Cooling Coil,
+  ,
+  Autosize,
+  Autosize,
+  3.0,
+  autosize,
+  ,
+  ,
+  hvac-default Supply Fan Outlet,
+  hvac-default Cooling Coil Outlet,
+  hvac-default Cool Coil Cap-FT,
+  hvac-default Cool Coil Cap-FF,
+  hvac-default Cool Coil EIR-FT,
+  hvac-default Cool Coil EIR-FF,
+  hvac-default Cool Coil PLF,
+  ,
+  0,
+  0,
+  0,
+  0,
+  hvac-default Cooling Coil Condenser Inlet,
+  AirCooled,
+  0,
+  ,
+  0,
+  0,
+  10;
+
+Curve:Biquadratic,
+  hvac-default Cool Coil Cap-FT,
+  0.942587793,
+  0.009543347,
+  0.00068377,
+  -0.011042676,
+  0.000005249,
+  -0.00000972,
+  12.77778,
+  23.88889,
+  18.0,
+  46.11111;
+
+Curve:Quadratic,
+  hvac-default Cool Coil Cap-FF,
+  0.8,
+  0.2,
+  0,
+  0.5,
+  1.5;
+
+Curve:Biquadratic,
+  hvac-default Cool Coil EIR-FT,
+  0.342414409,
+  0.034885008,
+  -0.0006237,
+  0.004977216,
+  0.000437951,
+  -0.000728028,
+  12.77778,
+  23.88889,
+  18.0,
+  46.11111;
+
+Curve:Quadratic,
+  hvac-default Cool Coil EIR-FF,
+  1.1552,
+  -0.1808,
+  0.0256,
+  0.5,
+  1.5;
+
+Curve:Quadratic,
+  hvac-default Cool Coil PLF,
+  0.85,
+  0.15,
+  0,
+  0,
+  1;
+
+OutdoorAir:Node,
+  hvac-default Cooling Coil Condenser Inlet,
+  -1;
+
+Fan:OnOff,
+  hvac-default Supply Fan,
+  HVACTemplate-Always 1,
+  0.7,
+  600,
+  autosize,
+  0.9,
+  1.0,
+  hvac-default Mixed Air Outlet,
+  hvac-default Supply Fan Outlet;
+
+OutdoorAir:NodeList,
+  hvac-default Outside Air Inlet;
+
+AirLoopHVAC:OutdoorAirSystem,
+  hvac-default OA System,
+  hvac-default OA System Controllers,
+  hvac-default OA System Equipment;
+
+AirLoopHVAC:ControllerList,
+  hvac-default OA System Controllers,
+  Controller:OutdoorAir,
+  hvac-default OA Controller;
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+  hvac-default OA System Equipment,
+  OutdoorAir:Mixer,
+  hvac-default OA Mixing Box;
+
+OutdoorAir:Mixer,
+  hvac-default OA Mixing Box,
+  hvac-default Mixed Air Outlet,
+  hvac-default Outside Air Inlet,
+  hvac-default Relief Air Outlet,
+  hvac-default Air Loop Inlet;
+
+SetpointManager:SingleZone:Cooling,
+  hvac-default Economizer Supply Air Temp Manager,
+  Temperature,
+  13,
+  45,
+  Level 1 - Open Office,
+  Level 1 - Open Office Zone Air Node,
+  Level 1 - Open Office Supply Inlet,
+  hvac-default Air Loop Outlet;
+
+SetpointManager:MixedAir,
+  hvac-default Cooling Coil Air Temp Manager,
+  Temperature,
+  hvac-default Air Loop Outlet,
+  hvac-default Mixed Air Outlet,
+  hvac-default Supply Fan Outlet,
+  hvac-default Mixed Air Outlet;
+
+Controller:OutdoorAir,
+  hvac-default OA Controller,
+  hvac-default Relief Air Outlet,
+  hvac-default Air Loop Inlet,
+  hvac-default Mixed Air Outlet,
+  hvac-default Outside Air Inlet,
+  Autosize,
+  Autosize,
+  NoEconomizer,
+  ModulateFlow,
+  ,
+  ,
+  ,
+  ,
+  ,
+  NoLockout,
+  FixedMinimum,
+  ,
+  ,
+  ,
+  ;
+
+Site:GroundTemperature:BuildingSurface,
+  18.0,
+  18.0,
+  18.0,
+  18.0,
+  18.0,
+  18.0,
+  18.0,
+  18.0,
+  18.0,
+  18.0,
+  18.0,
+  18.0;
+
+! source: repair (assumed glazing)
+WindowMaterial:SimpleGlazingSystem,
+  Repair Glazing,
+  2.4,
+  0.35,
+  0.5;
+
+! source: repair
+Construction,
+  Repair Glazing Construction,
+  Repair Glazing;
+
+! source: repair (window sizes assumed)
+FenestrationSurface:Detailed,
+  surf-sp-main-L1-wall-1 Window,
+  Window,
+  Repair Glazing Construction,
+  surf-sp-main-L1-wall-1,
+  ,
+  autocalculate,
+  ,
+  1,
+  4,
+  1.41,
+  0.0,
+  1.9946,
+  1.41,
+  0.0,
+  0.9,
+  29.8,
+  0.0,
+  0.9,
+  29.8,
+  0.0,
+  1.9946;
+
+! source: repair (window sizes assumed)
+FenestrationSurface:Detailed,
+  surf-sp-main-L1-wall-2 Window,
+  Window,
+  Repair Glazing Construction,
+  surf-sp-main-L1-wall-2,
+  ,
+  autocalculate,
+  ,
+  1,
+  4,
+  30.0,
+  1.41,
+  1.8146,
+  30.0,
+  1.41,
+  0.9,
+  30.0,
+  24.8,
+  0.9,
+  30.0,
+  24.8,
+  1.8146;
+
+! source: repair (window sizes assumed)
+FenestrationSurface:Detailed,
+  surf-sp-main-L1-wall-3 Window,
+  Window,
+  Repair Glazing Construction,
+  surf-sp-main-L1-wall-3,
+  ,
+  autocalculate,
+  ,
+  1,
+  4,
+  29.8,
+  25,
+  1.8122,
+  29.8,
+  25,
+  0.9,
+  0.2,
+  25,
+  0.9,
+  0.2,
+  25,
+  1.8122;
+
+! source: repair (window sizes assumed)
+FenestrationSurface:Detailed,
+  surf-sp-main-L1-wall-4 Window,
+  Window,
+  Repair Glazing Construction,
+  surf-sp-main-L1-wall-4,
+  ,
+  autocalculate,
+  ,
+  1,
+  4,
+  0,
+  24.8,
+  1.8146,
+  0,
+  24.8,
+  0.9,
+  0,
+  0.2,
+  0.9,
+  0,
+  0.2,
+  1.8146;
+
+! source: repair (window sizes assumed)
+FenestrationSurface:Detailed,
+  surf-sp-main-L2-wall-1 Window,
+  Window,
+  Repair Glazing Construction,
+  surf-sp-main-L2-wall-1,
+  ,
+  autocalculate,
+  ,
+  1,
+  4,
+  0.2,
+  0,
+  5.5946,
+  0.2,
+  0,
+  4.5,
+  29.8,
+  0,
+  4.5,
+  29.8,
+  0,
+  5.5946;
+
+! source: repair (window sizes assumed)
+FenestrationSurface:Detailed,
+  surf-sp-main-L2-wall-2 Window,
+  Window,
+  Repair Glazing Construction,
+  surf-sp-main-L2-wall-2,
+  ,
+  autocalculate,
+  ,
+  1,
+  4,
+  30,
+  0.2,
+  5.4146,
+  30,
+  0.2,
+  4.5,
+  30,
+  24.8,
+  4.5,
+  30,
+  24.8,
+  5.4146;
+
+! source: repair (window sizes assumed)
+FenestrationSurface:Detailed,
+  surf-sp-main-L2-wall-3 Window,
+  Window,
+  Repair Glazing Construction,
+  surf-sp-main-L2-wall-3,
+  ,
+  autocalculate,
+  ,
+  1,
+  4,
+  29.8,
+  25,
+  5.4122,
+  29.8,
+  25,
+  4.5,
+  0.2,
+  25,
+  4.5,
+  0.2,
+  25,
+  5.4122;
+
+! source: repair (window sizes assumed)
+FenestrationSurface:Detailed,
+  surf-sp-main-L2-wall-4 Window,
+  Window,
+  Repair Glazing Construction,
+  surf-sp-main-L2-wall-4,
+  ,
+  autocalculate,
+  ,
+  1,
+  4,
+  0,
+  24.8,
+  5.4146,
+  0,
+  24.8,
+  4.5,
+  0,
+  0.2,
+  4.5,
+  0,
+  0.2,
+  5.4146;
+
+! source: repair
+Material:NoMass,
+  Repair Door Panel,
+  MediumSmooth,
+  0.33,
+  0.9,
+  0.6,
+  0.6;
+
+! source: repair
+Construction,
+  Repair Door Construction,
+  Repair Door Panel;
+
+! source: repair (stated door; size assumed)
+FenestrationSurface:Detailed,
+  surf-sp-main-L1-wall-1 Repair Door,
+  Door,
+  Repair Door Construction,
+  surf-sp-main-L1-wall-1,
+  ,
+  autocalculate,
+  ,
+  1,
+  4,
+  0.3,
+  0,
+  2.13,
+  0.3,
+  0,
+  0,
+  1.21,
+  0,
+  0,
+  1.21,
+  0,
+  2.13;
+
+! source: repair
+Material:NoMass,
+  Service Door Panel,
+  MediumSmooth,
+  0.33,
+  0.9,
+  0.6,
+  0.6;
+
+! source: repair
+Construction,
+  Service Door Construction,
+  Service Door Panel;
+
+! source: repair (stated door; size assumed)
+FenestrationSurface:Detailed,
+  surf-sp-main-L1-wall-2 Service Door,
+  Door,
+  Service Door Construction,
+  surf-sp-main-L1-wall-2,
+  ,
+  autocalculate,
+  ,
+  1,
+  4,
+  30,
+  0.3,
+  2.13,
+  30,
+  0.3,
+  0,
+  30,
+  1.21,
+  0,
+  30,
+  1.21,
+  2.13;
+
+! source: repair (sizing factors)
+Sizing:Parameters,
+  1.25,
+  1.15;
+

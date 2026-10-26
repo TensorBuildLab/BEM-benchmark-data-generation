@@ -1,0 +1,543 @@
+and roof solar absorptance of 0.6 were assumed. The equivalence of the one-zone model versus the two- zone base case was verified with sensitivity tests using BLAST and SERIRES/SUNCODE. However, model the attic as a separate zone if your software allows it.
+
+2.2.2 Vented Crawl Space
+No attempt was made to describe the vented crawl space as a separate zone. To simulate a vented crawl space, HERS BESTEST only requires the floor to have an exterior film coefficient for "rough" surface texture and zero windspeed (in addition to the floor materials and interior film coefficient). Consistent with ASHRAE Handbook 1993 Fundamentals, vented crawl space air temperature is assumed to equal outdoor air temperature.
+
+2.2.3 Windows
+A great deal of information about the window properties has been provided so that equivalent input for windows will be possible for many programs. The basic properties of the single-pane window, including shading coefficient, solar heat gain coefficient, and thermal resistance, are provided in Table 2-3. Additional information can be found in Figure 2-8, Table 2-6, and Tables 2-12 through 2-14. This information is drawn primarily from the WINDOW 4.1 (WINDOW 4.1, 1994) software for developing detailed glazing properties. For programs that need transmittance or reflectance at other angles of incidence, interpolate between the values of Table 2-14. Where other unspecified data are needed, then values consistent with those quoted will have to be calculated.
+For the base case, total glass and frame areas for each wall can be combined into a single large area for that wall. For later cases where shading is used, the specific window geometry will need to be modeled as closely as possible.
+
+2.2.4 Interior Walls
+The interior walls within the conditioned zone have been included for the purpose of modeling the effect of their mass. They are not intended to divide the conditioned zone into separately controlled zones. The importance of modeling interior wall mass will be more evident in Tier 2 tests when passive solar cases are added to HERS BESTEST.
+
+2.2.5 Infiltration
+Colorado Springs, Colorado is at 6145 ft. altitude, so the density of air is Jess than that at sea-level. If your program does not use barometric pressure from the weather data, or otherwise automatically corrects for the change in air density caused by altitude, then adjust the specified infiltration rates (to yield mass flows equivalent to what would occur at the specified altitude) as shown in Table 2-4. Only use the attic infiltration rate if your software allows that input. Attic infiltration is based on the Cooling and Heating Load Calculation Manual, (McQuiston and Spitler, P. 4.12) for typical ventilation by natural effects. If you need more information about altitude effects on infiltration, see Appendix B.
+
+2.2.6 Internal Loads
+These are non-HVAC related internally generated loads from equipment, lights, people, animals, etc. An hourly internal load schedule for the conditioned zone is specified in Table 2-11. There are no internal loads in the attic. This schedule disaggregates sensible and latent loads. If your software does not analyze latent loads, then leave them out and use only the sensible portion of the internal loads. Aggregate sensible loads are 70% radiative and 30% convective.
+Because internal loads are given only for their effect on heating and cooling load, the equipment fuel type and efficiency associated with generating these loads do not matter.
+
+2.2.7 Combined Radiative and Convective Surface Coefficients
+Combined surface coefficients are denoted in various section drawings throughout Volume 1 as "Interior Film" and "Exterior Film" (e.g., see Figures 2-4 through 2-7). If your program uses combined surface coefficients, then use the information given in Table 2-4 (this information is also included with the detailed material descriptions of Tables 2-6 through 2-10). Because the heating season average windspeed for Colorado Springs, Colorado, is nearly equal to the cooling season average windspeed for Las Vegas, Nevada, the listed exterior surface coefficients apply to both climates.
+If your program does not allow variation of combined surface coefficients or if your program automatically calculates interior and exterior surface convection and radiation in greater detail, then you may ignore this information. See Appendices C and D if you need more information on surface coefficients.
+
+2.2.8 Surface Radiative Properties
+Surface radiative properties are given in Table 2-4. These properties apply to all opaque exterior and interior building surfaces; they are roughly equivalent to medium color paint or a light color roof.
+
+2.2.9 Interior Solar Distribution
+Interior solar distribution is the fraction of transmitted solar radiation incident on specific surfaces in a room. This effect can be significant in passive solar applications. If your program does not calculate this effect internally, then use the interior solar fractions from Table 2-5. The calculation of transmitted solar radiation reflected back out through windows (cavity albedo) is presented in Appendix E. If your program does not allow for variations of interior solar distribution, then disregard.
+
+2.2.10 Mechanical System
+For the base building, obtain only pure load outputs (i.e., assume all equipment including ducts is 100% efficient). The thermostat settings and equipment descriptions below are sufficient for this purpose. This mechanical system only applies to the conditioned zone; it does not apply to the unconditioned attic. Assume the following:
+
+* 100% Convective Air System 
+* The thermostat senses only the air temperature 
+* The thermostat is of the nonproportional type.
+
+2.2.10.1 Thermostat Control Strategies
+Annual thermostat control settings are shown below. Because monthly reference results for an entire year are provided in Volume 2, Section 3, your heating and cooling seasons may be for the entire year or some other reasonable length as designated by your tool. Instructions for using monthly reference results are also provided in Volume 2, Section 3.
+For Colorado Springs, Colorado (heating only) cases: 
+	HEAT = ON IF TEMP < 68°F; COOL = OFF.
+For Las Vegas, Nevada (cooling only) cases: 
+	COOL = ON IF TEMP > 78°F; HEAT = OFF.
+	
+The thermostat is nonproportional in the sense that when the air temperature exceeds the thermostat cooling set-point, the heat extraction rate is assumed to equal the maximum capacity of the cooling equipment. Likewise, when the air temperature drops below the thermostat heating set-point, the heat addition rate equals the maximum capacity of the heating equipment. A proportional thermostat model can be made to approximate a nonproportional thermostat model by setting a very small throttling range (the minimum allowed by your program).
+
+2.2.10.2 Equipment Characteristics
+
+HEATING CAPACITY = 3413 MBtwh (effectively infinite). 
+EFFECTIVE EFFICIENCY = 100%.
+
+COOLING CAPACITY = 3413 MBtwh (effectively infinite). 
+EFFECTIVE EFFICIENCY = 100%.
+
+WASTE HEAT FROM FAN = 0.
+
+The 3413 MBtu/h requirement comes from the english equivalent of 1 MW. If your software does not allow this much capacity, then use the largest system that your software will allow.
+
+## The starting of Figure 2-1
+1. **Dimensions**: 
+   - The length of the building as marked in the image is approximately 57.0 feet.
+   - The width is approximately 27.0 feet.
+   - The height of the wall from the base to the eaves (where the roof starts sloping) is 8 feet.
+The building length is 57'-0", width is 27'-0", and height is 8'-0".
+## The ending of Figure 2-1
+Figure 2-1. Basase building axonometric
+
+## The starting of Figure 2-2
+The image is a detailed floor plan labeled "Case L100A" with specific measurements and placements of structural elements such as windows and doors. Here’s the detailed analysis based on the labeled data:
+- **Overall Layout**: The layout is rectangular, and oriented with the north direction indicated at the top of the image. The external measurements of the layout are approximately 57 feet in width and 27 feet 8 inches in depth.
+- **Rooms and Spaces**: The image does not explicitly delineate individual rooms, but the placement of doors and windows suggests partitioned spaces or potential rooms.
+- **Windows**: Labeled with a "W", these are 3 feet wide by 5 feet high. They are found uniformly distributed along the external walls of the layout. 
+- **Doors**: Identified with a "D", and are solid-core wood doors measuring 3 feet wide by 6 feet 8 inches high. There are two doors shown on the plan; their locations are specified with measurements from nearby structural elements.
+- **Measurement Notations**: The plan uses feet-and-inch notation to specify the distance between architectural elements such as from corner to window or window to door. For instance, starting from the left of the plan:
+  - There are series of windows and doors punctuated by specific measurements like 6’-0” between windows, or 2’-0” between a window and a door.
+- **Document Identification**: At the lower right corner, there's a code "CD0-AH06-A0327301" which likely serves as an identification or reference code for this floor plan within a larger document or architectural project.
+Legend: W = Window (3’ wide x 5’ high)
+D = Solid-core wood door (3’ wide x 6’8” high)
+## The ending of Figure 2-2
+Figure 2-2. Floor plan—Case L100A
+
+## The starting of Figure 2-3
+Key elements noted in the drawing:
+1. **Roof and Elevation**:
+   - There is a slanted roof with a pitch indicated as 4:12.
+   - The highest point on the roof measures 13 feet and 6 inches from the peak to the eave.
+2. **Measurements**:
+   - The building height from the base to the eaves is shown as 8 feet and 0 inches.
+   - The total length of the structure from left to right spans 27 feet.
+   - The vertical measurement in the center of the wall, from the top of the wall up to the lowest point of the roof, is shown as 18 feet and 43 inches.
+   - The separation between the eave and the peak along the slanted line (apparently the main roof inclination) is noted as 14 feet and 23 inches.
+3. **Windows**:
+   - There are two windows represented, both aligned vertically.
+   - Each window is labeled with a height separation of 1 foot and 0 inches in the area between them, and each window has essentially similar designs, noted with respective measurements adjacent.
+   - According to the note beneath the elevation, "All windows located vertically as shown here."
+Note: All windows located vertically as shown here. 
+## The ending of Figure 2-3
+Figure 2-3. East side elevation—Case L100A
+
+## The starting of Figure 2-4
+It depicts a cross-sectional view of an exterior wall, divided into two main sections: the "Insulated Section" and the "Framed Section". The drawing provides a detailed representation of the different layers and components that make up this portion of the wall.
+(Top) Insulated Section (From exterior to interrior): Exterior Film,  Hardboard Siding (7/16"), Fiberboard Sheathing (1/2"), Fiberglass Batt (R-11), Plasterboard (1/2"), Interrior Film.
+(Bottom) Framed Section (From exterior to interrior): Exterior Film,  Hardboard Siding (7/16"), Fiberboard Sheathing (1/2"), 2 x 4 16" (o.c.), Plasterboard (1/2"), Interrior Film.
+## The ending of Figure 2-4
+Figure 2-4. Exterior wall plan section—Case L100A 
+
+## The starting of Figure 2-5
+From the top to the bottom of the diagram:
+1. **Interior Film**: This serves as the interior finish or barrier layer between the indoor living space and the floor structure.
+2. **Carpet with Pad (R-2.08)**: Represents the carpet and its padding, with a mentioned R-value of 2.08, indicating its thermal resistance.
+3. **Plywood (3/4")**: This 3/4 inch thick plywood acts as the main structural element of the flooring.
+4. **Fiberglass Batt (R-11)**: Fiberglass insulation with an R-value of 11, used for thermal insulation between the floor joists.
+5. **Exterior Film (Still Air)**: Below the insulation, this film likely acts as a moisture barrier, facing the crawl space.
+6. **Joists**: The diagram shows floor joists labeled as "2 x 8, 16" o.c." which means that each joist is 2 inches by 8 inches in cross-section and placed with a center-to-center spacing of 16 inches.
+
+Framed Section and Insulated Section over the joists indicate different construction or treatment areas of the floor structure, particularly pointing to where framing and insulation are located.
+Arrow symbols in the crawl space Denote that the crawl space is vented, helping ventilate the space to prevent moisture accumulation.
+## The ending of Figure 2-5
+Figure 2-5. Floor above vented crawl space, section—Case L100A
+
+## The starting of Figure 2-6
+The image illustrates a detailed architectural cross-section view of a ceiling/attic/roof construction commonly found in residential buildings, specifically marked as "Case L100A." The diagram is divided into two main sections showing different components:
+
+1. **Roof Section:**
+   - On the topmost layer, an **Exterior Film** is shown, which likely acts as a weather barrier.
+   - Beneath the exterior film are **Shingles**, which serve as the primary protective and water-proof layer.
+   - Below the shingles is a **Plywood Sheathing** layer, indicated as being 1/2" thick. This serves as the structural base for the shingles.
+   - Below the plywood, the space is identified as **Attic Air**, implying a ventilated attic space.
+
+2. **Ceiling Section:**
+   - The ceiling starts with **2x6** framing members, which are spaced 24 inches on center. These are typical dimensions for roof or ceiling joists in residential construction.
+   - Within the spaces between the framing, **Fiberglass Batt** insulation is installed, with an R-value of 19. This type of insulation is common for reducing heat transfer and increasing energy efficiency.
+   - Below the fiberglass batts, there is a **Plasterboard** depicted as being 1/2" thick. This typically forms the ceiling surface of the room below.
+   - An **Interior Film** is shown directly beneath the plasterboard, which might serve as a vapor barrier to prevent moisture ingress from the living spaces into the insulation.
+
+Additional aspects of the diagram:
+   - The roofing section's angle and overlapping layers suggest a sloped roof design.
+   - The diagram includes two separate labels for sections – one as "Framed Section" and another as "Insulated Section," indicating the designated areas for structural framing and thermal insulation respectively.
+
+This simplistic yet thorough blueprint is useful in understanding the layer-by-layer assembly of a standard residential roof and ceiling construction.
+## The ending of Figure 2-6
+Figure 2-6. Ceiling/attic/roof section—Case L100A
+
+## The starting of Figure 2-7
+(From left to side ): Interior Film, Plasterboard (1/2"), (top) Air Gap (mid)"2 x 4, 16" o.c." (Bottom) Air Gap, Plasterboard (1/2"), Interior Film
+## The ending of Figure 2-7
+Figure 2-7. Interior wall plan section—Case L100A
+
+## The starting of Figure 2-8
+Figure 2-8. Window detail, vertical slider (NFRC AA) with 23%"-wide frame-Case 
+## The ending of Figure 2-8
+Figure 2-8. Window detail, vertical slider (NFRC AA) with 2%”-wide frame—Case L100A
+
+Table 2-3. Building Thermal Summary—Case L100A
+##  (like .csv format split by ",", the first Table 2-3 form (with .csv format) starts)
+       , AREA(ft^2), R(b*f*F/Btu), U(Btu/(h*ft^2*F), UA(Btu/(h*F), HEATCAP(Btu/F) 
+ELEMENT, ,(Note 1), (Note 1}, (Note 1), (Note 2) 
+Exterior Walls (Note 3), 1034, 11.76, 0.085, 87.9, 1383 
+North Windows (Note 4), 90, 0.96, 1.039, 93.5, ,
+East Windows (Note 4), 45, 0.96, 1.039, 46.7, , 
+West Windows (Note 4), 45, 0.96, 1.039, 46.7, ,
+South Windows (Note 4), 90, 0.96, 1.039, 93.5, , 
+Doors,                  40, 3.04, 0.329, 13.2, 62 
+Ceiling/Attic/Roof (Note 5), 1539, 20.48, 0.049, 75.4, 1665 
+Floor (Note 5), 1539, 14.15, 0.071, 108.8, 1471, 
+Infiltration (Note 6) 
+"Colorado Springs, CO", ,  ,  , 118.2 (UA(Btu/(h*F)),
+"Las Vegas, NV", ,  ,  , 136.9 (UA(Btu/(h*F), 
+Interior Walls, 1024, ,  ,  , 1425 (HEATCAP(Btu/F))
+TOTAL BUILDING 6006 Excluding Infiltration, , ,  ,  , 6006 (HEATCAP(Btu/F))
+Excluding Infiltration, , ,  ,  565.5 (UA(Btu/(h*F))
+Including Infiltration (Colorado Springs, CO), , ,  , 683.7 565.5 (UA(Btu/(h*F))
+Including Infiltration (Las Vegas, NV), , ,  ,  702.4 
+##  (the first Table 2-3 form (with .csv format) ends)
+
+WINDOW SUMMARY: SINGLE PANE, ALUMINUM FRAME WITH THERMAL BREAK {Note 7)
+
+##  (like .csv format split by ",", the second Table 2-3 form (with .csv format) starts)
+   ,Area(ft^2), U(Btu/(h*ft^2*F), SHGC (dir. nor.), Trans(dir. nor.), SC
+   ,          , (Note 1), (Note 8}, (Note 9), (Note 10) 
+Glass pane,            10.96, 1.064, 0.857, 0.837, 1.000 
+Aluminum sash with thermal break, 4.04, 0.971,
+Window composite air-air, 15.00, 1.039, 0.670, 0.612, 0.781 
+##  (the second Table 2-3 form (with .csv format) ends)
+
+Note 1: Includes interior and exterior surface coefficients. 
+Note 2: Heat capacity includes building mass within the thermal envelope (e.g., insulation and insulation thickness of structural framing are included, exterior siding and roof/attic mass are excluded). 
+Note 3: Excludes area of windows and doors. ASHRAE framed area fraction of 0.25 is assumed for 2x4 16" O.C. construction. 
+Note 4: Window area and other properties are for glass and frame combined. The accompanying window summary disaggregates glass and frame properties for a single window unit. North and south walls contain six window units each; east and west walls | contain three window units each. 
+Note 5: ASHRAE roof/ceiling framing area fraction of 0.1 applied to both ceiling and floor. 
+Note 6: Infiltration UA = (infiltration mass flow)*(specific heat). Assumes air properties: specific heat = 0.240 Bru/(Ib*F); density = 0,075 Ib/ft^3 at sea level, adjusted for altitude per Appendix B. The following values were used to obtain infiltration UA: 
+
+##  (like .csv format split by ",", the third Table 2-3 form (with .csv format) starts)
+Location, ACH Volume (ft^3), Altitude (ft), UAinf (Bru/(h*F))
+Colo Sprgs (Colorado Springs), 0.67 12312, 6145, 118.2
+Las Vegas, 0.67, 12312, 2178, 136.9
+##  (the third Table 2-3 form (with .csv format) ends)
+
+Note 7: This data summarizes one complete window unit per detailed description of Figure 2-8 and Tables 2-12 through 2-14.
+Note 8: SHGC is the Solar Heat Gain Coefficient that includes the inward flowing fraction of absorbed direct normal 1 solar radiation in addition to direct normal transmittance. For more detail, see ASHRAE 1993 Fundamentals, chp. 27. 
+Note 9: "Trans." is the direct normal transmittance.
+Note 10: Shading coefficient (SC) is the ratio of direct normal SHGC for a specific glazing unit to direct normal SHGC for the WINDOW 4.1 reference glazing unit.
+
+Table 2-4. Other Building Details—Case L100A
+##  (like .csv format split by ",", the first Table 2-4 form (with .csv format) starts)
+                 , Conditioned Zone, , Attic (unconditioned), 
+AIR VOLUME (ft^3), 12312, , 3463,
+INFILTRATION, ACH, CFM, ACH, CFM,
+ HERS w/ automatic altitude adjustment, 0.67, 137.5, 2.4, 138.5 
+ HERS wv site fixed at sea level (Note 1)
+ Colorado Springs, 0.533, 109.4, 1.910, 110.2
+ Las Vegas, 0.618, 126.8, 2.213, 127.7 
+INTERNAL GAINS, Sensible, Latent, Sensible, Latent 
+Daily internal gains (Btu/day)(see Table 2-11 for hourly profile), 56105, 12156, 0, 0 
+##  (the first Table 2-4 form (with .csv format) ends)
+
+##  (like .csv format split by ",", the second Table 2-4 form (with .csv format) starts)
+COMBINED RADIATIVE AND CONVECTIVE SURFACE (FILM) COEFFICIENTS (Note 2), Exterior film U-val (Btu/(h*ft^2*F)), Interior film U-val (Btu/(h*ft^2*F)) 
+Walls and doors, 5.748, 1.460 
+Ceiling, n/a, 1.307 
+Roof, 5.748, 1.330
+Floor above ventilated crawl space, 2.200, 1.307 
+Window, 4.256, 1.460 
+Window frame, 4.256, 1.460 
+SURFACE RADIATIVE PROPERTIES, Exterior, Interior 
+Shortwave (visible and UV) absorptance, 0.6, 0.6 
+Longwave (infrared) emittance, 0.9, 0.9
+##  (the second Table 2-4 form (with .csv format) ends)
+
+Note 1: Appendix B describes the algorithm used for adjusting infiltration rates if your software does not account for variation of air density with altitude (i.e., site fixed at sea level). 
+Note 2: More information about combined surface coefficients is included in Appendices C and D.
+
+2.2.11 Case L100A: Supplementary Tables
+The following data were used for generating reference results. The previous figures and tables summarized, and are based on, the data presented in this section. We expect that many HERS tools will not be able to directly input much of the data in this section (e.g., material densities, specific heats, detailed window optical properties, interior solar fractions, surface coefficients, etc.). However, if your models are capable of receiving this level of detail, then you must use these tables where possible.
+
+Table 2-5. Component Surface Areas and Solar Fractions—Case L100A
+##  (like .csv format split by ",", the first Table 2-5 form (with .csv format) starts)
+ELEMENT, HEIGHT or LENGTH (ft), WIDTH (ft), MULTIPLIER, AREA (ft^2), INSIDE SOLAR FRACTION
+EXTERIOR NORTH/SOUTH WALLS, , , , ,(Note 1)
+Gross Wall, 8.0, 57.0, 1.0, 456.0,
+ Gross Window, 5.0, 3.0, 6.0, 90.0,
+  Window Frame Only, , , ,24.2, 0.0031
+  Door 6.7, 3.0, 1.0, 20.0, 0.0026
+  Net Wall (Note 2), , , , 346.0,
+   Insulated Wall (Note 2), , , , 259.5, 0.0332
+   Framed Wall (Note 2), , , , 86.5, 0.0114 
+EXTERIOR EAST/WEST WALLS, , , , , ,  
+ Gross Wall, 8.0, 27.0, 1.0, 216.0,
+ Gross Window, 5.0, 3.0, 3.0, 45.0,
+  Window Frame Only, , , ,  121, 0.0016
+  Net Wall (Note 2), , , ,  171.0,
+    Insulated Wall (Note 2), , , ,  128.3, 0.0164
+	Framed Wall (Note 2), , , ,  42.8, 0.0055 
+INTERIOR WALLS, , , , , ,  
+ Gross Wall (Note 3), 8.0, 128.0, , 1024.0,
+ Unframed Wall (Note 3), , , ,  921.6, 0.1179
+ Framed Wall (Note 3), , , ,  102.4, 0.0131
+FLOOR/CEILING, , , , , , 
+Gross Floor/Ceiling, 57.0, 27.0, 1.0, 1539.0,
+ Insulated Floor/Ceiling (Note 4), , , ,   1385.1, 0.1772
+ Framed Floor/Ceiling (Note 4), , , ,   153.9, 0.0197 
+ROOF, , , , , , 
+Roof Deck (Note 5), 57.0, 14.2, 2.0, 1622.2, 
+Attic EW Gable (Note 6), 4.5, 27.0, 2.0, 121.5, 
+"TRANSMITTED SOLAR, INTERIOR DISTRIBUTION SUMMARY", , , , , , 
+Total Opaque Interior Surface Area (Note 7), , , ,   6272.7, 0.8024 
+Solar to Air (or low mass furnishings), , , ,  , 0.1750 (Note 8)
+Solar Lost (back out through windows), , , ,  , 0.0226 (Note 9)
+##  (the first Table 2-5 form (with .csv format) ends)
+Note 1: Solar energy transmitted through windows is assumed as distributed to interior opaque surfaces in proportion to their areas. Only the radiation not directly absorbed by lightweight furnishings (assumed to exist only for the purpose of calculating inside solar fraction) or lost back out through windows is distributed to interior opaque surfaces.
+Note 2: Net wall area is gross wal] area less the rough opening areas of the windows and door. Insulated and framed exterior wall sections are defined in Figure 2-4. ASHRAE framed area fraction of 0.25 is assumed for 2x4 16" O.C. construction.
+Note 3: Width is the total length of all interior walls. Framed wall area is assumed to be 10% of gross wall area for 2x4 16" O.C. framing. Only one side of the wall is considered for listed area. This area is multiplied by 2 for determining solar fractions. Solar fractions shown are for just one side of the interior wall.
+Note 4: Insulated and framed floor and ceiling sections are defined in Figures 2-5 and 2-6 respectively. ASHRAE roof/ceiling framing area fraction of 0.1 applied to both ceiling and floor.
+Note 5: The multiplier accounts for both the northward and southward sloped portions of the roof deck.
+Note 6: Gable area is calculated as a triangle. Multiplier accounts for east- and west-facing gable ends.
+Note 7: Total area of just those surfaces to which an inside solar fraction is applied.
+Note 8: Based on the midpoint of the range given by SUNCODE-PC User’s Manual, p. 2-16.
+Note 9: Calculated using the algorithm described in Appendix E.
+
+Table 2-6. Material Descriptions Exterior Wall, Door, and Window—Case L100A
+##  (like .csv format split by ",", the first Table 2-6 form (with .csv format) starts)
+EXTERIOR WALL (inside to outside) ELEMENT, Thickness (in), R (h*ft^2*F/Btu), U (Btu/h*ft^2*F), k (Btu/h*ft*F), DENSITY (lb/ft^3), Cp (Btu/lb*F)
+Int Surf Coef, , 0.685, 1.460, 
+Plasterboard, 0.5, 0.450, 2.222, 0.0926, 50.0, 0.26 
+Fiberglass batt (Note 1), 3.5, 11.000, 0.091, 0.0265, 0.6, 0.20 
+Frame 2x4, 16" O.C. (Note 2), 3.5, 4.373, 0.229, 0.0667, 32.0, 0.33 
+Fiberboard sheathing, 0.5, 1.320, 0.758, 0.0316, 18.0, 0.31 
+'Hardboard siding, 7/16" ', 0.44, 0.670, 1.492, 0.0544, 40.0, 0.28 
+Ext Surf Coef (Note 3), , 0.174, 5.748, 
+'Total air - air, insulated section', 14.299, 0.070, 
+'Total air - air, frame section',  7.672, 0.130 
+'Total air - air, composite section (Note 4)',  11.760, 0.085 
+'Total surf - surf, insulated section',  13.440, 0.074 
+'Total surf - surf, frame section',  6.813, 0.147 
+'Total surf - surf, composite section (Note 5)',  10.901, 0.092 
+DOOR, 
+Solid core door, 1.75, 2.179, 0.459, 0.0669, 32.0, 0.33 
+'Total air - air, door only (Note 6)', , 3.038, 0.329,  
+##  (the first Table 2-6 form (with .csv format) ends)
+
+WINDOW SUMMARY: SINGLE PANE, ALUMINUM FRAME WITH THERMAL BREAK (Note 7) 
+
+##  (like .csv format split by ",", the second Table 2-6 form (with .csv format) starts)
+ELEMENT, Thickness (in), Area (ft^2), R (h*ft^2*F/Btu), U (Btu/h*ft^2*F), SHGC (dir. nor.) (Note 8), Trans (dir. nor.) (Note 9), SC (Note 10)
+'Int surf coef, glass', , , 0.685 1.460, 
+'Int surf coef, frame', , , 0.685 1.460,
+'Glass pane',  0.118, 10.96, 0.020, 49.371, 0.857, 0.837, 1.000 
+'Aluminum sash w/ thermal break', , 4.04, 0.110, 9.096 ,
+'Ext surf coef (Note 11)', , ,  0.235, 4.256, 
+'Window composite air-air', , 15.00, 0.963, 1., 0.670, 0.612, 0.781
+##  (the second Table 2-6 form (with .csv format) ends)
+Note 1: Insulated section only, see Figure 2-4 for section view of wall.
+Note 2: Framed section only, see Figure 2-4 for section view of wall.
+Note 3: 10.7 mph wind speed and brick/rough plaster roughness assumed; see Appendices C and D for more information about exterior film coefficients.
+Note 4: Total composite R-values based on 75% insulated section 25% frame area section per ASHRAE. Thermal properties of windows and doors are not included in this composite calculation.
+Note 5: Total surf-surf composite R-value is the total air-air composite R-value less the resistances due to the film coefficients.
+Note 6: Door has same film coefficients as exterior wall.
+Note 7: This section sammatizes the detailed window description of Tables 2-12 through 2-14. Areas pertain to one complete window unit only (see Figure 2-8). If your software is capable of modeling windows in greater detail than shown here, then use Tables 2-12 through 2-14.
+Note 8: SHGC is the Solar Heat Gain Coefficient, which includes the inward flowing fraction of absorbed direct normal solar radiation in addition to direct normal transmittance. For more detail, see ASHRAE 1993 Fundamentals, chp. 27. 
+Note 9: "Trans." is the direct normal transmittance. 
+Note 10: Shading coefficient (SC) is the ratio of direct normal SHGC for a specific glazing unit to direct normal SHGC for the WINDOW 4.1 reference glazing unit. 
+Note 11; Exterior surface coefficient is the same for both frame and glass: see Appendices C and D for more about exterior film coefficients. 
+
+Table 2-7. Material Descriptions, Floor Over Vented Crawl Space—Case L100A
+##  (like .csv format split by ",", the first Table 2-7 form (with .csv format) starts)
+FLOOR OVER VENTED CRAWL SPACE (inside to outside) ELEMENT, Thickness (in), R (h*ft^2*F/Btu), U (Btu/h*ft^2*F), k (Btu/h*ft*F), DENSITY (lb/ft^3), Cp (Btu/lb*F)
+Int Surf Coef (Note 1), , 0.765, 1.307,
+Carpet w/ fibrous pad (Note 2), ,  2.080, 0.481, , , 0.34 
+Plywood 3/4”, 0.75, 0.937, 1.067, 0.0667, 34.0, 0.29 
+Fiberglass batt (Note 3), 3.5, 11.000, 0.091, 0.0265, 0.6, 0.20 
+'Joists 2x8, 16" O.C. (Note 4)', 3.5, 4.373, 0.229, 0.0667, 32.0, 0.33 
+'Ext Surf Coef (Note 5)', , 0.455, 2.200,
+'Total air-air, insulated section', ,  15.237, 0.066,
+'Total air-air, frame section', ,  8.609, 0.116,
+'Total air-air, composite section (Note 6)', ,  14.148, 0.071,
+Total surf-surf, composite section (Note 7)', ,  12.928, 0.077 ,
+##  (the first Table 2-7 form (with .csv format) ends)
+Note 1: Average of ASHRAE heating and cooling coefficients.
+Note 2: There is not enough information available for modeling thermal mass of carpet.
+Note 3: Insulated section only, see Figure 2-5 for section view of floor.
+Note 4: Framed section only, sec Figure 2-5 for section view of floor. For modeling purposes, thickness is the same as for insulation. remaining length is assumed to be at crawl space temperature and is not considered as thermal mass.
+Note 5: Still air and brick/rough plaster roughness assumed; see Appendix C for exterior film coefficient as a function of windspeed and surface roughness. This coefficient is applied to the 1539 ft^2 floor area.
+Note 6: ASHRAE roof/ceiling framing area fraction of 0.1 applied.
+Note 7: Total air-air composite R-value less the film resistances.
+
+Table 2-8. Material Descriptions, Ceiling, Attic, and Roof—Case L100A
+##  (like .csv format split by ",", the first Table 2-8 form (with .csv format) starts)
+CASE L100: CEILING/ATTIC/ROOF (inside to outside), attic as unconditioned zone (Note 1) ELEMENT, Thickness (in), R (h*ft^2*F/Btu), U (Btu/h*ft^2*F), k (Btu/h*ft*F), DENSITY (lb/ft^3), Cp (Btu/lb*F)
+CEILING (1539 ft^2 total area),
+Int Surf Coef (Note 2), , 0.765, 1.307, 
+Plasterboard, 0.5, 0.450, 2.222, 0.0926, 50.0, 0.26 
+Fiberglass batt (Note 3), 6.25, 19.000, 0.053, 0.0274, 0.6, 0.20
+'Joists 2x6, 24" OC (Note 4)', 55, 6.872, 0.146, 0.0667, 32.0, 0.33
+Int Surf Coef (Note 2), , 0.765 1.307,
+'Total air-air, insulated section', , 20.980 0.048, 
+'Total air-air, framed section', ,  8.852 0.113,
+'Total air-air, composite section (Note 5)', , 18.452 0.054, 
+'Total surf - surf, composite section (Note 5)', ,  16.922 0.059 
+END GABLES (121.5 ft^2 total area),
+'Int Surf Coef', ,   0.685, 1.460,
+'Plywood 1/2”',  0.5, 0.625, 1.601, 0.0667, 34.0, 0.29 
+'Hardboard siding, 7/16"',   0.44, 0.670, 1.492, 0.0544, 40.0, 0.28
+'Ext Surf Coef (Note 6)',  0.174, 5.748,
+'Total air-air', , 2.154 0.464 
+ROOF (1622 ft^2 total area),
+'Int Surf Coef {Note 7)', ,  0.752, 1.330
+'Plywood 1/2"',  0.5, 0.625, 1.601, 0.0667, 34.0, 0.29, 
+'Asphalt shingle 1/4"',  0.25, 0.440, 2.273, 0.0473, 70.0, 0.30 
+'Ext Surf Coef (Note 6)', ,  0.174, 5.748,
+'Total air-air', ,  1.991, 0.502, 
+'Total Roof/Gable UA, surf-surf_(Note 8)': 1711 Btu/(h*F)
+##  (the first Table 2-8 form (with .csv format) ends)
+Nate 1: This table is for modeling the attic as a separate zone. }
+Note 2: Average of ASHRAE heating and cooling coefficients. horizontal surface.
+Note 3: Insulated section only. see Figure 2-6 for section view of ceiling.
+Note 4: Framed section only, see Figure 2-6 for section view of ceiling.
+Note 5: Based on 10% frame area fraction per ASHRAE; applies to temperature difference between room air and attic air.
+  The “Composite surf-surf" R-value is the composite air-air R-value less the two interior film coefficient R-values.
+Note 6: 10.7 mph wind speed and brick/rough plaster roughness assumed; see Appendix C for more about exterior film coefficients.
+Note 7: Average for ASHRAE upward and downward heat flow through sloped surface, interpolated on cosine of roof pitch angic. 
+Note 8: Area weighted sum of plywood and asphalt shingle or wood siding material layers, does not include film coefficients. This value iL used for developing Table 2-9.
+
+Table 2-9. Material Descriptions, Ceiling/Attic/Roof, Attic as Material Layer—Case L100A
+##  (like .csv format split by ",", the first Table 2-9 form (with .csv format) starts)
+COMPOSITE CEILING/ATTIC/ROOF (inside to outside), attic as unconditioned zone (Note 1) ELEMENT, Thickness (in), R (h*ft^2*F/Btu), U (Btu/h*ft^2*F), k (Btu/h*ft*F), DENSITY (lb/ft^3), Cp (Btu/lb*F)
+CEILING/ATTIC AIR (1539 ft^2 total area),
+'Int Surf Coef', , 0.765, 1.307, 
+Plasterboard, 0.5, 0.450, 2.222, 0.0926, 50.0, 0.26 
+Fiberglass batt (Note 1), 6.25, 19,000, 0.053, 0.0274, 0.6, 0.20 
+'Joists 2x6, 24" OC (Note 2)', 5.5, 6.872, 0.146, 0.0667, 32.0, 0.33 
+Attic air space (Note 3), ,  1.550 0.645, 
+ROOF DECK AND GABLE PROPERTIES SCALED TO CEILING AREA, 1539 ft^2 (Note 4),
+'Plywood 1/2"', 0.5, 0.515, 1.940, 0.0808, 41.2, 0.29 
+Hybrid shingle/siding (Note 5), 0.25, 0.384, 2.605, 0.0543, 84.8, 0.30, 
+'Total roof deck/gable, surf-surf (Note 6)', ,   0.899, 1.412, 
+Ext Surf Coef, 0.144, 6.967
+SUMMARY CEILING/ATTIC/ROOF,
+'Total air-air, insulated section', ,  22.808, 0.044, 
+'Total air-air, framed section', ,  10.679, 0.094, 
+'Total composite, air-air (Note 7)', ,  20.482, 0.049, 
+'Total composite, surf-surf (Note 8)', , 19.573, 0.051,
+##  (the first Table 2-9 form (with .csv format) ends)
+Note 1: Insulated section only, see Figure 2-6 for section view of ceiling/attic/roof. 
+Note 2: Framed section only, see Figure 2-6 for section view of ceiling/attic/roof. 
+Note 3: Average winter/summer values for natural ventilation (2.4 ACH), R-19 ceiling insulation, ext abs = 0.6, includes interior films. 
+Note 4: Scaled properties are presented for use with ASHRAE equivalent attic air space R-value. U, R and k are scaled on area, while density and specific heat are scaled on volume (area and thickness). 
+Note 5: This “material” combines roofing and end gable materials into one hybrid layer of material. 
+Note 6: Based on total roof/gable UA, surf-surf calculated in Table 2-8. 
+Note 7: (ceiling interior film coefficient) + (ceiling materials) + (attic as material layer) + (scaled roof deck/gable materials) + (scaled exterior film coefficient). Based on 90% insulated section and 10% frame section per ASHRAE. 
+Note 8: Based on total air-air R-value less R-values of interior film coefficient and scaled exterior film coefficient. hspec4.wk3 d:a59..g97 21-Jul-95
+
+Table 2-10. Material Descriptions, Interior Wall—Case L100A
+##  (like .csv format split by ",", the first Table 2-10 form (with .csv format) starts)
+INTERIOR WALL ELEMENT (Source), Thickness (in), R (h*ft^2*F/Btu), U (Btu/h*ft^2*F), k (Btu/h*ft*F), DENSITY (lb/ft^3), Cp (Btu/lb*F)
+Int Surf Coef, , 0.685, 1.460, 
+Plasterboard, 0.5, 0.450, 2.222, 0.0926, 50.0, 0.26 
+'Frame 2x4, 16" O.C. (Note 1)', 3.5, 4.373, 0.229, 0.0667, 32.0, 0.33 
+Plasterboard, 0.5, 0.450, 2.222, 0.0926, 50.0, 0.26
+Int Surf Coef, ,  0.685, 1.460,
+##  (the first Table 2-10 form (with .csv format) ends) 
+Note 1: Frame 2x4 only applies to 10% of the interior wall area, Remaining area is air space that is disregarded. 
+ 
+Table 2-11. Internal Loads Schedule—Case L100A 
+##  (like .csv format split by ",", the first Table 2-11 form (with .csv format) starts)
+Hour of Day (Note 1), Sensible Load (Btu) (Note2),  Latent Load (Btu) (Note 2)
+1, 1139, 247
+2, 1139, 247
+3, 1139, 247
+4, 1139, 247
+5, 1139, 247
+6, 1903, 412
+7, 2391, 518
+8, 4782, 1036
+9, 2790, 604
+10, 1707, 370
+11, 1707, 370  
+12, 2277, 493 
+13, 1707, 370  
+14, 1424, 308 
+15, 1480, 321 
+16, 1480, 321   
+17, 2164, 469 
+18, 2334, 506
+19, 2505, 543
+20, 3928, 851
+21, 3928, 851 
+22, 4101, 888
+23, 4101, 888 
+24, 3701, 802
+Total, 56105, 12156
+##  (the first Table 2-11 form (with .csv format) ends) 
+Note 1: Hour 1 = the interval from midnight to lam. 
+Note 2: Includes all possible sources of intemal gains: sensible loads are 70% radiative and 30% convective. 
+
+Table 2-12. Gross Window Summary, Single Pane Aluminum Frame with Thermal Break—Case L100A
+##  (like .csv format split by ",", the first Table 2-12 form (with .csv format) starts)
+Property, Value Units, Notes
+GENERAL PROPERTIES,
+Area, gross window, 15.00 ft^2, (Note 1)
+Width, frame, 2.75 in,
+Area, frame, 4.04 ft^2,
+Area, edge of glass (EOG), 3.57 ft^2,
+Area, center of glass (COG), 7.39 ft,
+Area, net glass, 10.96 ft^2, (Area,EOG + Area,COG)
+OPTICAL PROPERTIES,
+'Absorptance, frame', 0.60
+'Transmittance, frame', 0.00
+COG/EOG optical properties, (see Table 2-13), (Note 2)
+'Solar Heat Gain Coefficient (SHGC), gross window', 0.670, (Note 3) 
+'Shading Coefficient (SC), gross window', 0.781, (Note 3) 
+'Dividers, curtains, blinds, and other obstructions in window',  None
+THERMAL PROPERTIES (conductances/resistances include film coefficients),
+'Conductance, frame', 0.971 Btu/(h ft^2 F), Aluminum frame with thermal 
+(R-Value), 1.030 h ft^2 F/Btu, break (Note 4) 
+'Conductance, edge of glass', 1.064 Btu/(h ft^2 F) 
+(R-Value), 0.940 h ft^2 F/Btu, 
+'Conductance, center of glass',  1.064 Btu/(h ft^2 F) 
+(R-Value), 0.940 h ft^2 F/Btu, 
+'Conductance, net glass',  1.064 Btu/(h ft^2 F),  (Note 5)
+(R-Value), 0.940 h ft^2 F/Btu, 
+'Conductance, gross glass',  1.039 Btu/(h ft^2 F),  (Note 6)
+(R-Value), 0.963 h ft^2 F/Btu, 
+COMBINED SURFACE COEFFICIENT CONDUCTANCES,
+'Exterior Surf Coef, glass and frame',  4.256 Biu/(h ft^2 F),  based on output of WINDOW 4.1
+'Interior Surface Coefficient, glass',  1.460 Biu/(h ft^2 F),  based on output of WINDOW 4.1
+'Interior Surface Coefficient, frame',  1.460 Biu/(h ft^2 F),  from ASHRAE
+##  (the first Table 2-12 form (with .csv format) ends) 
+Note 1: Area for one representative window unit. See Fig. 2-8 for a schematic representation of frame, center-of- glass (COG) and edge-of-glass (EOG) areas; dimensions are based on an NFRC size AA vertical slider. Gross window area is the sum of frame, COG and EOG areas.
+Note 2: Edge-of-glass optical properties are the same as the center-of-glass properties. Table 2-14 gives optical properties as a function of incidence angle.
+Note 3: These are the overall window (including COG, EOG, and frame) properties for direct normal solar radiation.
+Note 4: The frame conductance presented here is based on the ASHRAE value for operable 1-pane window with aluminum frame with thermal break adjusted for the exterior surface coefficients also shown in this table. Material properties for dynamic modeling of window frames (density, specific heat, etc.) are not given.
+Note 5: Net glass conductance includes only the COG and EOG portions of the window.
+Note 6: Gross window conductance includes the frame, EOG, and COG portions of the window.
+
+Table 2-13. Glazing Summary, Single Pane Center of Glass Values—Case L100A
+##  (like .csv format split by ",", the first Table 2-13 form (with .csv format) starts)
+Property, Value Units, Notes
+GENERAL PROPERTIES,
+Number of Panes, 1
+Pane Thickness, 0.118 in 
+SINGLE PANE OPTICAL PROP, (Note 1) 
+Transmittance, 0.837 
+Reflectance, 0.075 
+Absorptance, 0.088
+Index of Refraction, 1.5223 
+Extinction Coefficient, 0.7806 /in 
+Solar Heat Gain Coefficient (SHGC), 0.857
+Shading Coefficient (SC), 1.000
+Optical Properties as a Function of Incident Angle (See Table 2-14)
+THERMAL PROPERTIES,
+Conductivity of Glass, 0.520 Btu/(h ft F) 
+Conductance of Glass Pane, 52.881 Btu/(h ft^2 F) 
+(R-Value), 0.019 h ft^2 F/Btu, 
+Exterior Combined Surface Coefficieng, 4.256 Btu/(h ft^2 F)
+(R-Value), 0.235 h ft^2 F/Btu 
+Interior Combined Surface Coef, 1.460 Btu/(h ft^2 F) 
+(R-Value), 0.685 h ft^2 F/Btu 
+U-Value from Interior Air to Ambient Air, 1.064 Btu/(h ft^2 F) 
+(R-Value), 0.940 h ft^2 F/Btu 
+Hemispherical Infra-red Emittance, 0.84 
+Infra-red Transmittance, 0 
+Density of Glass, 154 Ib/ft^3 
+Specific Heat of Glass 0.18 Btu/(Ib F) 
+##  (the first Table 2-13 form (with .csv format) ends) 
+Note 1: Optical properties listed in this table are for direct normal radiation. hspec4. wk3, b:al..f35; 20-Jul-95
+
+Table 2-14. Optical Properties as a Function of Incidence Angle for Single-Pane Glazing—Case L100A
+##  (like .csv format split by ",", the first Table 2-14 form (with .csv format) starts)
+Properties (Notes 1, 2),
+Angle, Trans, Refl, Abs, SHGC 
+0, 0.837, 0.075, 0.088, 0.857
+10, 0.836, 0.075, 0.089, 0.857
+20, 0.835, 0.075, 0.080, 0.856 
+30, 0.830, 0.077, 0.093, 0.852
+40, 0.821, 0.083, 0.097, 0.843 
+50, 0.800, 0.089, 0.104, 0.823 
+60, 0.752, 0.143, 0.105, 0.776 
+70, 0.639, 0.253, 0.108, 0.664 
+80, 0.390, 0.505, 0.105, 0.414 
+90, 0.000, 1.000, 0.000, 0.000 
+Hemis, 0.756, 0.136, 00.98 0.779
+##  (the first Table 2-14 form (with .csv format) ends) 
+Note1: Trans = Transmittace. Refl = Reflectance. Abs = Absorptance. SHGC = Solar Heat Gain Coefficient. Hemis = Hemispherically integrated property.
+Note 2: Output is from WINDOW 4.1 for the following properties at direct normal incidence: transmituance = 0.837, reflectance = 0.075. SHGC accounts for surface coefficients. and is based on windspeed = 10.7 mph.
