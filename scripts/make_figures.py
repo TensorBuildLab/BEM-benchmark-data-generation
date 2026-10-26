@@ -133,7 +133,7 @@ def fig3_s1_matrix():
     order = {"expected": 0, "harness": 1, "direct": 2}
     R.sort(key=lambda r: (r["case"], order[r["candidate"]]))
     gates = ["G0", "G1", "G2", "G3", "G4", "G6"]
-    gnames = ["G0\nrights", "G1\nschema", "G2\nruns", "G3\nplausible", "G4\nconforms", "G6\nleakage"]
+    gnames = ["G0\nrights", "G1\nschema", "G2\nruns", "G3\nplaus.", "G4\nconf.", "G6\nleak."]
     col = {"pass": GOOD, "warn": WARN, "fail": BAD, "skip": NA, "pending": NA}
     n = len(R)
     fig = plt.figure(figsize=(7.2, 0.24 * n + 1.5))
@@ -281,12 +281,12 @@ def fig4_s2_metamorphic():
     base = R[0]["base_value"]
     fig, ax = plt.subplots(figsize=(7.2, 2.6))
     ax.barh(-1, base, color="#7a7a7a", height=0.62)
-    ax.text(base + 1.5, -1, f"{base:.1f}  seed: HERS BESTEST L100A, Colorado Springs", va="center", fontsize=6.8)
+    ax.text(base + 1.5, -1, f"{base:.1f}  seed: curated L100A item, Colorado Springs (TMYx)", va="center", fontsize=6.8)
     for i, m in enumerate(R):
         key = m["variant"].split("l100a-")[1]
         ax.barh(i, m["variant_value"], color=ACCENT if m["holds_on_references"] else BAD, height=0.62)
         arrow_txt = {"decrease": "expected: decrease", "increase": "expected: increase", "similar": "expected: within 10 %"}[m["relation"]["direction"]]
-        ax.text(m["variant_value"] + 1.5, i, f"{m['variant_value']:.1f}  ({arrow_txt}; holds)" if m["holds_on_references"] else f"{m['variant_value']:.1f} ({arrow_txt}; FAILS)",
+        ax.text(m["variant_value"] + 1.5, i, f"{round(m['variant_value'] + 1e-9, 1):.1f}  ({arrow_txt}; holds)" if m["holds_on_references"] else f"{round(m['variant_value'] + 1e-9, 1):.1f} ({arrow_txt}; FAILS)",
                 va="center", fontsize=6.6)
     ax.set_yticks([-1] + list(range(len(R))))
     ax.set_yticklabels(["seed"] + [labels.get(m["variant"].split("l100a-")[1], m["variant"]) for m in R], fontsize=7)
