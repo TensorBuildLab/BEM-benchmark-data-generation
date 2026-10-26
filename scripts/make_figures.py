@@ -298,7 +298,69 @@ def fig5_s2_metamorphic():
     plt.close(fig)
 
 
-FIGS = [fig1_framework, fig2_fact_composition, fig3_s1_matrix, fig4_s3_parity, fig5_s2_metamorphic]
+def graphical_abstract():
+    """Elsevier graphical abstract: 13 x 5 cm aspect, text legible at that size."""
+    W, H = 7.8, 3.0                       # inches; printed at 13 cm wide the fonts scale by 0.66
+    fig = plt.figure(figsize=(W, H))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, W)
+    ax.set_ylim(0, H)
+    ax.axis("off")
+
+    def rbox(x, y, w, h, fc="white", ec="#555555", lw=1.0):
+        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.02,rounding_size=0.06", fc=fc, ec=ec, lw=lw))
+
+    def head(x, y, s):
+        ax.text(x, y, s, ha="left", va="top", fontsize=11.5, weight="bold", color=INK)
+
+    def arr(x1, y1, x2, y2):
+        ax.annotate("", (x2, y2), (x1, y1), arrowprops=dict(arrowstyle="-|>", color=QUIET, lw=1.3, mutation_scale=11))
+
+    # column 1: four sources
+    head(0.12, 2.9, "Four sources")
+    srcs = [("S1", "everyday BEM work"), ("S2", "derived from seeds"), ("S3", "virtual, with probes"),
+            ("S4", "repair, round trip, ...")]
+    for i, (k, t) in enumerate(srcs):
+        y = 2.22 - i * 0.56
+        rbox(0.12, y, 2.2, 0.44)
+        ax.text(0.22, y + 0.22, k, ha="left", va="center", fontsize=11, weight="bold", color=ACCENT)
+        ax.text(0.62, y + 0.22, t, ha="left", va="center", fontsize=9.6, color=INK)
+        arr(2.36, y + 0.22, 2.58, 1.6)
+
+    # column 2: QA gates
+    head(2.62, 2.9, "Same QA for all")
+    rbox(2.62, 0.62, 1.86, 2.04, fc="#f4f4f4", ec="#888888")
+    gates = ["G0  rights", "G1  schema", "G2  runs", "G3  plausibility", "G4  fits documents",
+             "G5  determinacy", "G6  leakage", "G7  expert review"]
+    for i, g in enumerate(gates):
+        bold = g.startswith("G4")
+        ax.text(2.72, 2.47 - i * 0.235, g, ha="left", va="center", fontsize=9.4, color=BAD if bold else INK,
+                weight="bold" if bold else "normal")
+    arr(4.52, 1.6, 4.72, 1.6)
+
+    # column 3: the item and its grading
+    head(4.76, 2.9, "End-to-end item")
+    rbox(4.76, 1.14, 2.92, 1.52, fc="#e8f0fa", ec=ACCENT, lw=1.4)
+    ax.text(4.88, 2.47, "documents  →  EnergyPlus IDF", ha="left", va="center", fontsize=10.2, weight="bold", color=INK)
+    for i, s in enumerate(["ground truth = fact sheet, not one IDF",
+                           "each fact: stated, derived, provided,", "constrained by code, or assumed",
+                           "score = share of determined facts met"]):
+        ax.text(4.88, 2.17 - i * 0.25, s, ha="left", va="center", fontsize=9.2, color=INK)
+
+    # findings strip
+    rbox(4.76, 0.08, 2.92, 0.9, fc="white", ec=BAD, lw=1.2)
+    for i, s in enumerate(["4 of 4 supplied reference models", "contradicted their own documents",
+                           "52 open items, code and QA records"]):
+        ax.text(4.88, 0.8 - i * 0.26, s, ha="left", va="center", fontsize=9.4, color=BAD if i < 2 else INK,
+                weight="bold" if i < 2 else "normal")
+    ax.text(2.62, 0.3, "github.com/TensorBuildLab/\nBEM-benchmark-data-generation", ha="left", va="center",
+            fontsize=8.2, color=QUIET)
+    fig.savefig(OUT / "graphical_abstract.png", dpi=400)
+    fig.savefig(OUT / "graphical_abstract.pdf")
+    plt.close(fig)
+
+
+FIGS = [fig1_framework, fig2_fact_composition, fig3_s1_matrix, fig4_s3_parity, fig5_s2_metamorphic, graphical_abstract]
 
 if __name__ == "__main__":
     only = sys.argv[1:]
