@@ -1,0 +1,212 @@
+{
+ "annual": {
+  "P01-lupton-free-floating@harness": {
+   "heating_gj": 0,
+   "cooling_gj": 0,
+   "site_energy_gj": 26.1,
+   "internal_gains_gj": 37.69678830998636,
+   "unmet_occupied_heating_h": 0.0,
+   "unmet_occupied_cooling_h": 0.0
+  },
+  "P02-lupton-heat-pump@harness": {
+   "heating_gj": 69.53,
+   "cooling_gj": 1.46,
+   "site_energy_gj": 103.67,
+   "internal_gains_gj": 37.89463847173745,
+   "unmet_occupied_heating_h": 17.0,
+   "unmet_occupied_cooling_h": 0.0
+  },
+  "P03-office-minimal@harness": {
+   "heating_gj": 19.009999999999998,
+   "cooling_gj": 84.28,
+   "site_energy_gj": 376.77,
+   "internal_gains_gj": 233.5608874507627,
+   "unmet_occupied_heating_h": 461.0,
+   "unmet_occupied_cooling_h": 809.0
+  },
+  "P04-office-narrative@harness": {
+   "heating_gj": 18.18,
+   "cooling_gj": 69.75,
+   "site_energy_gj": 423.1,
+   "internal_gains_gj": 418.98168,
+   "unmet_occupied_heating_h": 174.0,
+   "unmet_occupied_cooling_h": 1766.0
+  },
+  "P05-tract-house-plan@harness": {
+   "heating_gj": 10.28,
+   "cooling_gj": 4.26,
+   "site_energy_gj": 47.19,
+   "internal_gains_gj": 33.83535370616337,
+   "unmet_occupied_heating_h": 23.33,
+   "unmet_occupied_cooling_h": 224.17
+  },
+  "P06-iunit@direct": {
+   "heating_gj": 0,
+   "cooling_gj": 0,
+   "site_energy_gj": null,
+   "internal_gains_gj": null,
+   "unmet_occupied_heating_h": null,
+   "unmet_occupied_cooling_h": null
+  },
+  "P06-iunit@expected": {
+   "heating_gj": 2.31,
+   "cooling_gj": 0.04,
+   "site_energy_gj": 6.92,
+   "internal_gains_gj": 4.593448453247498,
+   "unmet_occupied_heating_h": 87.0,
+   "unmet_occupied_cooling_h": 0.0
+  },
+  "P06-iunit@harness": {
+   "heating_gj": 1.54,
+   "cooling_gj": 0.03,
+   "site_energy_gj": 3.48,
+   "internal_gains_gj": 2.4283631214028643,
+   "unmet_occupied_heating_h": 119.0,
+   "unmet_occupied_cooling_h": 0.17
+  },
+  "P07-ce-building-72@harness": {
+   "heating_gj": 891.58,
+   "cooling_gj": 1735.57,
+   "site_energy_gj": 3277.9,
+   "internal_gains_gj": 1104.859360386426,
+   "unmet_occupied_heating_h": 0.0,
+   "unmet_occupied_cooling_h": 0.0
+  },
+  "P08-bestest-l100a-cos@direct": {
+   "heating_gj": 58.15,
+   "cooling_gj": 0,
+   "site_energy_gj": 58.15,
+   "internal_gains_gj": 26.287040072894467,
+   "unmet_occupied_heating_h": 0.0,
+   "unmet_occupied_cooling_h": 0.0
+  },
+  "P08-bestest-l100a-cos@expected": {
+   "heating_gj": 51.41,
+   "cooling_gj": 16.57,
+   "site_energy_gj": 94.26,
+   "internal_gains_gj": 26.2869988332286,
+   "unmet_occupied_heating_h": 0.0,
+   "unmet_occupied_cooling_h": 0.0
+  },
+  "P08-bestest-l100a-cos@harness": {
+   "heating_gj": 53.39,
+   "cooling_gj": 0,
+   "site_energy_gj": 79.68,
+   "internal_gains_gj": 26.28800298523171,
+   "unmet_occupied_heating_h": 0.0,
+   "unmet_occupied_cooling_h": 0.0
+  },
+  "P09-bestest-l100a-lv@direct": {
+   "heating_gj": 0,
+   "cooling_gj": 60.94,
+   "site_energy_gj": 60.94,
+   "internal_gains_gj": 26.287040072894467,
+   "unmet_occupied_heating_h": 0.0,
+   "unmet_occupied_cooling_h": 0.0
+  },
+  "P09-bestest-l100a-lv@expected": {
+   "heating_gj": 14.27,
+   "cooling_gj": 61.75,
+   "site_energy_gj": 102.3,
+   "internal_gains_gj": 26.2869988332286,
+   "unmet_occupied_heating_h": 0.0,
+   "unmet_occupied_cooling_h": 0.0
+  },
+  "P09-bestest-l100a-lv@harness": {
+   "heating_gj": 0,
+   "cooling_gj": 62.36,
+   "site_energy_gj": 88.65,
+   "internal_gains_gj": 26.28800298523171,
+   "unmet_occupied_heating_h": 0.0,
+   "unmet_occupied_cooling_h": 0.0
+  },
+  "P10-nist-nzertf@direct": {
+   "heating_gj": 7.64,
+   "cooling_gj": 4.65,
+   "site_energy_gj": 52.78,
+   "internal_gains_gj": 41.14602506673539,
+   "unmet_occupied_heating_h": 0.0,
+   "unmet_occupied_cooling_h": 0.0
+  },
+  "P10-nist-nzertf@expected": {
+   "heating_gj": 5.62,
+   "cooling_gj": 6.66,
+   "site_energy_gj": 30.44,
+   "internal_gains_gj": 19.6435176266258,
+   "unmet_occupied_heating_h": 852.0,
+   "unmet_occupied_cooling_h": 2570.0
+  },
+  "P10-nist-nzertf@harness": {
+   "heating_gj": 0.26,
+   "cooling_gj": 10.64,
+   "site_energy_gj": 84.97,
+   "internal_gains_gj": 70.68966845799231,
+   "unmet_occupied_heating_h": 461.5,
+   "unmet_occupied_cooling_h": 4393.53
+  }
+ },
+ "vs_expected": {
+  "P06-iunit@direct": {
+   "heating_gj": -1.0,
+   "cooling_gj": -1.0,
+   "site_energy_gj": null,
+   "internal_gains_gj": null
+  },
+  "P06-iunit@harness": {
+   "heating_gj": -0.3333333333333333,
+   "cooling_gj": -0.25000000000000006,
+   "site_energy_gj": -0.49710982658959535,
+   "internal_gains_gj": -0.47134203287161114
+  },
+  "P08-bestest-l100a-cos@direct": {
+   "heating_gj": 0.13110289826881935,
+   "cooling_gj": -1.0,
+   "site_energy_gj": -0.38308932739231916,
+   "internal_gains_gj": 1.5688236655301915e-06
+  },
+  "P08-bestest-l100a-cos@harness": {
+   "heating_gj": 0.03851390780003898,
+   "cooling_gj": -1.0,
+   "site_energy_gj": -0.15467854869509864,
+   "internal_gains_gj": 3.819956813934397e-05
+  },
+  "P09-bestest-l100a-lv@direct": {
+   "heating_gj": -1.0,
+   "cooling_gj": -0.013117408906882629,
+   "site_energy_gj": -0.4043010752688172,
+   "internal_gains_gj": 1.5688236655301915e-06
+  },
+  "P09-bestest-l100a-lv@harness": {
+   "heating_gj": -1.0,
+   "cooling_gj": 0.009878542510121449,
+   "site_energy_gj": -0.13343108504398818,
+   "internal_gains_gj": 3.819956813934397e-05
+  },
+  "P10-nist-nzertf@direct": {
+   "heating_gj": 0.3594306049822063,
+   "cooling_gj": -0.3018018018018018,
+   "site_energy_gj": 0.7339027595269382,
+   "internal_gains_gj": 1.0946362993033396
+  },
+  "P10-nist-nzertf@harness": {
+   "heating_gj": -0.9537366548042705,
+   "cooling_gj": 0.5975975975975977,
+   "site_energy_gj": 1.7913929040735874,
+   "internal_gains_gj": 2.598625755408289
+  }
+ },
+ "specified_mode": {
+  "P08-bestest-l100a-cos": {
+   "metric": "heating_gj",
+   "harness": 53.39,
+   "expected": 51.41,
+   "difference": 0.03851390780003898
+  },
+  "P09-bestest-l100a-lv": {
+   "metric": "cooling_gj",
+   "harness": 62.36,
+   "expected": 61.75,
+   "difference": 0.009878542510121449
+  }
+ }
+}

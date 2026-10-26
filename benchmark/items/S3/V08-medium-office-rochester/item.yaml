@@ -38,7 +38,7 @@ weather:
   source: NREL TMY3 (via openstudio-standards)
 tags:
   probes:
-  - code_lpd
+  - code_lookup
   - layers
   units: IP
   style: spec

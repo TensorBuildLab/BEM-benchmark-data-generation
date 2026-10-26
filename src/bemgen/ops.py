@@ -339,3 +339,88 @@ def set_glazing(idf: IDF, u: float, shgc: float, vt: float, name: str = "Retrofi
             o.fields[3] = ""
         n += 1
     return Change("set_glazing", "fenestration", f"{n} windows to U {u}, SHGC {shgc}, VT {vt}")
+
+
+
+HVAC_CLASSES = ["AirLoopHVAC*", "Coil:*", "Fan:*", "Controller:*", "AvailabilityManager*", "SetpointManager:*",
+                "OutdoorAir:Mixer", "OutdoorAir:NodeList", "NodeList", "Branch", "BranchList", "Connector:*",
+                "ConnectorList", "ZoneHVAC:*", "AirTerminal:*", "Sizing:System", "Sizing:Zone",
+                "DesignSpecification:OutdoorAir", "DesignSpecification:ZoneAirDistribution"]
+
+
+def one_system_per_zone(idf: IDF, oa_per_area: float = 0.000432, supplemental: str = "Gas") -> Change:
+    """Replace the air-side HVAC with one packaged single-zone heat pump per thermostat-controlled zone.
+
+    Repairs a common defect: one single-zone unitary system, controlled from one zone, serving several
+    zones, so that the other zones are never controlled. The model's own ZoneControl:Thermostat objects
+    are kept (the templates get no thermostat of their own) and the rated COPs of the removed DX coils
+    are carried over, so only the system layout changes.
+    """
+    from .schema import get_schema
+    S = get_schema("23.1")
+
+    def cop(cls, default):
+        for o in idf.by_class(cls):
+            fields = S._layout(o.cls)[1]
+            for k in ("gross_rated_cooling_cop", "gross_rated_heating_cop"):
+                if k in fields:
+                    v = _f(o.get(fields.index(k)), None)
+                    if v:
+                        return v
+        return default
+    cop_c = cop("Coil:Cooling:DX:SingleSpeed", 3.0)
+    cop_h = cop("Coil:Heating:DX:SingleSpeed", 2.75)
+    zones = [o.get(1) for o in idf.by_class("ZoneControl:Thermostat")]
+    removed = [o for o in idf.by_class(*HVAC_CLASSES)]
+    # an earlier template expansion left objects named "HVACTemplate..."; the new templates would
+    # create the same names, so rename them (and every reference to them) first
+    ren = {o.name.upper(): "Model" + o.name[len("HVACTemplate"):] for o in idf
+           if o not in removed and o.fields and o.name.upper().startswith("HVACTEMPLATE")}
+    for o in idf:
+        o.fields = [ren.get(str(v).strip().upper(), v) for v in o.fields]
+    for o in removed:
+        idf.remove(o)
+
+    def add(cls, **kw):
+        fields = S._layout(cls)[1]
+        vals = [""] * len(fields)
+        for k, v in kw.items():
+            vals[fields.index(k)] = v
+        while vals and vals[-1] == "":
+            vals.pop()
+        return idf.add(cls, vals, "! source: repair (one packaged heat pump per zone)")
+    for zn in zones:
+        sysname = f"{zn} PSZ-HP"
+        add("HVACTemplate:Zone:Unitary", zone_name=zn, template_unitary_system_name=sysname,
+            template_thermostat_name="", supply_air_maximum_flow_rate="autosize",
+            outdoor_air_method="Flow/Area", outdoor_air_flow_rate_per_zone_floor_area=oa_per_area)
+        add("HVACTemplate:System:UnitaryHeatPump:AirToAir", name=sysname, control_zone_or_thermostat_location_name=zn,
+            cooling_supply_air_flow_rate="autosize", heating_supply_air_flow_rate="autosize",
+            supply_fan_placement="BlowThrough", supply_fan_total_efficiency=0.6, supply_fan_delta_pressure=500,
+            supply_fan_motor_efficiency=0.9, cooling_coil_type="SingleSpeedDX", cooling_design_supply_air_temperature=12.8,
+            cooling_coil_gross_rated_total_capacity="autosize", cooling_coil_gross_rated_sensible_heat_ratio="autosize",
+            cooling_coil_gross_rated_cop=cop_c, heat_pump_heating_coil_type="SingleSpeedDXHeatPump",
+            heating_design_supply_air_temperature=45, heat_pump_heating_coil_gross_rated_capacity="autosize",
+            heat_pump_heating_coil_rated_cop=cop_h, heat_pump_heating_minimum_outdoor_dry_bulb_temperature=-8,
+            supplemental_heating_coil_type=supplemental, supplemental_heating_coil_capacity="autosize",
+            maximum_outdoor_air_flow_rate="autosize", minimum_outdoor_air_flow_rate="autosize",
+            economizer_type="NoEconomizer")
+    return Change("one_system_per_zone", "hvac",
+                  f"one heat pump controlled from one zone served {len(zones)} zones; replaced by one packaged heat pump "
+                  f"per zone (COP {cop_c:g} cooling, {cop_h:g} heating, {supplemental.lower()} supplemental heat kept); "
+                  f"{len(removed)} HVAC objects removed", zones)
+
+
+def set_lighting_density(idf: IDF, w_m2: float, why: str = "") -> Change:
+    """Set every Lights object to a lighting power density in W/m2 of zone floor area."""
+    ls = idf.by_class("Lights")
+    for o in ls:
+        while len(o.fields) < 7:
+            o.fields.append("")
+        o.fields[3] = "Watts/Area"
+        o.fields[4] = ""
+        o.fields[5] = str(w_m2)
+        o.fields[6] = ""
+        o.comment = "! source: repair (lighting power density" + (f"; {why}" if why else "") + ")"
+    return Change("set_lighting_density", "loads", f"lighting power density set to {w_m2:g} W/m2 in {len(ls)} Lights objects"
+                  + (f" ({why})" if why else ""), [o.name for o in ls])

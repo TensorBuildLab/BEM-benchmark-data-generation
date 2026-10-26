@@ -56,6 +56,13 @@ curation:
     description: added a 0.91 x 2.13 m door on the E facade
     objects:
     - surf-sp-main-L1-wall-2 Service Door
+  - op: one_system_per_zone
+    facet: hvac
+    description: one heat pump controlled from one zone served 2 zones; replaced by one packaged heat pump per zone
+      (COP 3 cooling, 2.75 heating, gas supplemental heat kept); 37 HVAC objects removed
+    objects:
+    - Level 1 - Open Office
+    - Level 2 - Open Office
   - op: add_sizing_factors
     facet: hvac
     description: sizing factors heating 1.25, cooling 1.15
@@ -64,3 +71,5 @@ curation:
 assumptions:
   windows: 'located but not dimensioned: WWR 0.30 south, 0.25 elsewhere; double pane U 2.4, SHGC 0.35'
   doors: 0.91 x 2.13 m main entrance (south) and service door (east)
+  hvac: one packaged heat pump per floor (the candidate had one heat pump, controlled from level 1, serving both
+    floors)

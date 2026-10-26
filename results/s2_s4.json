@@ -195,7 +195,7 @@
     "G3": "skip",
     "G4": "skip",
     "G5": "pass",
-    "G6": "warn",
+    "G6": "pass",
     "G7": "pending"
    },
    "conformance": null,
@@ -205,9 +205,9 @@
    "unverified": [],
    "n_findings": {
     "blocking": 0,
-    "major": 7,
-    "minor": 0,
-    "info": 3
+    "major": 4,
+    "minor": 1,
+    "info": 4
    }
   },
   {
@@ -231,7 +231,7 @@
    "unverified": [],
    "n_findings": {
     "blocking": 0,
-    "major": 2,
+    "major": 1,
     "minor": 1,
     "info": 3
    }
@@ -247,7 +247,7 @@
     "G3": "skip",
     "G4": "skip",
     "G5": "pass",
-    "G6": "warn",
+    "G6": "pass",
     "G7": "pending"
    },
    "conformance": null,
@@ -257,8 +257,8 @@
    "unverified": [],
    "n_findings": {
     "blocking": 0,
-    "major": 6,
-    "minor": 1,
+    "major": 0,
+    "minor": 6,
     "info": 3
    }
   },
@@ -273,7 +273,7 @@
     "G3": "skip",
     "G4": "skip",
     "G5": "pass",
-    "G6": "warn",
+    "G6": "pass",
     "G7": "pending"
    },
    "conformance": null,
@@ -283,8 +283,8 @@
    "unverified": [],
    "n_findings": {
     "blocking": 0,
-    "major": 6,
-    "minor": 1,
+    "major": 0,
+    "minor": 6,
     "info": 3
    }
   },

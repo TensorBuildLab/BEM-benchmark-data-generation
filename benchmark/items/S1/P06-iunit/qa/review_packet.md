@@ -23,8 +23,8 @@ Confirm each fact against the input documents and the reference model. Mark Agre
 | roof-u | derived | envelope | roof layers (Table 2) give U = 0.0515 W/m2K without films | Project 1_Description_V6.pdf (Table 2) | 0.051 | |
 | floor-u | derived | envelope | floor layers (Table 1) give U = 0.124 W/m2K without films | Project 1_Description_V6.pdf (Table 1) | 0.124 | |
 | people | stated | loads | on average two persons in the iUnit during business hours | Project 1_Description_V6.pdf (s2.4.1) | 2.0 | |
-| hours | derived | schedules | lights follow business hours (Mon-Thu 8-17, Fri 8-16): 712 h in the run period | Project 1_Description_V6.pdf (s2.4.2) | 743.084 | |
-| lpd | constrained | loads | lighting assumed per ASHRAE for a dwelling unit: 3-11 W/m2 | Project 1_Description_V6.pdf (s2.4.2) | 19.48 | |
+| hours | derived | schedules | lights follow business hours (Mon-Thu 8-17, Fri 8-16): 712 h in the run period | Project 1_Description_V6.pdf (s2.4.2) | 745.7988 | |
+| lpd | constrained | loads | lighting assumed per ASHRAE for a dwelling unit: 3-11 W/m2 | Project 1_Description_V6.pdf (s2.4.2) | 7.0 | |
 | equip | derived | loads | equipment design level = maximum of Appendix C = 149 W | Project 1_Description_V6.pdf (s2.4.3) | 149.0 | |
 | equip-file | stated | schedules | equipment fraction schedule from Schedule:File | Project 1_Description_V6.pdf (s2.4.3) | ['Schedule_electricity.csv'] | |
 | infil-a | stated | infiltration | infiltration coefficient A = 0.03 in all zones | Project 1_Description_V6.pdf (s2.5) | [0.03, 0.03, 0.03] | |

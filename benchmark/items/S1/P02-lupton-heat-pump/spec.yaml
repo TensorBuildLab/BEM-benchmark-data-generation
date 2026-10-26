@@ -141,7 +141,7 @@ facts:
   kind: stated
   text: 2 wood doors (SE and SW)
   check:
-    path: fenestration.n_doors
+    path: fenestration.n_doors_all
     op: eq
     value: 2
   source:

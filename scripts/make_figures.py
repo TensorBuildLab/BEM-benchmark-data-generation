@@ -48,10 +48,10 @@ def fig1_framework():
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
-    srcs = [("S1  Everyday BEM work", ["projects, coursework, agent test sets", "QA every candidate; repair the best", "fix documents; log clarifications"]),
-            ("S2  Validated seeds", ["change model, addendum and facts", "together (paired transformation);", "record a metamorphic relation"]),
-            ("S3  Virtual programs", ["one program gives the reference IDF,", "the documents and analytic facts;", "expertise probes placed on purpose"]),
-            ("S4  Other generators", ["repair tasks, modality variants,", "round trips of validated models,", "metamorphic pairs"])]
+    srcs = [("S1  Practice cases", ["projects, coursework, agent test sets", "QA every candidate; repair the best", "fix documents; log clarifications"]),
+            ("S2  Derived variants", ["change model, addendum and facts", "of a validated seed together;", "record the expected direction"]),
+            ("S3  Virtual buildings", ["one program gives the reference IDF,", "the documents and analytic facts;", "skill-test probes placed on purpose"]),
+            ("S4  Other generators", ["repair tasks, presentation variants,", "round trips of validated models,", "expected-direction pairs"])]
     h, gap, top = 0.165, 0.022, 0.975
     for i, (t, ls) in enumerate(srcs):
         y = top - h - i * (h + gap)
@@ -77,7 +77,7 @@ def fig1_framework():
         yy -= hh + 0.018
     gx, gw = 0.605, 0.222
     ax.add_patch(FancyBboxPatch((gx, 0.25), gw, 0.66, boxstyle="round,pad=0.006,rounding_size=0.012", fc="white", ec="#555555", lw=0.9))
-    ax.text(gx + 0.012, 0.888, "QA gates, every source", ha="left", va="top", fontsize=8.2, weight="bold", color=INK)
+    ax.text(gx + 0.012, 0.888, "QA gates", ha="left", va="top", fontsize=8.2, weight="bold", color=INK)
     gates = ["G0 packaging and rights", "G1 schema", "G2 execution", "G3 integrity, plausibility", "G4 document conformance",
              "G5 determinacy, ledger", "G6 leakage", "G7 expert review"]
     for i, g in enumerate(gates):
@@ -86,20 +86,21 @@ def fig1_framework():
                                     fc="#e8f0fa" if g.startswith("G4") else "#f4f4f4", ec=ACCENT if g.startswith("G4") else "#999999",
                                     lw=1.0 if g.startswith("G4") else 0.6))
         ax.text(gx + 0.02, yg - 0.025, g, ha="left", va="center", fontsize=6.6, color=INK)
+    ax.text(gx + 0.02, 0.272, "G1-G4 run on the reference model", ha="left", va="center", fontsize=6.0, color=QUIET)
     arrow(ax, x0 + w + 0.004, 0.56, gx - 0.004, 0.56)
     tiers = [("Quarantine", "open blocking finding", BAD), ("Bronze", "automated gates", "#a0763c"),
-             ("Silver", "+1 expert review", "#8c8c8c"), ("Gold", "+2 agreeing reviews", "#c9a227")]
+             ("Silver", "+1 review,\nno open major", "#8c8c8c"), ("Gold", "+2 reviews,\nno open major", "#c9a227")]
     tx = 0.85
     for i, (t, d, c) in enumerate(tiers):
         yt = 0.905 - i * 0.165
         ax.add_patch(FancyBboxPatch((tx, yt - 0.12), 0.138, 0.12, boxstyle="round,pad=0.004,rounding_size=0.01", fc="white", ec=c, lw=1.4))
         ax.text(tx + 0.01, yt - 0.035, t, ha="left", va="center", fontsize=7.6, weight="bold", color=INK)
-        ax.text(tx + 0.01, yt - 0.08, d, ha="left", va="center", fontsize=6.2, color=QUIET)
+        ax.text(tx + 0.01, yt - 0.083, d, ha="left", va="center", fontsize=6.2, color=QUIET, linespacing=1.15)
         arrow(ax, gx + gw + 0.008, 0.56, tx - 0.003, yt - 0.06, color="#888888", lw=0.7)
     ax.add_patch(FancyBboxPatch((0.012, 0.022), 0.976, 0.17, boxstyle="round,pad=0.006,rounding_size=0.012", fc="#fafafa", ec="#555555", lw=0.9))
     ax.text(0.024, 0.176, "Scoring a system under test (documents to candidate IDF)", ha="left", va="top", fontsize=8.0, weight="bold", color=INK)
     levels = [("L0 valid", "schema check", ""), ("L1 runs", "no severe error", ""), ("L2 conformance", "primary metric,", "by facet and probe"),
-              ("L3 constrained", "code and standard", "facts"), ("L4 plausible", "assumed values", "in range"), ("L5 outputs", "vs reference or", "ensemble band")]
+              ("L3 constrained", "code and standard", "facts"), ("L4 plausible", "assumed values", "in range"), ("L5 outputs", "vs reference,", "context only")]
     bw, bg = 0.147, 0.013
     for i, (lv, n1, n2) in enumerate(levels):
         x = 0.026 + i * (bw + bg)
@@ -185,7 +186,7 @@ FACET_COLORS = {"geometry": "#1f5fa8", "fenestration": "#4d9a5b", "envelope": "#
                 "site": "#8c8c8c", "simulation": "#bbbbbb"}
 
 
-def fig4_s3_parity():
+def fig5_s3_parity():
     R = json.loads((RES / "s3_items.json").read_text())
     pts = defaultdict(list)
     n_ok = n_all = 0
@@ -225,7 +226,7 @@ def fig4_s3_parity():
     ax.set_title("difference, extracted vs analytic", loc="left")
     ax.text(0.98, 0.95, f"max |diff| {max(abs(x) for x in rel):.2f} %", transform=ax.transAxes, ha="right", va="top", fontsize=7, color=INK)
     fig.tight_layout()
-    fig.savefig(OUT / "fig4_s3_parity.png"); fig.savefig(OUT / "fig4_s3_parity.pdf")
+    fig.savefig(OUT / "fig5_s3_parity.png"); fig.savefig(OUT / "fig5_s3_parity.pdf")
     plt.close(fig)
 
 
@@ -271,7 +272,7 @@ def fig2_fact_composition():
     plt.close(fig)
 
 
-def fig5_s2_metamorphic():
+def fig4_s2_metamorphic():
     R = json.loads((RES / "s2_s4.json").read_text())["metamorphic"]
     labels = {"relocate-miami": "relocate: Miami (1A)", "relocate-seattle": "relocate: Seattle (4C)",
               "relocate-chicago": "relocate: Chicago (5A)", "relocate-fairbanks": "relocate: Fairbanks (8)",
@@ -294,7 +295,7 @@ def fig5_s2_metamorphic():
     ax.set_xlim(0, 230)
     ax.set_xlabel("annual heating energy of the reference model (GJ)")
     fig.tight_layout()
-    fig.savefig(OUT / "fig5_s2_metamorphic.png"); fig.savefig(OUT / "fig5_s2_metamorphic.pdf")
+    fig.savefig(OUT / "fig4_s2_metamorphic.png"); fig.savefig(OUT / "fig4_s2_metamorphic.pdf")
     plt.close(fig)
 
 
@@ -328,7 +329,7 @@ def graphical_abstract():
         arr(2.36, y + 0.22, 2.58, 1.6)
 
     # column 2: QA gates
-    head(2.62, 2.9, "Same QA for all")
+    head(2.62, 2.9, "Common QA gates")
     rbox(2.62, 0.62, 1.86, 2.04, fc="#f4f4f4", ec="#888888")
     gates = ["G0  rights", "G1  schema", "G2  runs", "G3  plausibility", "G4  fits documents",
              "G5  determinacy", "G6  leakage", "G7  expert review"]
@@ -360,7 +361,7 @@ def graphical_abstract():
     plt.close(fig)
 
 
-FIGS = [fig1_framework, fig2_fact_composition, fig3_s1_matrix, fig4_s3_parity, fig5_s2_metamorphic, graphical_abstract]
+FIGS = [fig1_framework, fig2_fact_composition, fig3_s1_matrix, fig4_s2_metamorphic, fig5_s3_parity, graphical_abstract]
 
 if __name__ == "__main__":
     only = sys.argv[1:]

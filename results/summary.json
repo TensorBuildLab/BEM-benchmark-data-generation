@@ -1,0 +1,18 @@
+{
+ "s1_mean_conformance": {
+  "harness": {
+   "mean": 0.8946954168127259,
+   "n": 10
+  },
+  "expected": {
+   "mean": 0.7949481316820154,
+   "n": 4
+  },
+  "direct": {
+   "mean": 0.7858094280371193,
+   "n": 4
+  }
+ },
+ "s1_candidates": 18,
+ "s1_completed_simulation": 17
+}

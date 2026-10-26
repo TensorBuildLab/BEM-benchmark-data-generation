@@ -7,7 +7,7 @@ Tier: **Bronze**
 | G0 packaging and rights | pass |
 | G1 schema | pass |
 | G2 execution | pass |
-| G3 integrity and plausibility | warn |
+| G3 integrity and plausibility | pass |
 | G4 conformance with documents | pass |
 | G5 determinacy and ledger | pass |
 | G6 leakage | pass |
@@ -17,7 +17,6 @@ Tier: **Bronze**
 
 | Gate | Severity | Finding | Evidence | Resolution |
 | --- | --- | --- | --- | --- |
-| G3 | major | implausible: occupied cooling setpoint not met <= 300 h/yr | observed 711.33 | open |
 | G7 | info | no expert sign-off recorded yet; review packet written |  | open |
 
 ## Conformance of the reference with the fact sheet

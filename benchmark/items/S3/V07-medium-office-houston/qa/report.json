@@ -56,6 +56,8 @@
   "n_fail": 0,
   "n_na": 0,
   "conformance": 1.0,
+  "conformance_evaluable": 1.0,
+  "n_strict_na": 0,
   "constrained": null,
   "plausibility": null,
   "by_facet": {
@@ -105,6 +107,7 @@
    "schedule",
    "window_dims",
    "zoning"
-  ]
+  ],
+  "n_unstated_inputs": 7
  }
 }

@@ -10,6 +10,7 @@ Reference taken from candidate `expected` (course reference model (instructor), 
 - set_surface_construction (envelope): Face 8: Exterior wall construction layers -> Floor construction layers
 - set_surface_construction (envelope): Face 1: Floor construction layers -> Roof construction layers
 - set_surface_construction (envelope): Face 26: Floor construction layers -> Roof construction layers
+- set_lighting_density (loads): lighting power density set to 7 W/m2 in 3 Lights objects (middle of the 3-11 W/m2 the fact sheet allows for a dwelling unit; the course model had 19.5 W/m2)
 
 ## Open question for the author
 

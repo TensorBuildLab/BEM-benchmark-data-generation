@@ -5,7 +5,7 @@
   "G0": "pass",
   "G1": "pass",
   "G2": "pass",
-  "G3": "warn",
+  "G3": "pass",
   "G4": "pass",
   "G5": "pass",
   "G6": "pass",
@@ -13,20 +13,11 @@
  },
  "n_findings": {
   "blocking": 0,
-  "major": 1,
+  "major": 0,
   "minor": 0,
   "info": 1
  },
  "findings": [
-  {
-   "gate": "G3",
-   "id": "PL-unmet-cool",
-   "severity": "major",
-   "message": "implausible: occupied cooling setpoint not met <= 300 h/yr",
-   "evidence": "observed 1549.17",
-   "resolution": "",
-   "open": true
-  },
   {
    "gate": "G7",
    "id": "G7-pending",
@@ -42,7 +33,7 @@
   "fatal": false,
   "severe": 0,
   "warnings": 1,
-  "elapsed_s": 98.69,
+  "elapsed_s": 35.78,
   "returncode": 0,
   "severe_messages": [],
   "instrumentation": [
@@ -61,6 +52,8 @@
   "n_fail": 0,
   "n_na": 0,
   "conformance": 1.0,
+  "conformance_evaluable": 1.0,
+  "n_strict_na": 0,
   "constrained": null,
   "plausibility": 1.0,
   "by_facet": {

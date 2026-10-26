@@ -95,6 +95,14 @@ curation:
     description: 'Face 26: Floor construction layers -> Roof construction layers'
     objects:
     - Face 26
+  - op: set_lighting_density
+    facet: loads
+    description: lighting power density set to 7 W/m2 in 3 Lights objects (middle of the 3-11 W/m2 the fact sheet
+      allows for a dwelling unit; the course model had 19.5 W/m2)
+    objects:
+    - Livingroom_Lights
+    - Bathroom_Lights
+    - Storage_Lights
   note: Infiltration design flow 'I = 1' has no unit in the assignment; the reference uses 0.001133 m3/s per m2
     of exterior surface. Coefficients A and B are graded; the design flow is left to the author to confirm.
 assumptions: null

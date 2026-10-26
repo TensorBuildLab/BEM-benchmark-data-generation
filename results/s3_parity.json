@@ -1,0 +1,26 @@
+{
+ "n_numeric_facts": 497,
+ "n_pass": 497,
+ "max_rel_error": 0.008333333333333342,
+ "worst": {
+  "item": "V20-house-phoenix",
+  "fact": "win-shgc",
+  "facet": "fenestration",
+  "expected": 0.24,
+  "observed": 0.242,
+  "rel_error": 0.008333333333333342,
+  "pass": true
+ },
+ "median_rel_error": 0.0,
+ "by_facet": {
+  "site": 24,
+  "geometry": 48,
+  "fenestration": 155,
+  "envelope": 48,
+  "loads": 69,
+  "schedules": 46,
+  "infiltration": 21,
+  "hvac": 42,
+  "control": 44
+ }
+}

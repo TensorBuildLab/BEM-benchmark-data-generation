@@ -19,7 +19,7 @@ A check that cannot be evaluated (the fact is missing from the model) returns *n
 | `site.latitude`, `site.elevation`, `site.north_axis` | `Site:Location`, `Building` (falls back to the location EnergyPlus used) |
 | `meta.weather_file`, `meta.run_period`, `meta.annual_run`, `meta.timestep`, `meta.schedule_files`, `meta.pv_dc_kw` | input and SQLite |
 | `geometry.total_floor_area`, `conditioned_floor_area`, `n_zones`, `n_conditioned_zones`, `n_levels`, `building_height`, `volume_total`, `conditioned_volume`, `underground_wall_area`, `boundary_conditions`, `zones[NAME].*` | SQLite `Zones` and tabular reports |
-| `fenestration.wwr.{N,E,S,W,total}`, `window_area.*`, `gross_wall_area.*`, `window_area_total`, `window_u`, `window_shgc`, `window_vt`, `n_windows`, `n_doors`, `door_area_total`, `door_area_by_construction`, `doors_by_direction` | Envelope Summary, Input Verification |
+| `fenestration.wwr.{N,E,S,W,total}`, `window_area.*`, `gross_wall_area.*`, `window_area_total`, `window_u`, `window_shgc`, `window_vt`, `n_windows`, `n_doors` (opaque), `n_glass_doors`, `n_doors_all`, `door_area_total`, `door_area_by_construction`, `doors_by_direction`, `doors_by_direction_all` | Envelope Summary, Input Verification |
 | `envelope.wall_u`, `wall_u_nofilm`, `wall_u_composite`, `roof_u`, `roof_u_nofilm`, `floor_u`, `floor_u_nofilm`, `n_ground_surfaces`, `has_internal_mass` | Envelope Summary over surfaces of conditioned zones |
 | `loads.people_total`, `lpd_w_m2`, `epd_w_m2`, `lpd_w_m2_conditioned`, `epd_w_m2_conditioned`, `people_per_100m2`, `activity_w_per_person_max` | SQLite nominal tables |
 | `infiltration.zones[NAME].{design_flow_m3s, ach, flow_per_ext_area, coef_a..coef_d}`, `ach_design_conditioned` | `.eio` nominal infiltration statistics |

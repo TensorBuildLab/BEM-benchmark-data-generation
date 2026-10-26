@@ -13,7 +13,7 @@
  },
  "n_findings": {
   "blocking": 0,
-  "major": 2,
+  "major": 1,
   "minor": 1,
   "info": 3
  },
@@ -32,15 +32,6 @@
    "id": "G0-rights-unknown",
    "severity": "major",
    "message": "redistribution right not recorded for inputs/draft_model.idf",
-   "evidence": "",
-   "resolution": "",
-   "open": true
-  },
-  {
-   "gate": "G0",
-   "id": "G0-ref-rights-unknown",
-   "severity": "major",
-   "message": "redistribution right of the reference not recorded",
    "evidence": "",
    "resolution": "",
    "open": true

@@ -211,7 +211,7 @@ def render(p: Program, out_dir: Path) -> Dict[str, str]:
     L.append("## Internal loads and schedules")
     L.append("")
     if "loads" not in om:
-        if "code_lpd" in pr:
+        if "code_lookup" in pr:
             L.append("- Lighting: installed at the ASHRAE Standard 90.1-2019 building area method allowance for an office.")
         else:
             L.append(f"- Lighting: {power_density(p.lpd, p)}")

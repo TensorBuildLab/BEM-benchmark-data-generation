@@ -1,0 +1,432 @@
+{
+ "candidates": [
+  {
+   "case": "P01-lupton-free-floating",
+   "candidate": "harness",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.9767441860465116,
+    "1-1-1 (equal) | tol x0.5": 0.9565217391304348,
+    "9-3-1 (steep) | tol x0.5": 0.9859154929577465,
+    "3-2-1 (default) | tol x1": 0.9767441860465116,
+    "1-1-1 (equal) | tol x1": 0.9565217391304348,
+    "9-3-1 (steep) | tol x1": 0.9859154929577465,
+    "3-2-1 (default) | tol x2": 0.9767441860465116,
+    "1-1-1 (equal) | tol x2": 0.9565217391304348,
+    "9-3-1 (steep) | tol x2": 0.9859154929577465
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P02-lupton-heat-pump",
+   "candidate": "harness",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.9814814814814815,
+    "1-1-1 (equal) | tol x0.5": 0.9642857142857143,
+    "9-3-1 (steep) | tol x0.5": 0.9895833333333334,
+    "3-2-1 (default) | tol x1": 0.9814814814814815,
+    "1-1-1 (equal) | tol x1": 0.9642857142857143,
+    "9-3-1 (steep) | tol x1": 0.9895833333333334,
+    "3-2-1 (default) | tol x2": 0.9814814814814815,
+    "1-1-1 (equal) | tol x2": 0.9642857142857143,
+    "9-3-1 (steep) | tol x2": 0.9895833333333334
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P03-office-minimal",
+   "candidate": "harness",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 1.0,
+    "1-1-1 (equal) | tol x0.5": 1.0,
+    "9-3-1 (steep) | tol x0.5": 1.0,
+    "3-2-1 (default) | tol x1": 1.0,
+    "1-1-1 (equal) | tol x1": 1.0,
+    "9-3-1 (steep) | tol x1": 1.0,
+    "3-2-1 (default) | tol x2": 1.0,
+    "1-1-1 (equal) | tol x2": 1.0,
+    "9-3-1 (steep) | tol x2": 1.0
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P04-office-narrative",
+   "candidate": "harness",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.6774193548387096,
+    "1-1-1 (equal) | tol x0.5": 0.6470588235294118,
+    "9-3-1 (steep) | tol x0.5": 0.7358490566037735,
+    "3-2-1 (default) | tol x1": 0.6774193548387096,
+    "1-1-1 (equal) | tol x1": 0.6470588235294118,
+    "9-3-1 (steep) | tol x1": 0.7358490566037735,
+    "3-2-1 (default) | tol x2": 0.6774193548387096,
+    "1-1-1 (equal) | tol x2": 0.6470588235294118,
+    "9-3-1 (steep) | tol x2": 0.7358490566037735
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P05-tract-house-plan",
+   "candidate": "harness",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.5625,
+    "1-1-1 (equal) | tol x0.5": 0.625,
+    "9-3-1 (steep) | tol x0.5": 0.53125,
+    "3-2-1 (default) | tol x1": 0.5625,
+    "1-1-1 (equal) | tol x1": 0.625,
+    "9-3-1 (steep) | tol x1": 0.53125,
+    "3-2-1 (default) | tol x2": 0.75,
+    "1-1-1 (equal) | tol x2": 0.75,
+    "9-3-1 (steep) | tol x2": 0.8125
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": [
+     "area"
+    ]
+   }
+  },
+  {
+   "case": "P06-iunit",
+   "candidate": "expected",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.8059701492537313,
+    "1-1-1 (equal) | tol x0.5": 0.8125,
+    "9-3-1 (steep) | tol x0.5": 0.7910447761194029,
+    "3-2-1 (default) | tol x1": 0.835820895522388,
+    "1-1-1 (equal) | tol x1": 0.84375,
+    "9-3-1 (steep) | tol x1": 0.8134328358208955,
+    "3-2-1 (default) | tol x2": 0.835820895522388,
+    "1-1-1 (equal) | tol x2": 0.84375,
+    "9-3-1 (steep) | tol x2": 0.8134328358208955
+   },
+   "flips": {
+    "tol x0.5": [
+     "hours"
+    ],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P06-iunit",
+   "candidate": "harness",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.9402985074626866,
+    "1-1-1 (equal) | tol x0.5": 0.9375,
+    "9-3-1 (steep) | tol x0.5": 0.9552238805970149,
+    "3-2-1 (default) | tol x1": 0.9402985074626866,
+    "1-1-1 (equal) | tol x1": 0.9375,
+    "9-3-1 (steep) | tol x1": 0.9552238805970149,
+    "3-2-1 (default) | tol x2": 0.9402985074626866,
+    "1-1-1 (equal) | tol x2": 0.9375,
+    "9-3-1 (steep) | tol x2": 0.9552238805970149
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P06-iunit",
+   "candidate": "direct",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.43283582089552236,
+    "1-1-1 (equal) | tol x0.5": 0.40625,
+    "9-3-1 (steep) | tol x0.5": 0.48507462686567165,
+    "3-2-1 (default) | tol x1": 0.43283582089552236,
+    "1-1-1 (equal) | tol x1": 0.40625,
+    "9-3-1 (steep) | tol x1": 0.48507462686567165,
+    "3-2-1 (default) | tol x2": 0.43283582089552236,
+    "1-1-1 (equal) | tol x2": 0.40625,
+    "9-3-1 (steep) | tol x2": 0.48507462686567165
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P07-ce-building-72",
+   "candidate": "harness",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 1.0,
+    "1-1-1 (equal) | tol x0.5": 1.0,
+    "9-3-1 (steep) | tol x0.5": 1.0,
+    "3-2-1 (default) | tol x1": 1.0,
+    "1-1-1 (equal) | tol x1": 1.0,
+    "9-3-1 (steep) | tol x1": 1.0,
+    "3-2-1 (default) | tol x2": 1.0,
+    "1-1-1 (equal) | tol x2": 1.0,
+    "9-3-1 (steep) | tol x2": 1.0
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P08-bestest-l100a-cos",
+   "candidate": "expected",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.9166666666666666,
+    "1-1-1 (equal) | tol x0.5": 0.9473684210526315,
+    "9-3-1 (steep) | tol x0.5": 0.8615384615384616,
+    "3-2-1 (default) | tol x1": 0.9166666666666666,
+    "1-1-1 (equal) | tol x1": 0.9473684210526315,
+    "9-3-1 (steep) | tol x1": 0.8615384615384616,
+    "3-2-1 (default) | tol x2": 0.9166666666666666,
+    "1-1-1 (equal) | tol x2": 0.9473684210526315,
+    "9-3-1 (steep) | tol x2": 0.8615384615384616
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P08-bestest-l100a-cos",
+   "candidate": "harness",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 1.0,
+    "1-1-1 (equal) | tol x0.5": 1.0,
+    "9-3-1 (steep) | tol x0.5": 1.0,
+    "3-2-1 (default) | tol x1": 1.0,
+    "1-1-1 (equal) | tol x1": 1.0,
+    "9-3-1 (steep) | tol x1": 1.0,
+    "3-2-1 (default) | tol x2": 1.0,
+    "1-1-1 (equal) | tol x2": 1.0,
+    "9-3-1 (steep) | tol x2": 1.0
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P08-bestest-l100a-cos",
+   "candidate": "direct",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.9722222222222222,
+    "1-1-1 (equal) | tol x0.5": 0.9473684210526315,
+    "9-3-1 (steep) | tol x0.5": 0.9846153846153847,
+    "3-2-1 (default) | tol x1": 0.9722222222222222,
+    "1-1-1 (equal) | tol x1": 0.9473684210526315,
+    "9-3-1 (steep) | tol x1": 0.9846153846153847,
+    "3-2-1 (default) | tol x2": 1.0,
+    "1-1-1 (equal) | tol x2": 1.0,
+    "9-3-1 (steep) | tol x2": 1.0
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": [
+     "floor-u"
+    ]
+   }
+  },
+  {
+   "case": "P09-bestest-l100a-lv",
+   "candidate": "expected",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.9166666666666666,
+    "1-1-1 (equal) | tol x0.5": 0.9473684210526315,
+    "9-3-1 (steep) | tol x0.5": 0.8615384615384616,
+    "3-2-1 (default) | tol x1": 0.9166666666666666,
+    "1-1-1 (equal) | tol x1": 0.9473684210526315,
+    "9-3-1 (steep) | tol x1": 0.8615384615384616,
+    "3-2-1 (default) | tol x2": 0.9166666666666666,
+    "1-1-1 (equal) | tol x2": 0.9473684210526315,
+    "9-3-1 (steep) | tol x2": 0.8615384615384616
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P09-bestest-l100a-lv",
+   "candidate": "harness",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 1.0,
+    "1-1-1 (equal) | tol x0.5": 1.0,
+    "9-3-1 (steep) | tol x0.5": 1.0,
+    "3-2-1 (default) | tol x1": 1.0,
+    "1-1-1 (equal) | tol x1": 1.0,
+    "9-3-1 (steep) | tol x1": 1.0,
+    "3-2-1 (default) | tol x2": 1.0,
+    "1-1-1 (equal) | tol x2": 1.0,
+    "9-3-1 (steep) | tol x2": 1.0
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P09-bestest-l100a-lv",
+   "candidate": "direct",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.9722222222222222,
+    "1-1-1 (equal) | tol x0.5": 0.9473684210526315,
+    "9-3-1 (steep) | tol x0.5": 0.9846153846153847,
+    "3-2-1 (default) | tol x1": 0.9722222222222222,
+    "1-1-1 (equal) | tol x1": 0.9473684210526315,
+    "9-3-1 (steep) | tol x1": 0.9846153846153847,
+    "3-2-1 (default) | tol x2": 1.0,
+    "1-1-1 (equal) | tol x2": 1.0,
+    "9-3-1 (steep) | tol x2": 1.0
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": [
+     "floor-u"
+    ]
+   }
+  },
+  {
+   "case": "P10-nist-nzertf",
+   "candidate": "expected",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.46808510638297873,
+    "1-1-1 (equal) | tol x0.5": 0.4642857142857143,
+    "9-3-1 (steep) | tol x0.5": 0.47297297297297297,
+    "3-2-1 (default) | tol x1": 0.5106382978723404,
+    "1-1-1 (equal) | tol x1": 0.5,
+    "9-3-1 (steep) | tol x1": 0.5135135135135135,
+    "3-2-1 (default) | tol x2": 0.5106382978723404,
+    "1-1-1 (equal) | tol x2": 0.5,
+    "9-3-1 (steep) | tol x2": 0.5135135135135135
+   },
+   "flips": {
+    "tol x0.5": [
+     "roof-u"
+    ],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P10-nist-nzertf",
+   "candidate": "harness",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.8085106382978723,
+    "1-1-1 (equal) | tol x0.5": 0.7857142857142857,
+    "9-3-1 (steep) | tol x0.5": 0.8378378378378378,
+    "3-2-1 (default) | tol x1": 0.8085106382978723,
+    "1-1-1 (equal) | tol x1": 0.7857142857142857,
+    "9-3-1 (steep) | tol x1": 0.8378378378378378,
+    "3-2-1 (default) | tol x2": 0.8085106382978723,
+    "1-1-1 (equal) | tol x2": 0.7857142857142857,
+    "9-3-1 (steep) | tol x2": 0.8378378378378378
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": []
+   }
+  },
+  {
+   "case": "P10-nist-nzertf",
+   "candidate": "direct",
+   "C": {
+    "3-2-1 (default) | tol x0.5": 0.7659574468085106,
+    "1-1-1 (equal) | tol x0.5": 0.75,
+    "9-3-1 (steep) | tol x0.5": 0.7972972972972973,
+    "3-2-1 (default) | tol x1": 0.7659574468085106,
+    "1-1-1 (equal) | tol x1": 0.75,
+    "9-3-1 (steep) | tol x1": 0.7972972972972973,
+    "3-2-1 (default) | tol x2": 0.8085106382978723,
+    "1-1-1 (equal) | tol x2": 0.7857142857142857,
+    "9-3-1 (steep) | tol x2": 0.8378378378378378
+   },
+   "flips": {
+    "tol x0.5": [],
+    "tol x1": [],
+    "tol x2": [
+     "wwr-n"
+    ]
+   }
+  }
+ ],
+ "summary": {
+  "3-2-1 (default) | tol x0.5": {
+   "max_abs_change": 0.04255319148936165,
+   "mean_abs_change": 0.004022440986556575,
+   "spearman_vs_default": 0.9979360165118679,
+   "within_case_order_flips": "0 of 12"
+  },
+  "1-1-1 (equal) | tol x0.5": {
+   "max_abs_change": 0.0625,
+   "mean_abs_change": 0.021066747966198517,
+   "spearman_vs_default": 0.9690402476780186,
+   "within_case_order_flips": "0 of 12"
+  },
+  "9-3-1 (steep) | tol x0.5": {
+   "max_abs_change": 0.0584297017650639,
+   "mean_abs_change": 0.025126014944803775,
+   "spearman_vs_default": 0.9917440660474718,
+   "within_case_order_flips": "0 of 12"
+  },
+  "3-2-1 (default) | tol x1": {
+   "max_abs_change": 0.0,
+   "mean_abs_change": 0.0,
+   "spearman_vs_default": 1.0,
+   "within_case_order_flips": "0 of 12"
+  },
+  "1-1-1 (equal) | tol x1": {
+   "max_abs_change": 0.0625,
+   "mean_abs_change": 0.018227521479583973,
+   "spearman_vs_default": 0.9690402476780186,
+   "within_case_order_flips": "0 of 12"
+  },
+  "9-3-1 (steep) | tol x1": {
+   "max_abs_change": 0.0584297017650639,
+   "mean_abs_change": 0.021949450002598944,
+   "spearman_vs_default": 0.9979360165118679,
+   "within_case_order_flips": "0 of 12"
+  },
+  "3-2-1 (default) | tol x2": {
+   "max_abs_change": 0.1875,
+   "mean_abs_change": 0.015867152613606512,
+   "spearman_vs_default": 0.933952528379773,
+   "within_case_order_flips": "0 of 12"
+  },
+  "1-1-1 (equal) | tol x2": {
+   "max_abs_change": 0.1875,
+   "mean_abs_change": 0.0257079295525639,
+   "spearman_vs_default": 0.9277605779153767,
+   "within_case_order_flips": "0 of 12"
+  },
+  "9-3-1 (steep) | tol x2": {
+   "max_abs_change": 0.25,
+   "mean_abs_change": 0.03806388174203068,
+   "spearman_vs_default": 0.9256965944272446,
+   "within_case_order_flips": "0 of 12"
+  }
+ }
+}

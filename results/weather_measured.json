@@ -1,0 +1,5 @@
+{
+ "file": "iUnit_measured_2021-01-01_2021-04-25.epw",
+ "measured_hours": 2759,
+ "comment": "COMMENTS 1,Measured hours (2759) from Appedix B. iUnit_measured_weather_epw_60min_1_1_2021_to_4_25_2021_ins.csv; other hours spliced from USA_CO_Golden-NREL.724666_TMY3.epw; global horizontal derived from direct and diffuse (2759 h); 44144 missing fields taken from the template"
+}

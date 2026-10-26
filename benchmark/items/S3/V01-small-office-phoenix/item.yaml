@@ -33,7 +33,7 @@ weather:
   source: NREL TMY3 (via openstudio-standards)
 tags:
   probes:
-  - code_lpd
+  - code_lookup
   - distractor
   units: SI
   style: narrative

@@ -91,3 +91,11 @@ def test_plausibility_rules_apply_conditionally():
 
 def test_get_path_case_insensitive():
     assert get_path({"A": {"b": 1}}, "a.B") == 1
+
+
+def test_range_bounds_absorb_float_noise():
+    from bemgen.spec import evaluate_check
+    facts = {"loads": {"people_total": 577.000003}}
+    assert evaluate_check({"path": "loads.people_total", "op": "range", "min": 100, "max": 577}, facts)["pass"] is True
+    facts = {"loads": {"people_total": 578.0}}
+    assert evaluate_check({"path": "loads.people_total", "op": "range", "min": 100, "max": 577}, facts)["pass"] is False

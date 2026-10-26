@@ -179,7 +179,7 @@ facts:
   kind: stated
   text: one exterior door
   check:
-    path: fenestration.n_doors
+    path: fenestration.n_doors_all
     op: eq
     value: 1
   source:

@@ -8,14 +8,14 @@
   "G3": "warn",
   "G4": "pass",
   "G5": "pass",
-  "G6": "warn",
+  "G6": "pass",
   "G7": "pending"
  },
  "n_findings": {
   "blocking": 0,
-  "major": 6,
+  "major": 5,
   "minor": 1,
-  "info": 1
+  "info": 2
  },
  "findings": [
   {
@@ -75,8 +75,8 @@
   {
    "gate": "G6",
    "id": "G6-model-in-inputs",
-   "severity": "major",
-   "message": "a model file is among the inputs (iUnit.osm); facets it carries must be kind 'provided'",
+   "severity": "info",
+   "message": "a model file is among the inputs (iUnit.osm); the facts it carries are graded as 'provided'",
    "evidence": "",
    "resolution": "",
    "open": true
@@ -96,7 +96,7 @@
   "fatal": false,
   "severe": 0,
   "warnings": 20,
-  "elapsed_s": 8.35,
+  "elapsed_s": 11.89,
   "returncode": 0,
   "severe_messages": [],
   "instrumentation": [
@@ -139,11 +139,13 @@
  },
  "conformance": {
   "n_facts": 33,
-  "n_pass": 32,
-  "n_fail": 1,
+  "n_pass": 33,
+  "n_fail": 0,
   "n_na": 0,
   "conformance": 1.0,
-  "constrained": 0.0,
+  "conformance_evaluable": 1.0,
+  "n_strict_na": 0,
+  "constrained": 1.0,
   "plausibility": null,
   "by_facet": {
    "site": 1.0,

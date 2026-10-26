@@ -156,7 +156,10 @@ def _cmp(op: str, x, c: dict) -> Optional[bool]:
         return abs(xn - _num(v)) <= lim + 1e-12
     if op == "range":
         lo, hi = c.get("min"), c.get("max")
-        return (lo is None or xn >= float(lo) - 1e-12) and (hi is None or xn <= float(hi) + 1e-12)
+        # bounds are inclusive; a relative slack of 1e-6 absorbs float noise (577.000003 people is 577)
+        def slack(b):
+            return max(1e-12, 1e-6 * abs(float(b)))
+        return (lo is None or xn >= float(lo) - slack(lo)) and (hi is None or xn <= float(hi) + slack(hi))
     if op in ("gt", "ge", "lt", "le"):
         vv = _num(v)
         return {"gt": xn > vv, "ge": xn >= vv, "lt": xn < vv, "le": xn <= vv}[op]
@@ -233,6 +236,10 @@ def summarize(results: List[dict]) -> dict:
            "n_fail": sum(1 for r in results if r["pass"] is False),
            "n_na": sum(1 for r in results if r["pass"] is None),
            "conformance": score(strict),          # unanswerable (None) counts as not passed
+           # the same score over the facts the checker could evaluate; the gap between the two is the
+           # weight of facts a reviewer must check by hand (valid but unusual modelling idioms)
+           "conformance_evaluable": score([r for r in strict if r["pass"] is not None]),
+           "n_strict_na": sum(1 for r in strict if r["pass"] is None),
            "constrained": score([r for r in results if r["kind"] == "constrained"]),
            "plausibility": score([r for r in results if r["kind"] == "assumed"]),
            "by_facet": {}, "by_probe": {}}

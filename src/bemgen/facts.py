@@ -441,6 +441,13 @@ def extract(idf: IDF, run_dir: Optional[str] = None, schema=None, expanded: Opti
         ps = opaque.get(d.get("Parent Surface", ""), {})
         door_dirs.append(ps.get("Cardinal Direction", "?"))
     fen["doors_by_direction"] = dict(Counter(door_dirs))
+    # glass doors are reported with the windows; a glazed entrance is still a door
+    glass = {o.name.upper() for o in model.by_class("FenestrationSurface:Detailed") if o.get(1).upper() == "GLASSDOOR"}
+    glass |= {o.name.upper() for o in model.by_class("GlassDoor")}
+    gdirs = [w.get("Cardinal Direction", "?") for k, w in wins.items() if k.upper() in glass]
+    fen["n_glass_doors"] = len(gdirs)
+    fen["n_doors_all"] = len(doors) + len(gdirs)
+    fen["doors_by_direction_all"] = dict(Counter(door_dirs + gdirs))
     by_cons = {}
     for d in doors.values():
         cn = d.get("Construction", "?")
