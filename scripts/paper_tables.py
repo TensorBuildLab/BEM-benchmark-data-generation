@@ -22,26 +22,27 @@ DOCS = {"P01": "text (5 kB)", "P02": "text (6 kB)", "P03": "9-line list (181 cha
         "P07": "5 room-label plan PDFs, facts", "P08": "test-case text + figure descriptions", "P09": "test-case text + figure descriptions",
         "P10": "spreadsheet (356 rows)"}
 CAND = {"expected": "E", "harness": "H", "direct": "D"}
+CAND_WORD = {"expected": "supplied", "harness": "harness", "direct": "direct"}
 
 
 def t_cases():
     C = json.loads((RES / "s1_candidates.json").read_text())
-    rows = ["| Case | Building | Location | Floor area (m²) | Documents | Facts (determined share) | C expert/standard | C harness | C direct |",
-            "| --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
+    # conformance of the candidates is shown in Fig. 3 only (tables must not duplicate figures)
+    rows = ["| Case | Building | Location | Floor area (m²) | Documents | Facts (determined share) | Candidates |",
+            "| --- | --- | --- | --- | --- | --- | --- |"]
     for cp in sorted((ROOT / "cases" / "practice").glob("P*.yaml")):
         case = load_case(cp)
         sp = spec_from_case(case)
         bk = sp.by_kind()
         det = sum(bk.get(k, 0) for k in ("stated", "derived", "provided")) / len(sp.facts)
-        cc = {r["candidate"]: r["conformance"] for r in C if r["case"] == case["id"]}
-        cell = lambda k: f"{cc[k]:.2f}" if cc.get(k) is not None else ""
+        cands = [CAND_WORD[r["candidate"]] for r in sorted(C, key=lambda r: "ehd".index(r["candidate"][0]))
+                 if r["case"] == case["id"]]
         b = case["building"]
         rows.append(f"| {case['id'].split('-')[0]} | {b['type']} | {b['location']} | {b['floor_area_m2']:,} | "
-                    f"{DOCS[case['id'][:3]]} | {len(sp.facts)} ({det:.2f}) | {cell('expected')} | {cell('harness')} | {cell('direct')} |")
+                    f"{DOCS[case['id'][:3]]} | {len(sp.facts)} ({det:.2f}) | {', '.join(cands)} |")
     rows.append("")
-    rows.append("C: conformance of each candidate reference with the documents (0–1). Expert/standard: the course, "
-                "Standard 140 or third-party reference supplied with the case; harness: the agent harness (gbXML route); "
-                "direct: the agent working from the documents without gbXML.")
+    rows.append("Candidates: the models found with the case. Supplied: the course, Standard 140 or third-party reference; "
+                "harness: the agent harness (gbXML route); direct: the agent working from the documents without gbXML.")
     return "\n".join(rows)
 
 

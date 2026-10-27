@@ -7,6 +7,9 @@ authors:
     given-names: Liang
     email: liangzhang1@arizona.edu
     affiliation: "Department of Civil and Architectural Engineering and Mechanics, University of Arizona"
+  - family-names: Fu
+    given-names: Xiaoqin
+    affiliation: "Department of Civil and Architectural Engineering and Mechanics, University of Arizona"
 version: 0.1.0
 date-released: 2026-10-26
 license: BSD-3-Clause

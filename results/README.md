@@ -16,3 +16,9 @@
 | `weather_measured.json` | the measured-weather EPW built for the iUnit case | `scripts/extra_results.py` |
 | `summary.json` | means and counts quoted in the text | `scripts/extra_results.py` |
 | `figures/` | the paper's figures and graphical abstract | `scripts/make_figures.py` |
+| `mutation.json` | check audit: every mutant of 10 seed references with its conformance, constrained and plausibility verdicts and output change | `scripts/mutation_analysis.py` |
+| `mutation_summary.json` | completeness and soundness of the fact sheets and of output-agreement checks, by role and operator, by sheet type, and over a tolerance sweep | `scripts/analyze_studies.py` |
+| `ensembles.json` | admissible ensembles: sampled inputs, conformance and annual results of every member | `scripts/ensembles.py` |
+| `ensemble_summary.json` | document-induced bands per item, pilot runs and the ground-floor idiom placed in them, input sensitivities | `scripts/analyze_studies.py` |
+| `idioms.json` | the ensemble references rewritten with the pilot agent's ground-floor idiom (F-factor slab): conformance and output change | `scripts/idioms.py` |
+| `defect_taxonomy.json` | every defect found, with origin, type and the mechanism that found it | `scripts/defect_taxonomy.py` |

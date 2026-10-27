@@ -1,0 +1,138 @@
+[
+ {
+  "item": "P02-lupton-heat-pump",
+  "idiom": "slab_ffactor",
+  "facet": "envelope",
+  "description": "1 ground floors by the F-factor method (F 1.2634 W/(m\u00b7K), exposed perimeter 56.8 m)",
+  "L1": true,
+  "C": 1.0,
+  "C_e": 1.0,
+  "failed": [],
+  "output": {
+   "heating_gj": -0.07270645484471158,
+   "cooling_gj": 4.201388888888889,
+   "site_energy_gj": 0.022202998846597346,
+   "eui_mj_m2": 0.02224274754481528,
+   "internal_gains_gj": 0.0
+  }
+ },
+ {
+  "item": "P04-office-narrative",
+  "idiom": "slab_ffactor",
+  "facet": "envelope",
+  "description": "1 ground floors by the F-factor method (F 1.2634 W/(m\u00b7K), exposed perimeter 110.0 m)",
+  "L1": true,
+  "C": 1.0,
+  "C_e": 1.0,
+  "failed": [],
+  "output": {
+   "heating_gj": -0.5718685831622177,
+   "cooling_gj": 0.7386149003147954,
+   "site_energy_gj": 0.20150559295976245,
+   "eui_mj_m2": 0.20150292234901201,
+   "internal_gains_gj": 0.0
+  }
+ },
+ {
+  "item": "V02-small-office-chicago",
+  "idiom": "slab_ffactor",
+  "facet": "envelope",
+  "description": "5 ground floors by the F-factor method (F 1.2634 W/(m\u00b7K), exposed perimeter 108.0 m)",
+  "L1": true,
+  "C": 1.0,
+  "C_e": 1.0,
+  "failed": [],
+  "output": {
+   "heating_gj": -0.3266914498141264,
+   "cooling_gj": 0.49347710330138433,
+   "site_energy_gj": -0.018199398651602063,
+   "eui_mj_m2": -0.018179321236674366,
+   "internal_gains_gj": 0.0
+  }
+ },
+ {
+  "item": "V03-small-office-seattle",
+  "idiom": "slab_ffactor",
+  "facet": "envelope",
+  "description": "5 ground floors by the F-factor method (F 1.2634 W/(m\u00b7K), exposed perimeter 118.0 m)",
+  "L1": true,
+  "C": 1.0,
+  "C_e": 1.0,
+  "failed": [],
+  "output": {
+   "heating_gj": -0.5766714082503556,
+   "cooling_gj": 1.025389755011136,
+   "site_energy_gj": -0.03326483929748386,
+   "eui_mj_m2": -0.03326478771017297,
+   "internal_gains_gj": 0.0
+  }
+ },
+ {
+  "item": "V08-medium-office-rochester",
+  "idiom": "slab_ffactor",
+  "facet": "envelope",
+  "description": "5 ground floors by the F-factor method (F 1.2634 W/(m\u00b7K), exposed perimeter 170.0 m)",
+  "L1": true,
+  "C": 1.0,
+  "C_e": 1.0,
+  "failed": [],
+  "output": {
+   "heating_gj": -0.32624990095871953,
+   "cooling_gj": 0.571571238348868,
+   "site_energy_gj": -0.0832195373997586,
+   "eui_mj_m2": -0.08321485098049732,
+   "internal_gains_gj": 0.0
+  }
+ },
+ {
+  "item": "V09-retail-las-vegas",
+  "idiom": "slab_ffactor",
+  "facet": "envelope",
+  "description": "1 ground floors by the F-factor method (F 1.2634 W/(m\u00b7K), exposed perimeter 166.0 m)",
+  "L1": true,
+  "C": 1.0,
+  "C_e": 1.0,
+  "failed": [],
+  "output": {
+   "heating_gj": -0.6666666666666666,
+   "cooling_gj": 0.2471500227998176,
+   "site_energy_gj": -0.0015952597994530833,
+   "eui_mj_m2": -0.0015788383890672265,
+   "internal_gains_gj": 0.0
+  }
+ },
+ {
+  "item": "V17-house-denver",
+  "idiom": "slab_ffactor",
+  "facet": "envelope",
+  "description": "2 ground floors by the F-factor method (F 1.2634 W/(m\u00b7K), exposed perimeter 64.8 m)",
+  "L1": true,
+  "C": 1.0,
+  "C_e": 1.0,
+  "failed": [],
+  "output": {
+   "heating_gj": -0.36720729853015716,
+   "cooling_gj": 1.5286624203821657,
+   "site_energy_gj": -0.17232851750618242,
+   "eui_mj_m2": -0.17237593324549846,
+   "internal_gains_gj": 0.0
+  }
+ },
+ {
+  "item": "V21-rowhouse-chicago",
+  "idiom": "slab_ffactor",
+  "facet": "envelope",
+  "description": "1 ground floors by the F-factor method (F 1.2634 W/(m\u00b7K), exposed perimeter 13.6 m)",
+  "L1": true,
+  "C": 1.0,
+  "C_e": 1.0,
+  "failed": [],
+  "output": {
+   "heating_gj": -0.40477242598320806,
+   "cooling_gj": 2.0210526315789474,
+   "site_energy_gj": -0.1816239316239316,
+   "eui_mj_m2": -0.18150766542219393,
+   "internal_gains_gj": 0.0
+  }
+ }
+]

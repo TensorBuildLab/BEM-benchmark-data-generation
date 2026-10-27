@@ -178,6 +178,14 @@ def parse_err(path: Union[str, Path]) -> dict:
     return out
 
 
+def _finished(err: Path) -> bool:
+    """True when the error file carries EnergyPlus's final status line."""
+    if not err.is_file():
+        return False
+    text = err.read_text(errors="replace")
+    return "EnergyPlus Completed" in text or "EnergyPlus Terminated" in text
+
+
 def needs_expand(idf: IDF) -> bool:
     return any(o.key.startswith("HVACTEMPLATE:") for o in idf)
 
@@ -198,9 +206,17 @@ def run_model(model: Union[str, Path, IDF], weather: Optional[Union[str, Path]],
     text = idf.to_text()
     manifest = run_dir / "run.json"
     if reuse and manifest.is_file() and (run_dir / "in.idf").is_file():
-        old = json.loads(manifest.read_text())
+        try:
+            old = json.loads(manifest.read_text())
+        except ValueError:  # manifest of an interrupted run
+            old = {}
+        # reuse only a run that EnergyPlus finished (completed or terminated) and whose manifest agrees with its
+        # error file (a killed client records a failure for a run the engine went on to finish), and a completed
+        # one only while its SQLite output is still there (prune_run_dir may have removed it)
+        err = run_dir / "out" / "eplusout.err"
         if (run_dir / "in.idf").read_text(encoding="utf-8") == text and old.get("completed") is not None \
-                and (run_dir / "out" / "eplusout.err").is_file():
+                and _finished(err) and parse_err(err)["completed"] == bool(old["completed"]) \
+                and (not old["completed"] or (run_dir / "out" / "eplusout.sql").is_file()):
             return RunResult(**old)
     import hashlib
     h = hashlib.sha256(text.encode("utf-8"))
@@ -261,6 +277,26 @@ def run_model(model: Union[str, Path, IDF], weather: Optional[Union[str, Path]],
         except OSError:
             pass
     return res
+
+
+def prune_run_dir(run_dir: Union[str, Path]) -> None:
+    """Delete the bulky files of a finished, scored run to save disk space.
+
+    The weather copy goes. A completed run loses its whole output folder, which the run
+    cache still holds, so a rerun restores it from there instead of simulating again.
+    A failed run keeps only ``eplusout.err``.
+    """
+    run_dir = Path(run_dir)
+    (run_dir / "w.epw").unlink(missing_ok=True)
+    out = run_dir / "out"
+    manifest = run_dir / "run.json"
+    completed = manifest.is_file() and json.loads(manifest.read_text()).get("completed")
+    if completed:
+        shutil.rmtree(out, ignore_errors=True)
+    elif out.is_dir():
+        for f in out.iterdir():
+            if f.name != "eplusout.err":
+                shutil.rmtree(f, ignore_errors=True) if f.is_dir() else f.unlink(missing_ok=True)
 
 
 @dataclass

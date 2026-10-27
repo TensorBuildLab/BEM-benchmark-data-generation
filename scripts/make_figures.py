@@ -22,7 +22,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 8, "axes.titlesize": 9, "axes.labelsize": 8,
                      "xtick.labelsize": 7.5, "ytick.labelsize": 7.5, "legend.fontsize": 7.5, "axes.spines.top": False,
-                     "axes.spines.right": False, "savefig.dpi": 300})
+                     "axes.spines.right": False, "savefig.dpi": 600})
 INK, QUIET, GRID = "#222222", "#6b6b6b", "#d9d9d9"
 ACCENT = "#1f5fa8"
 GOOD, WARN, BAD, NA = "#4d9a5b", "#e0a43a", "#c8513f", "#bdbdbd"
@@ -141,16 +141,22 @@ def fig3_s1_matrix():
     axb = fig.add_axes([0.77, 0.15, 0.2, 0.76])
     for i, r in enumerate(R):
         y = n - 1 - i
+        ran = bool((r.get("run") or {}).get("completed", True))
         for j, g in enumerate(gates):
             st = r["gates"].get(g, "skip")
+            if g == "G4" and not ran:
+                st = "skip"  # no facts to compare: the model did not run
             axm.add_patch(plt.Rectangle((j, y), 0.94, 0.86, color=col.get(st, NA), lw=0))
-            if g == "G4":
+            if g == "G4" and ran:
                 nf = len(r["failed"])
                 if nf:
                     axm.text(j + 0.47, y + 0.43, str(nf), ha="center", va="center", fontsize=6.8, color="white", weight="bold")
         lab = f"{CASE_SHORT[r['case']]}  |  {CAND_LABEL[r['candidate']]}"
         axm.text(-0.15, y + 0.43, lab, ha="right", va="center", fontsize=6.6,
                  color=INK if r["candidate"] != "expected" else "#000000", weight="bold" if r["candidate"] == "expected" else "normal")
+        if not ran:
+            axb.text(1.5, y + 0.43, "did not run", va="center", fontsize=6.6, color=QUIET, style="italic")
+            continue
         c = r["conformance"] or 0
         axb.barh(y + 0.43, c * 100, height=0.7, color=ACCENT if r["candidate"] != "expected" else "#7a7a7a")
         axb.text(c * 100 + 1.5, y + 0.43, f"{c * 100:.0f}", va="center", fontsize=6.6, color=INK)

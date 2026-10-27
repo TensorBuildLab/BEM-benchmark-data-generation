@@ -3,8 +3,11 @@ omitted_facets:
 reference_choices:
   infiltration_ach: 0.4
 unstated_inputs:
-  slab: 'slab on grade: 200 mm cast concrete with a carpet pad, no insulation; ground
-    temperatures assumed'
+  slab: 'slab on grade: 200 mm cast concrete with a carpet pad, no insulation, as
+    a layered construction'
+  ground: 'BuildingSurface ground temperatures: half the monthly mean air temperature
+    plus 9 C'
+  absorptance: exterior solar absorptance 0.6 of every outer layer
   interior_constructions: concrete intermediate floors, gypsum partitions
   doors: 45 mm solid panel door (no U-factor stated)
   sizing: heating 1.25 and cooling 1.15 sizing factors; design days from the site's

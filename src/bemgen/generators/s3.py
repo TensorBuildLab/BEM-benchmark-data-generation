@@ -292,7 +292,9 @@ Input documents:
 
 def unstated_inputs(p) -> dict:
     """Inputs the generated reference sets that the rendered documents never state."""
-    u = {"slab": "slab on grade: 200 mm cast concrete with a carpet pad, no insulation; ground temperatures assumed",
+    u = {"slab": "slab on grade: 200 mm cast concrete with a carpet pad, no insulation, as a layered construction",
+         "ground": "BuildingSurface ground temperatures: half the monthly mean air temperature plus 9 C",
+         "absorptance": "exterior solar absorptance 0.6 of every outer layer",
          "interior_constructions": "concrete intermediate floors, gypsum partitions",
          "doors": "45 mm solid panel door (no U-factor stated)" if p.doors else None,
          "sizing": "heating 1.25 and cooling 1.15 sizing factors; design days from the site's design-day file",
@@ -301,6 +303,8 @@ def unstated_inputs(p) -> dict:
         u["outdoor_air"] = "2.36 L/s per person, no economizer"
         u["fans"] = ("500 Pa, total efficiency 0.6, blow-through" if p.hvac == "psz_hp"
                      else "75 Pa, total efficiency 0.7, draw-through")
+    elif p.hvac == "ideal":
+        u["outdoor_air"] = "none: the ideal loads hold the setpoints without ventilation"
     return {k: v for k, v in u.items() if v}
 
 
